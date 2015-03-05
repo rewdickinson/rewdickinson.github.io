@@ -238,7 +238,10 @@ li.ruleNotSatisfied:before {
 	list-style-type: none;
 	padding-left: 3em;
 }
-.GGID2ICBGX{
-	color: #0000FF !important;
-	
+
+.appian-body .GGID2ICBGY {
+    word-wrap: break-word;
+    color: #0000FF !important;
+    font-size: 18px;
+    font-weight: bold;
 }
