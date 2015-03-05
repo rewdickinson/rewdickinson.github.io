@@ -1,12 +1,334 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-  <title>Appian Embedded example</title>
-  <script src="https://presales.appiancloud.com/suite/tempo/tempo.nocache.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<title>Genworth Financial</title>
+<script language="javascript" type="text/javascript">
+//helper function to create the form
+function getNewSubmitForm(){
+	 var submitForm = document.createElement("FORM");
+	 document.body.appendChild(submitForm);
+	 submitForm.method = "POST";
+	 return submitForm;
+}
+
+//helper function to add elements to the form
+function createNewFormElement(inputForm, elementName, elementValue){
+	var newElement = document.createElement("input");
+	newElement.type = "hidden";
+	newElement.name = elementName;
+	newElement.value = elementValue;
+	inputForm.appendChild(newElement);
+	return newElement;
+}
+</script>
 </head>
+
 <body>
-<h1>Countdown until the next Giants Super Bowl Win!</h1>
-<p>330 days</p>
-<appian-task taskId="536873922" />
+	
+	
+	
+
+		
+		<div id="masterDiv">
+			<div id="header">
+				<!-- Logo and Links -->
+				<div id="pageHead"> 
+					<head>
+<title>Genworth Financial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="description"
+	content="Genworth Financial, About Us,
+		    Life Events, Products, For the Sales Professional,
+		    For Creating and Preserving Wealth,	For Protecting your Lifestyle and Assets,
+		    Meeting Your Business Needs, Our Vision, Pathways to a Career,
+		    Retirement Planning, Planning an Education,	Owning a Car,
+		    Distribution Internet Servicing and Support, The Marketing Power of Genworth">
+<meta name="keywords"
+	content="Sales Professional, Insurance Brokerage Group,
+			Strategic Partners Group, Products,
+		    Distribution Internet Servicing and Support">
+<meta name="WT.cg_n" content="" />
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/usermanagement/themes/themeGenworth/css/main.css">
+<NOSCRIPT>
+	<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1"
+		SRC="http://ssdc.genworth.com/dcsu69jft00000wo8w4iwozqa_5n2u/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2">
+</NOSCRIPT>
+
+</head>
+	<div id="logo">				
+		<img src="/usermanagement/themes/themeGenworth/images/header_bg.png" alt="" usemap="#logomap" border="0" width="100%" height="75px"/>
+
+		<map name="logomap">
+  			<area shape="rect" coords="0,0,361,75" 
+  				onfocus="window.status='Genworth Financial'; return true;"
+				onmouseover="window.status='Genworth Financial'; return true;"
+				onmouseout="window.status=''; return true;"
+				href="http://www.genworth.com/content/genworth/www_genworth_com/web/global/en/home.html?ignore=true" alt="" />
+		</map>		
+	</div>
+	<div id="topNav"></div>
+				</div>
+			</div>
+			<div id="body">
+				<!-- Content -->
+				<div id="mainColumn">
+					
+
+	<script language="JavaScript" type="text/javascript" src="/usermanagement/js/jquery-1.9.1.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/usermanagement/js/password.js"></script>
+
+	<table width="100%" class="registrationHeader">
+		
+		<tr >
+			<td class="h2nounderline" width="22%">
+				User Registration
+			</td>
+			<td class="h2nounderline" width="63%">				
+				<img src="/usermanagement/image/icon_lock.png" alt="Protecting your privacy is important to us. The information you provide is confidential and will not be shared." />
+			</td>
+			<td class="h2nounderline" width="15%">Page 1 of 2</td>
+		</tr>
+	</table> 
+	
+	<table width="100%">
+		
+		<tr><td colspan="2"></td></tr>
+		
+		
+		
+		
+			<form action="validateUserData" method="post">
+			<tr>		
+				<td>
+					<table>
+						<tr><td colspan="3"><b>All Fields below require an entry to complete the registration process</b></td></tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">First Name:</td>
+							<td>													
+								<input type="text" name="firstName" size="30" maxlength="60" value="" id="firstName"/>		
+							</td>
+							<td width="500px">&nbsp;</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Middle Initial:</td>
+							<td>
+								<input type="text" name="middleInitial" size="1" maxlength="1" value="" id="middleInitial"/>
+							</td>
+							<td width="500px">&nbsp;</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Last Name:</td>
+							<td>								
+								<input type="text" name="lastName" size="30" maxlength="60" value="" id="lastName"/>
+							</td>
+							<td width="500px">&nbsp;</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Email Address:</td>
+							<td>
+								<input type="text" name="email" size="30" maxlength="60" value="" id="email"/>
+							</td>
+							<td width="500px">&nbsp;</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Confirm Email Address:</td>
+							<td>
+								<input type="text" name="confirmEmail" size="30" maxlength="60" value="" id="confirmEmail"/>
+							</td>
+							<td width="500px">&nbsp;</td>
+						</tr>
+					</table></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" height="50">
+				<h2 style="font-size: 15pt;"> 
+				Create Account
+				</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Username:</td>
+							<td><input type="text" name="username" size="30" maxlength="120" value="" id="username" onchange="checkPasswordStrength()"/></td>
+							<td style="color:#999999">Must contain a minimum of eight (8). Special characters and numbers are allowed.</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Password:</td>
+							<td><input type="password" name="password" size="30" maxlength="64" value="" id="password" onkeyup="checkPasswordStrength()" onchange="checkPasswordStrength()"/></td>
+							<td style="color:#999999">
+								<ul id="passwordRules">
+								<script>	
+									for(i=0; i < passwordStrengthRules.length; i++) {
+										document.write("<li id='"+passwordStrengthRules[i].id+"' class='ruleNotSatisfied'>"+passwordStrengthRules[i].description+"</li>");
+										if(passwordStrengthRules[i].subrules != null) {
+											document.write("<ul id='passwordSubrules'>");
+											if(passwordStrengthRules[i].subrules != null) {
+												for(j=0; j < passwordStrengthRules[i].subrules.length; j++) {
+													document.write("<li id='"+passwordStrengthRules[i].subrules[j].id+"'>"
+															+passwordStrengthRules[i].subrules[j].description+"</li>");	
+												}											
+												document.write("</ul>");
+											}
+										}
+									}								
+								</script>
+								</ul>
+							</td>																
+						</tr>
+						<tr>
+							<td width="180px">Confirm Password:</td>
+							<td colspan="2">																
+								<input type="password" name="confirmPassword" size="30" maxlength="64" value="" id="confirmPassword"/>
+							</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Challenge Question:</td>
+							<td colspan="2"> 								
+								<select name="challengeQuestion" id="challengeQuestion">
+    <option value=""
+    >Please select...</option>
+    <option value="Favorite movie from your childhood?">Favorite movie from your childhood?</option>
+    <option value="Favorite fictional character?">Favorite fictional character?</option>
+    <option value="Favorite book from childhood?">Favorite book from childhood?</option>
+    <option value="College you applied to but didn't attend?">College you applied to but didn't attend?</option>
+    <option value="What is your first pet's name?">What is your first pet's name?</option>
+    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+    <option value="What is your birth place?">What is your birth place?</option>
+    <option value="Name of your favorite childhood friend? ">Name of your favorite childhood friend? </option>
+    <option value="Name of your first manager?">Name of your first manager?</option>
+    <option value="Name of your first boyfriend or girlfriend?">Name of your first boyfriend or girlfriend?</option>
+    <option value="Favorite TV show no longer on the air?">Favorite TV show no longer on the air?</option>
+    <option value="Favorite person from history?">Favorite person from history?</option>
+
+
+</select>
+
+							</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Challenge Response:</td>
+							<td colspan="2">
+								<input type="password" name="challengeResponse" size="30" maxlength="30" value="" id="challengeResponse"/>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" height="50">
+				<h2 style="font-size: 15pt;"> 
+				Add a Policy
+				</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td colspan="2">Please enter a valid policy number including leading zeros.
+							</td>
+						</tr>
+						<tr><td colspan="3"></td></tr>
+						<tr>
+							<td width="180px">Policy Number:</td>
+							<td class="vCenterAlign"><input type="text" name="policyNumber" size="30" maxlength="60" value="" id="policyNumber" onblur="javascript:this.value=this.value.toUpperCase();"/></td>
+							<td class="vCenterAlign"><img src="/usermanagement/image/icon_lock.png" alt="Protecting your privacy is important to us. The information you provide is confidential and will not be shared." /></td>
+						</tr>
+					</table></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" height="50">
+				<h2 style="font-size: 15pt;"> 
+				Terms and Conditions
+				</h2>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" ><a href='#' onclick='window.open("jsp/register/registerTerms.jsp", "registerPopupWindow", "width=700,height=300,scrollbars=YES,location=NO")'>Click here</a> to view the terms and conditions for registering.
+				</td>
+			</tr>
+			<tr><td colspan="2"></td></tr>
+			<tr>
+				<td colspan="3" >
+				<input type="checkbox" name="accept" value="true" id="accept"/><input type="hidden" id="__checkbox_accept" name="__checkbox_accept" value="true" />
+				I accept the terms and conditions for registration
+			</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left" valign="middle" height="80">
+						<input type="submit" id="common_button_acceptAndContinue" name="common.button.acceptAndContinue" value="Accept and Continue" class="button" style="width:11em;"/>
+	
+						<input type='button' onclick='window.location="https://auth.genworth.com/routingandauthorization/public/backToLoginPage?pageCode=cq5Home"' value='Cancel Registration' class="button" style="width: 11em;" />						
+				</td>
+			</tr>
+				
+				
+					<input type="hidden" name="from" value="genworth" />
+				
+			</form>
+		
+	</table>
+
+	
+	<script>checkPasswordStrength();</script>
+				</div>														
+			</div>							
+			<div class="push"></div>		
+		</div>
+
+		<div id="footer" class="footer">
+			
+
+
+	<div id="copyright" class="copyright">
+		
+		&copy; 2015 Genworth Financial, Inc. All rights reserved.&nbsp;&nbsp;
+	</div>
+
+	&nbsp;&nbsp;
+	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/privacy_policy.html">Privacy Policy</a> |
+	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/corp_terms_of_use.html">Terms of Use</a> |
+	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/corp_information_safety.html">Information Safety </a>
+		</div>	
+	
+	
+	<!-- SiteCatalyst code version: H.22.1.
+		Copyright 1996-2011 Adobe, Inc. All Rights Reserved
+		More info available at http://www.omniture.com -->
+	<script language="JavaScript" type="text/javascript" src="/usermanagement/js/s_code.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/usermanagement/js/jquery-1.9.1.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/usermanagement/js/omniture.js"></script>
+	<script language="JavaScript" type="text/javascript"><!--
+
+	/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/	
+	<script language="JavaScript" type="text/javascript"><!--
+	if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+	//--></script><noscript><img src="https://genworthfinancial.d2.sc.omtrdc.net/b/ss/genfinconsumer/1/H.22.1--NS/0"
+	height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+	<!-- End SiteCatalyst code version: H.22.1. -->	
 </body>
 </html>
