@@ -1,0 +1,240 @@
+	* {
+		margin: 0;
+	}
+	
+	html { 
+		padding-right:12%;
+		padding-left:12%;
+	}
+	
+	html, body { 
+		height: 100%;
+		margin: 0 auto;
+		padding-top: 0px;
+	}
+	
+	body {
+		font-size: 12px;
+		font-family:arial, sans-serif;
+		color:#535353;
+		background-color:#EFE7E7;
+	}
+	
+	.footer .push {
+		height: 35px; /* .push must be the same height as .footer */
+	}
+	
+	#header {
+   		padding:0;
+	}
+	
+	#body {
+   		padding:1px;
+   		padding-bottom:35px;   /* Height of the footer */   
+   		background-color:#FFFFFF;
+   		overflow: auto;	
+	}
+	
+	#masterDiv {
+		min-height:100%;
+		height: auto !important;
+   		margin: 0 auto -35px;
+		background-color:#FFFFFF;
+		text-align:left; /* for where IE ver < 6 */
+		border-right:1px solid #888;
+		border-left:1px solid #888;
+	}
+	
+	#logo {
+		height:75px;		
+		width:100%;
+		padding:0;
+	}
+
+	#pageHead {
+		background-color:#FFFFFF;
+		position:relative;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+	}		
+
+	#homePageHead #globalNav {
+		position:absolute;
+		top:185px;
+		left:26px;
+	}
+
+	#globalNav {
+		position:absolute;
+		top:10px;
+		left:480px;
+	}
+	
+
+	.panes div {
+		display:none;
+		border:8px solid #F5931F;
+		font-size:14px;
+		background-color:#fff;
+		width:534px;
+	}
+
+	#globalNavLinks {
+		top:4px;
+		left:0px;
+		text-align:center;
+		font-size:12px;
+	}
+	
+	#subPageContainer {
+		padding:20px 0px 20px 0px;
+	}
+	#subPageContent {
+		padding:0 23px 0 25px;
+	}
+	
+	#mainColumn {
+		width:100%;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+	}
+	
+	#footer {
+		width:100%;
+		height:25px;
+		padding-left:0px;
+		padding-top:10px;
+		background: url('/usermanagement/themes/themeGenworth/images/footer_bg.png') repeat-x #BDD3D8;
+		color:#ffffff;
+		font-size:12px;	
+	}
+	#footer a:link, #footer a:visited, #footer a:hover, #footer a:active {
+		color:#ffffff;
+		font-size:12px;
+	}
+	.copyright {
+		float:right;		
+		color:#ffffff;
+		font-size:12px;
+	}
+	
+	.titleHeader {
+		color: #2495e0;
+		font-size:16px;
+		font-family:arial, sans-serif;
+		font-weight: bold;
+	}
+	
+	#topNav {
+		background: url('/usermanagement/themes/themeGenworth/images/topNav_bg.png') repeat-x #BDD3D8;
+		padding:0;
+		z-index:1;
+		height:35px;
+	}
+	
+	.vCenterAlign {
+		vertical-align: middle;
+	}
+	
+	.detail {
+		font-size: 9pt;
+		border-collapse: collapse;
+		border-color: #dfdfdf;
+		border-width: 1px;
+		border-style: solid;
+		width: 100%;
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
+	
+	.detail th {
+		background-color: #dfdfdf;	
+	}
+	
+	h2 {
+	    padding: 20px 0 3px;
+	    font: bold 1.4em "Lucida Grande", Helvetica, "Arial Unicode MS", "Arial Unicode", Arial, sans-serif;
+	    font-size: 15pt;
+	    color: #00e;
+	    border-bottom: 1px solid #00e;
+	    letter-spacing: 1px;
+	}
+	
+	.h2nounderline {
+		padding: 20px 0 3px;
+	    font: bold 1.4em "Lucida Grande", Helvetica, "Arial Unicode MS", "Arial Unicode", Arial, sans-serif;
+	    font-size: 15pt;
+	    color: #00e;
+	    letter-spacing: 1px;
+	}
+	
+	.registrationHeader {
+		border-bottom: 1px solid #00e; 
+		padding: 20px 0 3px;
+	}
+	
+	table.detail td.labelHeader {
+		font-weight: bold;
+	}
+	
+	table.detail td {
+		padding: 2px;
+		border-bottom: 1px solid #DFDFDF;
+	    border-top: 1px solid #DFDFDF;
+	}
+.confirmationMessage {
+	font-weight: bold;
+	font-size: 14px; 	
+}
+
+.okButton {
+	padding: .5em;
+}
+.mandatory {
+	color: #AA0000;
+}
+.button {
+    background-image:url("../images/button_bg.png");
+	background-position:center center;
+	background-repeat:repeat-x;
+	border:1px solid #666666;
+	color:#FFFFFF;
+	height:30px;
+	margin-left:10px;
+	padding-bottom:5px;
+}
+.forgotUsernameHeader {
+	border-bottom: 1px solid #2495e0;
+	color: #2495e0;
+	font-size:16px;
+	font-family:arial, sans-serif;
+	font-weight: bold;
+	padding: 1em 0em 1em 0em;
+}
+.fieldError {
+	color:#FF0000; 
+	padding-left:1em;
+	list-style-type: none;
+}
+#passwordRules {
+	list-style-type: none;
+	padding-left: 0;
+}
+.ruleSatisfied {
+	color: #00AA00;
+}
+li.ruleSatisfied:before {
+	content: "\2713";
+	padding-right: .5em;
+}
+.ruleNotSatisfied {
+	color: #999999;
+}
+li.ruleNotSatisfied:before {
+	content: "\2715";
+	padding-right: .5em;
+}
+#passwordSubrules {
+	list-style-type: none;
+	padding-left: 3em;
+}
