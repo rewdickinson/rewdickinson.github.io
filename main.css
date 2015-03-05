@@ -245,3 +245,9 @@ li.ruleNotSatisfied:before {
     font-size: 18px;
     font-weight: bold;
 }
+.appian-body .left > .GGID2ICBLF {
+    margin-left: 0px;
+    margin-right: 6px;
+    background: #0000CC;
+    color: white;
+}
