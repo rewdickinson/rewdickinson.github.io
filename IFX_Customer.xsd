@@ -1,0 +1,12 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:n1="http://janus.com/types/appianTypes" xmlns:tns="https://presales.appiancloud.com/suite/types/" xmlns:types1="http://janus.com/types/appianTypes" targetNamespace="https://presales.appiancloud.com/suite/types/">
+  <xsd:import namespace="http://janus.com/types/appianTypes" schemaLocation="%7Bhttp%3A%2F%2Fjanus.com%2Ftypes%2FappianTypes%7DAddress.xsd" />
+  <xsd:complexType name="FM_Customer">
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int" />
+      <xsd:element name="firstName" nillable="true" type="xsd:string" />
+      <xsd:element name="lastName" nillable="true" type="xsd:string" />
+      <xsd:element form="unqualified" name="mailingAddress" nillable="true" type="n1:Address" />
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="loanAttributes" nillable="true" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
