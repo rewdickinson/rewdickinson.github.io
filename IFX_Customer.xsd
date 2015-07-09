@@ -1,12 +1,2157 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:n1="http://janus.com/types/appianTypes" xmlns:tns="https://presales.appiancloud.com/suite/types/" xmlns:types1="http://janus.com/types/appianTypes" targetNamespace="https://presales.appiancloud.com/suite/types/">
-  <xsd:import namespace="http://janus.com/types/appianTypes" schemaLocation="%7Bhttp%3A%2F%2Fjanus.com%2Ftypes%2FappianTypes%7DAddress.xsd" />
-  <xsd:complexType name="FM_Customer">
-    <xsd:sequence>
-      <xsd:element name="id" nillable="true" type="xsd:int" />
-      <xsd:element name="firstName" nillable="true" type="xsd:string" />
-      <xsd:element name="lastName" nillable="true" type="xsd:string" />
-      <xsd:element form="unqualified" name="mailingAddress" nillable="true" type="n1:Address" />
-      <xsd:element maxOccurs="unbounded" minOccurs="0" name="loanAttributes" nillable="true" type="xsd:string" />
-    </xsd:sequence>
-  </xsd:complexType>
+<?xml version="1.0"?>
+<!-- $Id: IFX_Customer.xsd,v 1.8 2008/11/04 20:26:50 llaikang Exp $ -->
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by JULIE TABOR-LEVEILLE (TD BANKNORTH) -->
+<!-- Change log
+	: IFX_Customer
+	: 11/05/08	Laks :: Added element com.td.customer:AcctMiscellaneous in com.td.customer:CustInfo_Type complex type
+	: 04/14/11	agup76 ::  added elements for WalletShare online  	
+	: 05/02/2011 skumar116 :: datatype changed for IsActive and IsLockedOut as it takes Yes or No
+	: 06/28/2011 jainr3 :: datatype changed for CustInfo in PartyAcctRelAdd to com.td.customer namespace instead of IFX and added AcctDetInfo
+	: 12/25/2011 jainr3 :: DA - Modified CustAddRs to have CustInfo outside of inner sequence and added RefInfo
+	: 12/25/2011 jainr3 :: Added Affiliate elements in Party Acct Rel Info
+	: 
+-->
+<!-- 
+Release:
+            (No comments here until we officially make this TD version production 
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:IFX="http://services.tdgroup.com/IFX170_XSD/2008/08/14" xmlns:com.td.customer="http://services.tdgroup.com/ifxcust/2008/08/14" targetNamespace="http://services.tdgroup.com/ifxcust/2008/08/14" elementFormDefault="qualified" version="3.1.1.2" >
+	<xsd:import namespace="http://services.tdgroup.com/IFX170_XSD/2008/08/14" schemaLocation="../ns170/IFX170_XSD.xsd"/>
+	<!-- Root Elements Listed here in Alphabetic order - if you do not see your IFX root element here, please contact TD's Integration Platform team -->
+	<xsd:element name="IFX_CustInqRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Inquiry IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustInqRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustInqRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Inquiry IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustInqRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustModRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Modification IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustModRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustModRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Modification IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustModRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustAddRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Add IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustAddRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustAddRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Add IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustAddRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>	
+	<xsd:element name="IFX_PartyAcctRelAddRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party to Account Relationship Add IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelAddRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_PartyAcctRelAddRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party to Account Relationship Add IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelAddRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_PartyAcctRelInqRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party to Account Relationship Inquiry IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelInqRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_PartyAcctRelInqRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party to Account Relationship Inquiry IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelInqRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- @ssin44 changes for PartAcctRelMod |Starts -->
+	<xsd:element name="IFX_PartyAcctRelModRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party Acct Rel Mod IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelModRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_PartyAcctRelModRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party to Account Relationship Inquiry IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyAcctRelModRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- @ssin44 changes for PartAcctRelMod |Ends -->	
+	<xsd:element name="IFX_PartyInqRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party Inquiry IFX-based transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyInqRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_PartyInqRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Party Inquiry IFX-based transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:PartyInqRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+		<xsd:element name="IFX_CustAddStndRq">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Name Address Standardization IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:SignonRq"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRq" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustAddStndRq" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRq" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IFX_CustAddStndRs">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the IFX_Type for Customer Name Address Standardization IFX transactions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:SignonRs" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element name="BaseSvcRs" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="IFX:Status" minOccurs="0"/>
+								<xsd:element ref="IFX:RqUID"/>
+								<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+								<xsd:element ref="IFX:SPName" minOccurs="0"/>
+								<xsd:sequence>
+									<xsd:element ref="com.td.customer:CustAddStndRs" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:sequence>
+							<xsd:attribute name="Id" type="xsd:ID"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:element ref="IFX:SignoffRs" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- Added for WalletShare Online |14-Apr-2011 |agup76 |Starts  -->
+
+	<xsd:complexType name="UserProfile_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:CustLoginId" minOccurs="0" maxOccurs="1"/>	
+			<xsd:element ref="com.td.customer:RelnName" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:AliasID" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:FirstName" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:LastName" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:FistSignOn" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:LastSignOn" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:TotalSignOn" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:LastSignOnFailure" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:FailedSignonCount" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:CustStatusCode" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:Notes" minOccurs="0" maxOccurs="1"/>													
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="UserIAInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:Nickname" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:EnrollmentDate" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:IsActive" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:LoginSinceLastChallenge" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:LastAuthenticated" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:IsLockedOut" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:UnlockFailureCount" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:ChallengeFailureCount" minOccurs="0" maxOccurs="1"/>
+		<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Starts -->	
+			<xsd:element ref="com.td.customer:InStaticMode" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:CurrentChallengeQuestionID" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:CurrentChallengeQuestion" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:CurrentChallengeType" minOccurs="0" maxOccurs="1"/>
+		<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Ends -->	
+		<!-- WSO Changes | srivak2 | 25-May-2011 | Making SecurityQuestion a list | Starts -->	
+			<xsd:element ref="com.td.customer:SecurityQuestion" minOccurs="0" maxOccurs="unbounded"/>
+		<!-- WSO Changes | srivak2 | 25-May-2011 | Making SecurityQuestion a list | Ends -->	
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="SecurityQuestion_Type">
+		<xsd:sequence>	
+			<xsd:element ref="com.td.customer:UserChallengeQuesId" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:UserChallengeQuestion" minOccurs="0" maxOccurs="1"/>			
+		</xsd:sequence>
+		<xsd:attribute name="Id" type="xsd:ID"/>
+	</xsd:complexType>	
+	
+	<xsd:complexType name="EStatementAccount_Type">
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:StatementPrintOption" minOccurs="0" maxOccurs="1"/>
+			
+			<!--  Changes for WalletShare Online |agup76 |10-May-2011 |Start -->
+			<xsd:element ref="com.td.customer:PendingPrintOption" minOccurs="0" maxOccurs="1"/>			
+			<!-- 
+			<xsd:element ref="IFX:AcctId" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:AcctType" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>			
+			-->
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<!--  Changes for WalletShare Online |agup76 |10-May-2011 |End -->
+		</xsd:sequence>
+	</xsd:complexType>		
+	
+	<xsd:element name="CustomerIDType" type="IFX:CustType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Customer Id Type value get Customer Profile </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="UserProfile" type="com.td.customer:UserProfile_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Customer's signon details </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="UserIAInfo" type="com.td.customer:UserIAInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's user Intelligent Authentication (IA) Info </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="SecurityQuestion" type="com.td.customer:SecurityQuestion_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's user IA security question  </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="EStatementAccount" type="com.td.customer:EStatementAccount_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Estatement account details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<!-- For Customer SignOn detail  -->
+	<xsd:element name="RelnName" type="IFX:NC"/>
+	<xsd:element name="AliasID" type="IFX:NC"/>
+	<xsd:element name="FistSignOn" type="IFX:DateTime"/>
+	<xsd:element name="LastSignOn" type="IFX:DateTime"/>
+	<xsd:element name="TotalSignOn" type="IFX:Count_Type"/>
+	<xsd:element name="LastSignOnFailure" type="IFX:DateTime"/>
+	<xsd:element name="FailedSignonCount" type="IFX:Count_Type"/>	
+	<xsd:element name="Notes" type="IFX:NC"/>
+	
+	<!-- For User IA info -->
+	<xsd:element name="EnrollmentDate" type="IFX:DateTime" />
+	<!-- WSO Changes|skumar116|12-May-2011| START  -->
+	<xsd:element name="IsActive" type="IFX:Boolean" />
+	<!-- WSO Changes|skumar116|12-May-2011|  END  -->
+	<xsd:element name="LoginSinceLastChallenge" type="IFX:Count_Type"/>
+	<xsd:element name="LastAuthenticated" type="IFX:DateTime" />
+	<!-- WSO Changes|skumar116|12-May-2011| START  -->
+	<xsd:element name="IsLockedOut" type="IFX:NC"/>
+	<!-- WSO Changes|skumar116|12-May-2011| END  -->
+	<xsd:element name="UnlockFailureCount" type="IFX:Count_Type"/>
+	<xsd:element name="ChallengeFailureCount" type="IFX:Count_Type"/>
+
+<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Starts -->	
+	<xsd:element name="InStaticMode" type = "IFX:Boolean"/>
+	<xsd:element name="CurrentChallengeQuestionID" type = "IFX:NC"/>
+	<xsd:element name="CurrentChallengeQuestion" type = "IFX:NC"/>
+	<xsd:element name="CurrentChallengeType" type = "IFX:NC"/>
+<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Ends -->				
+	
+	<xsd:element name="UserChallengeQuesId" type="IFX:Long" />
+	<xsd:element name="UserChallengeQuestion" type="IFX:NC"/>
+
+	<!-- For paperless prefrence info-->	
+	<xsd:element name="StatementPrintOption" type="IFX:Boolean"/>
+	
+	<!-- WSO Changes|agup76|10-May-2011|Start  -->
+	<xsd:element name="PendingPrintOption" type="IFX:Long"/>	
+	<!-- WSO Changes|agup76|10-May-2011|End  -->
+	
+	<xsd:element name="Password" type="com.td.customer:Password_Type" />
+	<xsd:element name="LockOut" type="IFX:Boolean"/>
+	
+	<xsd:simpleType name="Password_Type">
+		<xsd:restriction base="IFX:NC">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<!-- Added for WalletShare Online |14-Apr-2011 |agup76 |End  -->
+	
+	<xsd:simpleType name="AcctMiscValue_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for miscellanous types for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AcctMiscType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom Enumeration for various miscellanous types for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="IFX:OpenEnum"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AcctMiscDt_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom date time for various miscellanous types for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="IFX:DateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AcctTypeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom string for account type description for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<!-- <aku122><01-Apirl-2011><WalletShareWave4> Added new field for action to add or update or delete : Starts -->
+	<xsd:simpleType name="Action_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Relationship Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Add"/>
+			<xsd:enumeration value="Update"/>
+			<xsd:enumeration value="Delete"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- <aku122><01-Apirl-2011><WalletShareWave4> Added new field for action to add or update or delete : Ends-->
+	<xsd:simpleType name="BackupWth_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Contingent_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustType_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FeeType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Stop Check Transaction Code  types for StopChkAdd and StopChkCan</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterAction_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation actions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AccountToCustomerInquiry"/>
+			<xsd:enumeration value="AddressUpdate"/>
+			<xsd:enumeration value="CustomerInquiry"/>
+			<xsd:enumeration value="CustomerRootInformationUpdate"/>
+			<xsd:enumeration value="CustomerRootInquiry"/>
+			<xsd:enumeration value="CustomerToAccountInquiry"/>
+			<xsd:enumeration value="CustomerToCustomerInquiry"/>
+			<xsd:enumeration value="EnrollmentAdd"/>
+			<xsd:enumeration value="EnrollmentEligibility"/>
+			<xsd:enumeration value="AddressStandardization" />
+			<xsd:enumeration value="NewCustomer"/>
+			<!-- NAYYAA2 | NewFilterAction added for new functionality  PH2 | Start -->
+			<xsd:enumeration value="CustomerToAccountToCustomerInquiry"/>
+			<!-- NAYYAA2 | NewFilterAction added for new functionality  PH2 | End -->
+			<!-- gverm5 | NewFilterAction added for new functionality  PAR Mod Operation | Start -->
+			<xsd:enumeration value="CombinedStatements"/>
+			<!-- gverm5 | NewFilterAction added for new functionality  PAR Mod Operation | Ends -->
+
+			<!-- Changes for WalletShare Online |14-Apr-2011|agup76|Starts --> 
+			<xsd:enumeration value="SetProfile-Online"/>
+			<xsd:enumeration value="ResetQuestions-Online"/> 
+			<xsd:enumeration value="ResetSignOnFailureCount-Online"/>
+			<xsd:enumeration value="ChangeSignOnStatus-Online"/> 
+			<xsd:enumeration value="GetUserIAInfo-Online"/>
+			<xsd:enumeration value="GetProfile-Online"/>					<!--  WSO|Keeping it for future use|agup76|10-May-2011 -->
+						
+			<!--  Changes for WalletShare Online |10-May-2011|agup76|Starts -->
+			<xsd:enumeration value="GetCustomerProfile-Online"/>
+			<xsd:enumeration value="GetUserProfiles-Online"/>
+			<xsd:enumeration value="GetPaperLessPrefrences-Online"/>
+			<!--  Changes for WalletShare Online |10-May-2011|agup76|End -->			
+			
+			<xsd:enumeration value="Enroll-Online"/>
+			<!-- Changes for WalletShare Online |14-Apr-2011|agup76|End -->			
+			<!--  Changes for WalletShare Online, PartyAcctRelMod |17-May-2011|skumar116|Start -->
+			<xsd:enumeration value="SetOnlinePreference"/>
+			<!--  Changes for WalletShare Online, PartyAcctRelMod |17-May-2011|skumar116|End -->
+			<!--  Changes for Online Account Opening, PartyAcctRelMod |7-July-2011|jainr3|Start -->
+			<xsd:enumeration value="CreateProfile"/>
+			<xsd:enumeration value="GetCustomerEligibility"/>
+			<!--  Changes for Online Account Opening, PartyAcctRelMod |7-July-2011|jainr3|Start -->
+			<!--  Changes for DA, add filter action DeleteRelationship, PartyAcctRelMod |10Jan-2012|jainr3 -->
+			<xsd:enumeration value="DeleteRelationship"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterAttribute_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation main attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterMoreData_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation more data attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterNamePair_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation name-value pair</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterSubAttribute_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation sub attributes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterStatusCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation status</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterCountMin_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation request count</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterCountMax_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation request count</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterCountTotal_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation response count</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterCountCurrent_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation response count</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterCountIndex_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation response count</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilterValuePair_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for service operation name-value pair</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="FrnAddr_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="HighTranCode_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LowTranCode_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MerchantId_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="20"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MoreIndicator_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for MoreIndicator  types</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="OEDCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Percentage_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Primary_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Relationship_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="RetireProd_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SourceSystemAppId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom string for source system application identification for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="StateInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for StateInfo1  types for Account Trn Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="StopChkTrn_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Stop Check Transaction Code  types for StopChkAdd and StopChkCan</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TrailerType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for Beneficiary Employee ID</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TrnType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom simple type value for StateInfo1  types for Account Trn Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="WeekDay_Type">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdType_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdTypeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Type Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdNumber_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Number for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Code for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdCodeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Code Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdOtherInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Other Information for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CustIdOtherDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Other Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="VerificationType_Type">
+		<xsd:annotation>
+			<xsd:documentation>Verification Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="VerificationStatusCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>Verification Status Code for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="IssueDate_Type">
+		<xsd:annotation>
+			<xsd:documentation>Issue Date for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="IssuePlace_Type">
+		<xsd:annotation>
+			<xsd:documentation>Issue Place for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmployeeId_Type">
+		<xsd:annotation>
+			<xsd:documentation>Employee ID for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:element name="AcctAssocInfo" type="com.td.customer:AcctAssocInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctAssocInfo_Type for linked account information </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctDetInfo" type="com.td.customer:AcctDetInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctDetInfo_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctMiscellaneous" type="com.td.customer:AcctMiscellaneous_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctMiscellanous_Type</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctMiscType" type="com.td.customer:AcctMiscType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctMiscType_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctMiscValue" type="com.td.customer:AcctMiscValue_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctMiscValue_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctMiscDt" type="com.td.customer:AcctMiscDt_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctMiscDt_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctTypeDesc" type="com.td.customer:AcctTypeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctTypeDesc_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcctTypeInfo" type="com.td.customer:AcctTypeInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctType_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- <aku122><01-Apirl-2011><WalletShareWave4> Added new field for action to add or update or delete : Starts -->
+	<xsd:element name="Action" type="com.td.customer:Action_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Action_Type for Account Relationship Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- <aku122><01-Apirl-2011><WalletShareWave4> Added new field for action to add or update or delete : End-->
+	<xsd:element name="BackupWth" type="com.td.customer:BackupWth_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the BackupWth_Type for Credit Card ID</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BenAcctId" type="com.td.customer:BenAcctId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the BenAcctId_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BenInfo" type="com.td.customer:BenInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the BenInfo_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CardAcctId" type="com.td.customer:CardAcctId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CardAcctId_Type for Cards</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CardLogicalData" type="com.td.customer:CardLogicalData_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CardLogicalData_Type for Card Information </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Contingent" type="com.td.customer:Contingent_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Contingent_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustAcctDetInfo" type="com.td.customer:CustAcctDetInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the AcctDetInfo_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustInfo" type="com.td.customer:CustInfo_Type"/>
+	<!-- @ssin44 changes for PartAcctRelMod |Starts -->
+	<xsd:element name="PackageStmt" type="com.td.customer:PackageStmt_Type"/>			
+	<xsd:element name="PackageCycleFlag" type="com.td.customer:PackageCycleFlag_Type"/>
+	<xsd:element name="PackageName" type="com.td.customer:PackageName_Type"/>
+	<xsd:element name="ProdPackageGroup" type="com.td.customer:ProdPackageGroup_Type"/>
+	<xsd:element name="CombinedStmt" type="com.td.customer:CombinedStmt_Type"/>
+	<xsd:element name="CombinedStmtGroup" type="com.td.customer:CombinedStmtGroup_Type"/>
+	<xsd:element name="CombinedStmtFlag" type="com.td.customer:CombinedStmtFlag_Type"/>
+	<xsd:element name="RelPricingGroup" type="com.td.customer:RelPricingGroup_Type"/>
+	<xsd:element name="PricingCode" type="com.td.customer:PricingCode_Type"/>
+	<!-- @ssin44 changes for PartAcctRelMod |Ends -->
+	<xsd:element name="CustInqRq" type="com.td.customer:CustInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustInqRq_Type for Customer Demographic Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustInqRs" type="com.td.customer:CustInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustInqRs_Type for Customer Demographic Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustModRq" type="com.td.customer:CustModRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustModRq_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustModRs" type="com.td.customer:CustModRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustModRs_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustAddRq" type="com.td.customer:CustAddRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustAddRq_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustAddRs" type="com.td.customer:CustAddRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustAddRs_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustAddStndRq" type="com.td.customer:CustAddStndRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustNameAddStndRq_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustAddStndRs" type="com.td.customer:CustAddStndRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustNameAddStndRs_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustRec" type="com.td.customer:CustRec_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the CustRec_Type for Customer Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustType" type="com.td.customer:CustType_Type"/>
+	<xsd:element name="DepAcctId" type="com.td.customer:DepAcctId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the DepAcctId_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FeeType" type="com.td.customer:FeeType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FeeType_Type for Stop Check Add and Cancel</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterAction" type="com.td.customer:FilterAction_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterAction_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterAttribute" type="com.td.customer:FilterAttribute_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterAttribute_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterMoreData" type="com.td.customer:FilterMoreData_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterMoreData_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterNamePair" type="com.td.customer:FilterNamePair_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterNamePair_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterInfo" type="com.td.customer:FilterInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterInfo_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterSubAttribute" type="com.td.customer:FilterSubAttribute_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterSubAttribute_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterStatus" type="com.td.customer:FilterStatus_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterStatusCode_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterStatusCode" type="com.td.customer:FilterStatusCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterStatusCode_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterCountMin" type="com.td.customer:FilterCountMin_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterCountMin_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterCountMax" type="com.td.customer:FilterCountMax_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterCountMax_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterCountTotal" type="com.td.customer:FilterCountTotal_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterCountTotal for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterCountCurrent" type="com.td.customer:FilterCountCurrent_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterCountCurrent for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterCountIndex" type="com.td.customer:FilterCountIndex_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterCountIndex for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FilterValuePair" type="com.td.customer:FilterValuePair_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FilterValuePair_Type for all custom TD actions</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FrnAddr" type="com.td.customer:FrnAddr_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the FrnAddr_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HighTranCode" type="com.td.customer:HighTranCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the ???_Type for ????</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LoanAcctId" type="com.td.customer:LoanAcctId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the LoanAcctId_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LowTranCode" type="com.td.customer:LowTranCode_Type"/>
+	<xsd:element name="MerchantId" type="com.td.customer:MerchantId_Type"/>
+	<xsd:element name="MoreIndicator" type="com.td.customer:MoreIndicator_Type"/>
+	<xsd:element name="OEDCode" type="com.td.customer:OEDCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the OEDCode_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelAddRq" type="com.td.customer:PartyAcctRelAddRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAddRq_Type for General Party Account Relationship Add</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelAddRs" type="com.td.customer:PartyAcctRelAddRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAddRs_Type for General Party Account Relationship Add</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelInfo" type="com.td.customer:PartyAcctRelInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAcctRelInfo_Type for Party Account relation types</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelInqRq" type="com.td.customer:PartyAcctRelInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyInqRq_Type for General Party Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelInqRs" type="com.td.customer:PartyAcctRelInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyInqRs_Type for General Party Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- @ssin44 changes for PartAcctRelMod |Starts -->
+	<xsd:element name="PartyAcctRelModRq" type="com.td.customer:PartyAcctRelModRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAcctRelModRq_Type for adding, updating and deleting customer relationship</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyAcctRelModRs" type="com.td.customer:PartyAcctRelModRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAcctRelModRs_Type for adding, updating and deleting customer relationship</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- @ssin44 changes for PartAcctRelMod |Ends -->
+	
+	<xsd:element name="PartyAcctRelRec" type="com.td.customer:PartyAcctRelRec_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyAcctRelRec_Type for Party Account relation types</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyInqRq" type="com.td.customer:PartyInqRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyInqRq_Type for General Party Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyInqRs" type="com.td.customer:PartyInqRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PartyInqRs_Type for General Party Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Percentage" type="com.td.customer:Percentage_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Percentage_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonInfo" type="com.td.customer:PersonInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the PersonInfo_Type for Account Details</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Primary" type="com.td.customer:Primary_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Primary_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Relationship" type="com.td.customer:Relationship_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Relationship_Type for Account Maintenance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RfrlDetInfo" type="com.td.customer:RfrlDetInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the Relationship_Type for RfrlDetInfo_Type</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SelRangeTranCode" type="com.td.customer:SelRangeTranCode_Type"/>
+	<xsd:element name="SourceSystemAppId" type="com.td.customer:SourceSystemAppId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the SourceSystemAppId_Type for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StateInfo" type="com.td.customer:StateInfo_Type"/>
+	<xsd:element name="Trailer_Type" type="com.td.customer:TrailerType_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom element that references the TrailerType_Type for Beneficiary Employee ID</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TrnType" type="com.td.customer:TrnType_Type"/>
+	<xsd:element name="CustIdType" type="com.td.customer:CustIdType_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdTypeDesc" type="com.td.customer:CustIdTypeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Type Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdNumber" type="com.td.customer:CustIdNumber_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Number for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdCode" type="com.td.customer:CustIdCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Code for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdCodeDesc" type="com.td.customer:CustIdCodeDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Code Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdOtherInfo" type="com.td.customer:CustIdOtherInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Other Information for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdOtherDesc" type="com.td.customer:CustIdOtherDesc_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Other Description for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VerificationType" type="com.td.customer:VerificationType_Type">
+		<xsd:annotation>
+			<xsd:documentation>Verification Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VerificationStatusCode" type="com.td.customer:VerificationStatusCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>Verification Status Code for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IssueDate" type="com.td.customer:IssueDate_Type">
+		<xsd:annotation>
+			<xsd:documentation>Issue Date for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IssuePlace" type="com.td.customer:IssuePlace_Type">
+		<xsd:annotation>
+			<xsd:documentation>Issue Place for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EmployeeId" type="com.td.customer:EmployeeId_Type">
+		<xsd:annotation>
+			<xsd:documentation>Employee ID for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustIdInfo" type="com.td.customer:CustIdInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>Customer ID Information for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Remarks" type="com.td.customer:Remarks_Type">
+		<xsd:annotation>
+			<xsd:documentation>Remarks for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="AcctAssocInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:AcctId" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctTypeInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:SeqNum" minOccurs="0"/>
+			<xsd:element ref="IFX:BankAcctStatus" minOccurs="0"/>
+			<xsd:element ref="IFX:Desc" minOccurs="0"/>
+			<xsd:element ref="IFX:Category" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AcctDetInfo_Type">
+		<xsd:sequence>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="com.td.customer:PersonInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:OrgInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:IncExtBal" minOccurs="0"/>
+			<xsd:element ref="IFX:IncBal" minOccurs="0"/>
+			<xsd:element ref="IFX:DeliveryMethod" minOccurs="0"/>
+			<xsd:element ref="IFX:UpDt" minOccurs="0"/>
+			<xsd:element ref="IFX:LastTrnDt" minOccurs="0"/>
+			<xsd:element ref="IFX:LastStmtDt" minOccurs="0"/>
+			<xsd:element ref="IFX:AcctBal" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:ExtAcctBal" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="IFX:DepAcctRec"/>
+				<xsd:element ref="IFX:CCAcctRec"/>
+				<xsd:element ref="IFX:LoanAcctRec"/>
+				<xsd:element ref="IFX:LOCAcctRec"/>
+				<xsd:element ref="IFX:MortAcctRec"/>
+			</xsd:choice>
+			<xsd:element ref="com.td.customer:AcctMiscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:BankAcctRec" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:PartyAcctRelInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AcctMiscellaneous_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom Complex Type that references IFX compliant elements for Amounts and Counts used for various miscellaneous types for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:AcctMiscType"/>
+			<xsd:element ref="IFX:CurAmt" minOccurs="0"/>
+			<xsd:element ref="IFX:Count" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctMiscDt" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctMiscValue" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AcctTypeInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom Complex Type that references IFX compliant elements for Account Types and Descriptions used for various miscellaneous types for Account Inquiry</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="IFX:AcctType" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctTypeDesc" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:SourceSystemAppId" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BenAcctId_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:AcctId"/>
+			<xsd:element ref="com.td.customer:AcctTypeInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:BankInfo" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BenInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom  type for Beneficiary Person Info(New IRA Plan Bank Service)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:Relationship" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:Percentage" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:Primary" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:Contingent" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:Action" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:Trailer_Type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CardAcctId_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom  type for Cards</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element ref="IFX:AcctId"/>
+				<xsd:element ref="IFX:CardMagData"/>
+			</xsd:choice>
+			<xsd:element ref="com.td.customer:AcctTypeInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:BankInfo" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CardLogicalData" minOccurs="0"/>
+			<xsd:element ref="IFX:CCMotoAcct" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CardLogicalData_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom  type for CardLogical info</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="IFX:CardEmbossNum" minOccurs="0"/>
+			<xsd:element ref="IFX:CardSeqNum" minOccurs="0"/>
+			<xsd:element ref="IFX:Brand" minOccurs="0"/>
+			<xsd:element ref="IFX:Technology" minOccurs="0"/>
+			<xsd:element ref="IFX:ExpDt" minOccurs="0"/>
+			<xsd:element ref="IFX:CardVrfyData" minOccurs="0"/>
+			<xsd:element ref="IFX:Name" minOccurs="0"/>
+			<xsd:element ref="IFX:CSPhoneNum" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctAssocInfo" minOccurs="0" maxOccurs="10"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustAcctDetInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RecCtrlOut" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctDetInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:OrgInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustInfo_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:CustName"/>
+				<xsd:sequence>
+					<xsd:element ref="IFX:PostAddr" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="IFX:CustContact" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="IFX:ContactInfo" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="IFX:CustPref" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:element ref="com.td.customer:CustType" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="com.td.customer:PersonInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:OrgInfo" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:element ref="com.td.customer:AcctMiscellaneous" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element ref="com.td.customer:CustIdInfo" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element ref="com.td.customer:Remarks" minOccurs="0" maxOccurs="unbounded" />
+
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76 |Starts -->
+			<xsd:element ref="IFX:CustStatusCode" minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="com.td.customer:Notes" minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="com.td.customer:Password" minOccurs="0" maxOccurs="1" />
+			<xsd:element ref="com.td.customer:LockOut" minOccurs="0" maxOccurs="1" />
+			<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Starts -->	
+			<xsd:element ref="com.td.customer:IsActive" minOccurs="0" maxOccurs="1" />
+			<!-- WSO Changes | srivak2 | 19-May-2011 | Additional fields received in TDBANK Voyager RM Web Service API-v1.4.doc | Ends -->	
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76 |End -->
+			<!-- skumar116 |WS Online | 28-Apr-2011   STARTS  -->
+			
+			<!-- WSO Changes | srivak2 | 25-May-2011 | Using SecurityQuestion list instead of userchallendequesId 1 and userchallendequesId 2 | Starts -->	
+			<xsd:element ref="com.td.customer:SecurityQuestion" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+			<!-- WSO Changes | srivak2 | 25-May-2011 | Using SecurityQuestion list instead of userchallendequesId 1 and userchallendequesId 2 | Ends -->	
+			<xsd:element name="ResetAll" type="IFX:Boolean" maxOccurs="1" minOccurs="0"></xsd:element>
+			<!-- skumar116 |WS Online | 28-Apr-2011   END  -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- @ssin44 changes for PartAcctRelMod |starts -->
+	<xsd:complexType name="CombinedStmt_Type">
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:CombinedStmtGroup" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:CombinedStmtFlag" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:RelPricingGroup" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="com.td.customer:PricingCode" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PackageCycleFlag_Type">
+		<xsd:restriction base="xsd:string">
+		  <xsd:enumeration value="Y"/>
+		  <xsd:enumeration value="N"/>
+		  <xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PackageName_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:simpleType name="ProdPackageGroup_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:simpleType name="CombinedStmtGroup_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:simpleType name="CombinedStmtFlag_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:simpleType name="RelPricingGroup_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:simpleType name="PricingCode_Type">
+		<xsd:restriction base="xsd:string"/>		 
+	</xsd:simpleType>
+	<xsd:complexType name="PackageStmt_Type">
+		<xsd:sequence>               
+            <xsd:element ref="com.td.customer:ProdPackageGroup" />
+            <xsd:element ref="com.td.customer:PackageCycleFlag"/>
+            <xsd:element ref="com.td.customer:PackageName" />				
+			</xsd:sequence>		
+	</xsd:complexType>
+	<!-- @ssin44 changes for PartAcctRelMod |Ends -->
+	<xsd:complexType name="CustInqRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:CardMagData" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:DeliveryMethod" minOccurs="0"/>
+			<xsd:element ref="IFX:UpDt" minOccurs="0"/>
+			<xsd:element ref="IFX:IncToken" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustInqRs_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+				<xsd:element ref="IFX:CustId" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="IFX:CardMagData" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="IFX:DeliveryMethod" minOccurs="0"/>
+				<xsd:element ref="IFX:UpDt" minOccurs="0"/>
+				<xsd:element ref="IFX:IncToken" minOccurs="0"/>
+				<xsd:element ref="IFX:NewUpDt"/>
+				<xsd:element ref="com.td.customer:CustRec" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="IFX:Token" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustModRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustInfo"/>
+			<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| START  -->
+			<xsd:element ref="IFX:PostingSessionId" minOccurs="0" />
+			<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| END  -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustModRs_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+				<xsd:element ref="IFX:CustId" minOccurs="0"/>
+				<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| START  -->
+				<xsd:element ref="IFX:PostingSessionId" minOccurs="0" />
+				<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| END  -->
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:CustRec"/>
+				<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="CustAddRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustInfo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustAddRs_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+				<xsd:element ref="IFX:CustId" minOccurs="0"/>
+				<!-- jainr3 | 12/25/2011 | DA - Moved from below sequence to this sequence -->
+				<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="com.td.customer:CustRec"/>
+				<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			</xsd:sequence>
+			<!-- jainr3 | 12/25/2011 | DA - Moved from below sequence to this sequence -->
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="CustRec_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:CustId"/>
+			<xsd:element ref="com.td.customer:CustInfo"/>
+			<xsd:element ref="IFX:CustStatus" minOccurs="0"/>
+			<xsd:element ref="IFX:UpDt" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DepAcctId_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:AcctId"/>
+			<xsd:element ref="com.td.customer:AcctTypeInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:AcctKey" minOccurs="0"/>
+			<xsd:element ref="IFX:AcctCur" minOccurs="0"/>
+			<xsd:element ref="IFX:BankInfo" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FilterInfo_Type">
+		<xsd:sequence minOccurs="0">
+			<xsd:element ref="com.td.customer:FilterAction" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterAttribute" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterSubAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="com.td.customer:FilterStatus" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FilterStatus_Type">
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:FilterStatusCode" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterMoreData" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterCountMin" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterCountMax" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterCountTotal" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterCountCurrent" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterCountIndex" minOccurs="0"/>
+			<xsd:sequence>
+				<xsd:element ref="com.td.customer:FilterNamePair" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="com.td.customer:FilterValuePair" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LoanAcctId_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:AcctId"/>
+			<xsd:element ref="com.td.customer:AcctTypeInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:BankInfo" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelAddRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<!-- srivak2 | 4/14/2011 | Walletshare online contract changes | Start -->
+			<xsd:element ref="IFX:EmailAddr" minOccurs="0"/>
+			<xsd:element ref="IFX:TaxId" minOccurs="0"/>
+			<!-- srivak2 | 4/14/2011 | Walletshare online contract changes | End -->
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:PartyAcctRelInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- jainr3 | 06/28/2011 | Walletshare OAO, Updated to refer to Customer CustInfo  | START -->
+			<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctDetInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- jainr3 | 06/28/2011 | Walletshare OAO, Updated to refer to Customer CustInfo  | END -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelAddRs_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:Status" minOccurs="0"/>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:PartyAcctRelInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:PartyAcctRelRec" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:CSPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:PartyAcctRel" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:OwnerPercent" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:AcctMiscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="com.td.customer:CustInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- <aku122><01-Apirl-2011><WalletShareWave4> Added new field for action to add or update or delete -->
+			<xsd:element ref="com.td.customer:Action" minOccurs="0"/>
+			<!-- jainr3 | 01/10/2012 | DA - Added for Affiliate Information -->
+			<xsd:element ref="com.td.customer:Affiliate" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelInqRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76 |Starts -->
+			<xsd:element ref="com.td.customer:CustomerIDType" minOccurs="0"/>
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76 |Starts -->			
+			<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:SelRangeDt" minOccurs="0"/>
+			<xsd:element ref="IFX:RecCtrlIn" minOccurs="0"/>
+			<xsd:element ref="IFX:OpenAcctInd" minOccurs="0"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| START  -->
+			<xsd:element ref="IFX:PostingSessionId" minOccurs="0" />
+			<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| END  -->
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelInqRs_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:Status" minOccurs="0"/>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:RecCtrlOut" minOccurs="0"/>
+			<xsd:element ref="IFX:OpenAcctInd" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:PartyAcctRelRec" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="com.td.customer:CustRec" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:CSPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76|Starts -->
+			<xsd:element ref="com.td.customer:UserProfile" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="com.td.customer:UserIAInfo" minOccurs="0" maxOccurs="1"/>			
+			<xsd:element ref="com.td.customer:EStatementAccount" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- Added for WalletShare Online |14-Apr-2011|agup76|End -->			
+  		    <!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| START  -->
+			<xsd:element ref="IFX:PostingSessionId" minOccurs="0" />
+			<!-- skumar116|WSO Changes for VoySessionToken 25-May-2011| END  -->
+		</xsd:sequence>
+	</xsd:complexType>	
+	<!--  @ssin44 changes for PartAcctRelMod |starts-->	
+	<xsd:complexType name="PartyAcctRelModRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:PartyAcctRelId"/>			
+			<xsd:element ref="com.td.customer:CustInfo"/>			
+			<!-- jainr3 | 01/10/2012 | DA - Updated contract to add Acct Id aggregates -->
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+            <xsd:element ref="com.td.customer:PackageStmt" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element ref="com.td.customer:PartyAcctRelInfo" minOccurs="1" maxOccurs="unbounded"/>
+            <xsd:element ref="com.td.customer:CombinedStmt" minOccurs="0" maxOccurs="unbounded"/>
+           	<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyAcctRelModRs_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:Status" minOccurs="0"/>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="com.td.customer:DepAcctId"/>
+				<xsd:element ref="com.td.customer:CardAcctId"/>
+				<xsd:element ref="com.td.customer:LoanAcctId"/>
+				<xsd:element ref="com.td.customer:BenAcctId"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:RecCtrlOut" minOccurs="0"/>
+			<xsd:element ref="IFX:OpenAcctInd" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:PartyAcctRelRec" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="com.td.customer:CustRec" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:CSPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- @ssin44 changes for PartAcctRelMod |Ends -->	
+	<xsd:complexType name="PartyAcctRelRec_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:PartyAcctRelId" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:PartyAcctRelInfo"/>
+			<xsd:element ref="IFX:FullName" minOccurs="0"/>
+			<xsd:element ref="IFX:TINInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:OwnerInd" minOccurs="0"/>
+			<xsd:element ref="IFX:BankAcctStatus" minOccurs="0"/>
+			<xsd:element ref="IFX:OpenDt" minOccurs="0"/>
+			<xsd:element ref="IFX:CloseDt" minOccurs="0"/>
+			<xsd:element ref="IFX:PrimaryAcct" minOccurs="0"/>
+			<xsd:element ref="IFX:Nickname" minOccurs="0"/>
+			<xsd:element ref="IFX:AcctBal" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:PartyAcctRelStatus" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyInqRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element ref="com.td.customer:CustInfo"/>
+				<xsd:choice>
+					<xsd:element ref="com.td.customer:DepAcctId"/>
+					<xsd:element ref="com.td.customer:CardAcctId"/>
+					<xsd:element ref="com.td.customer:LoanAcctId"/>
+					<xsd:element ref="com.td.customer:BenAcctId"/>
+				</xsd:choice>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PartyInqRs_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:CustRec" maxOccurs="unbounded"/>
+				<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:NameAddrType"/>
+			<xsd:choice>
+				<xsd:element ref="IFX:FullName"/>
+				<xsd:element ref="IFX:PersonName"/>
+			</xsd:choice>
+			<xsd:element ref="IFX:ContactInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:TINInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:BirthDt" minOccurs="0"/>
+			<xsd:element ref="IFX:DriversLicense" minOccurs="0"/>
+			<xsd:element ref="IFX:MotherMaidenName" minOccurs="0"/>
+			<xsd:element ref="IFX:SpouseName" minOccurs="0"/>
+			<xsd:element ref="IFX:EmploymentHistory" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:Gender" minOccurs="0"/>
+			<xsd:element ref="IFX:MaritalStatus" minOccurs="0"/>
+			<xsd:element ref="IFX:USA.MilitaryRank" minOccurs="0"/>
+			<xsd:element ref="IFX:Dependents" minOccurs="0"/>
+			<xsd:element ref="IFX:PassportNumber" minOccurs="0"/>
+			<xsd:element ref="IFX:PassportCountry" minOccurs="0"/>
+			<xsd:element ref="IFX:EffDt" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:BenInfo" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:OEDCode" minOccurs="0"/>
+			<xsd:element ref="IFX:OEDInstitution" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostAddrStndrdztnRq_Type">
+		<xsd:annotation>
+			<xsd:documentation>New TD type used for Address Standardization</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:PostAddr"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostAddrStndrdztnRs_Type">
+		<xsd:annotation>
+			<xsd:documentation>New TD type used for Address Standardization</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID"/>
+				<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="IFX:PostAddr" minOccurs="0"/>
+				<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RfrlDetInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom  type for Referral Detail info</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ProdType" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ProdCat">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="30"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="OrigBranch">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="3"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="FrnAddr" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="1"/>
+						<xsd:enumeration value="Y"/>
+						<xsd:enumeration value="N"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RfrlByInd">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="1"/>
+						<xsd:enumeration value="E"/>
+						<xsd:enumeration value="P"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RfrlByID">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="18"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RfrlToInd">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="1"/>
+						<xsd:enumeration value="E"/>
+						<xsd:enumeration value="P"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RfrlToID">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="18"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="RfrlSessionNo">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="40"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Notes" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:normalizedString">
+						<xsd:maxLength value="255"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SelRangeTranCode_Type">
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:LowTranCode"/>
+			<xsd:element ref="com.td.customer:HighTranCode"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustIdInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>CustIdInfo_Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:CustIdType" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdTypeDesc" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdNumber" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdCode" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdCodeDesc" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdOtherInfo" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustIdOtherDesc" minOccurs="0"/>
+			<xsd:element ref="IFX:ExpDt" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:VerificationType" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:VerificationStatusCode" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:IssueDate" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:IssuePlace" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Remarks_Type">
+		<xsd:annotation>
+			<xsd:documentation>Remarks_Type for Customer Mod</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="IFX:StartDt" minOccurs="0"/>
+			<xsd:element ref="IFX:ExpDt" minOccurs="0"/>
+			<xsd:element ref="IFX:Desc" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:EmployeeId" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustAddStndRq_Type">
+		<xsd:sequence>
+			<xsd:element ref="IFX:RqUID"/>
+			<xsd:element ref="com.td.customer:FilterInfo" minOccurs="0"/>
+			<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+			<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+			<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			<xsd:element ref="com.td.customer:CustInfo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustAddStndRs_Type">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="IFX:Status" minOccurs="0"/>
+				<xsd:element ref="IFX:RqUID"/>
+				<xsd:element ref="IFX:MsgRqHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:MsgRsHdr" minOccurs="0"/>
+				<xsd:element ref="IFX:AsyncRqUID" minOccurs="0"/>
+				<xsd:element ref="IFX:CustId" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="com.td.customer:CustInfo" minOccurs="0"/>
+				<xsd:element ref="com.td.customer:CustRec"/>
+				<xsd:element ref="IFX:SPRefId" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>	
+	<!-- jainr3 | 01/10/2011 | DA - Added Affiliate Info agregates -->
+    <xsd:simpleType name="AffiliateTypeName_Type">
+        <xsd:restriction base="IFX:NC" />
+    </xsd:simpleType>
+	<xsd:element name="AffiliateTypeName" type="com.td.customer:AffiliateTypeName_Type"/>
+    <xsd:simpleType name="AffilitateDate_Type">
+        <xsd:restriction base="IFX:Date" />
+    </xsd:simpleType>
+	<xsd:element name="AffilitateDate" type="com.td.customer:AffilitateDate_Type"/>
+    <xsd:simpleType name="AffiliateValue_Type">
+        <xsd:restriction base="IFX:NC" />
+    </xsd:simpleType>
+	<xsd:element name="AffiliateValue" type="com.td.customer:AffiliateValue_Type"/>
+	<xsd:complexType name="AffiliateInfo_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom Complex Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:AffiliateTypeName" />
+			<xsd:choice>
+				<xsd:element ref="IFX:CurAmt" minOccurs="0"/>
+				<xsd:element ref="IFX:Count"/>
+				<xsd:element ref="com.td.customer:AffilitateDate" />
+				<xsd:element ref="com.td.customer:AffiliateValue" />
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AffiliateInfo" type="com.td.customer:AffiliateInfo_Type"/>
+	<xsd:complexType name="Affiliate_Type">
+		<xsd:annotation>
+			<xsd:documentation>TD's Custom Complex Type</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="com.td.customer:AffiliateInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="IFX:RefInfo" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Affiliate" type="com.td.customer:Affiliate_Type"/>
 </xsd:schema>
