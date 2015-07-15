@@ -194,8 +194,170 @@
 						<div id="td-nav-divider" class="header-div">&nbsp;</div>
 					</div>
 				</div>
+				<!-- End #td-layout-nav-main -->
+				<!-- Begin Grid -->
+				<!-- Place immediately after <div id="td-container"> -->
+				<div id="td-layout-contentarea" class="td-layout-row td-padding-left-12">
+					<div class="td-layout-column td-layout-grid8" role="main">
+						<a name="main" id="main" tabindex="-1"></a>
+						<!--<h1 class="td-margin-top-none td-margin-bottom-large">Select Your Region</h1>-->
+						<!--<p>To make sure we are able to give you the most accurate product, rate and fee information in your area, please choose the region that's closest to where you live (or bank).</p>		-->
 
+					</div><!-- End .td-layout-column -->
+				</div><!-- End .td-layout-row -->
+				<div id="td-layout-contentarea" class="td-layout-row td-padding-left-12 td-padding-bottom-36">
+					<div class="td-layout-column td-layout-grid8 td-layout-column-first">
+						<div class="td-callout td-callout-primary td-cs-tertiary">
+							<div class="td-callout-content">
+								
+								<label for="state" class="td-selectstate td-padding-bottom-12 td-padding-right-36">Please choose the TD Bank location that's closest to where you live (or bank) so we are able to give you the most accurate product, rate and fee information in your area.</label><br />
+								
+								<form name="banksBankState" action="selectstate.aspx" method="get" onsubmit="return checkNoState()">
+                                <input type="hidden" value="" name="CountrySelected" id="CountrySelected" />
+									
+                                 
+									<table cellpadding="0" cellspacing="0" border="0"> 
+										<tr>
+											<td colspan="5">
+												<div id="divSelectState" style="display:none" role="alert">
+													<span style="color: #ae0101;" tabindex="0">Select a state</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" colspan="2"><title="Select a state"></title></td>
+											<td width="15" valign="top"><img src="../exc/img/pixel.gif" alt="" width="15"></td>
+											<td valign="top" colspan="2">
+												<DIV ID="DivCityLabel" name="DivCityLabel" style='position:relative;display:none;' visibility ='hidden'>
+													<table cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td valign="top"><title="Select a city"></title></td>
+														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+													<input type=hidden name=ref value='/customerservice/default.aspx'>
+													<!-- test -->
+											</td><!-- added -->
+                                                                                 
+											<td valign="middle">
+												<!-- mp_trans_schedule_disable_start -->
+												<label for="state" class="td-forscreenreader">Select a state:</label>
+												<select class="monospace" name="state" aria-required="true" title="Select a state" id="state" onChange='goState ()' onblur='setFocusOnDD()'><OPTION value=''>Select a state</OPTION><OPTION VALUE='CT'  >Connecticut</OPTION><OPTION VALUE='DC'  >Washington DC</OPTION><OPTION VALUE='DE'  >Delaware</OPTION><OPTION VALUE='FL'  >Florida</OPTION><OPTION VALUE='MA'  >Massachusetts</OPTION><OPTION VALUE='MD'  >Maryland</OPTION><OPTION VALUE='ME'  >Maine</OPTION><OPTION VALUE='NC'  >North Carolina</OPTION><OPTION VALUE='NH'  >New Hampshire</OPTION><OPTION VALUE='NJ'  >New Jersey</OPTION><OPTION VALUE='NY'  >New York</OPTION><OPTION VALUE='PA'  >Pennsylvania</OPTION><OPTION VALUE='RI'  >Rhode Island</OPTION><OPTION VALUE='SC'  >South Carolina</OPTION><OPTION VALUE='VA'  >Virginia</OPTION><OPTION VALUE='VT'  >Vermont</OPTION></select>
+											</td>
+											<td valign="top"></td>
+											<td width="15" valign="top"><img src="../exc/img/pixel.gif" alt="" width="10"></td>
+											<td valign="middle">
+												<DIV ID="DivCity" name="DivCity" style='position:relative;display:none;' visibility ='hidden'>
+													<table cellpadding="0" cellspacing="0" border="0"> 
+														<tr>
+															<td valign="top"><select class="monospace" aria-required="true" name="city" title="Select a city" id="city"></select><!-- mp_trans_schedule_disable_end --></td>	
+														</tr>
+													</table>
+												</div>
+												<script language="javascript">
 
+													function setFocusOnDD() {
+														var selectedState = document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+
+														if (selectedState != null && selectedState.length > 0) {
+															document.getElementById("city").focus();
+
+														}
+													}
+												function goState ()
+												{
+												//banksBankState.submit()
+												st=document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+
+												if (cities[st]==null || cities[st].length==0) 
+												{
+												document.banksBankState.city.selectedIndex=-1;
+												hide ("DivCity");			
+												hide ("DivCityLabel");					
+												return;
+												}
+
+												if (cities[st]!=null) document.banksBankState.city.length =getLength(cities[st]);
+												else {document.banksBankState.city.length=1;}
+												x = 0;
+
+												
+												for (var n in cities[st]) 
+												{
+												//document.write (n+":"+ cities[st][n]);
+												document.banksBankState.city[x] = new Option(cities[st][n],n);
+												x++;
+								}
+								sortSelect(document.getElementById('city'));
+
+												if (x==0) {document.banksBankState.city[x] = new Option("------------","");}
+												show ("DivCity");
+												show("DivCityLabel");	
+												//document.getElementById("city").focus();
+															 
+
+															
+												}
+
+												function goBranches ()
+												{
+
+												st=document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+												//ct=document.bankSubmit.city.options[document.bankSubmit.city.selectedIndex].value;
+
+												if (st =="") {alert ("Please select state"); return false;}
+												//if (ct=="" && cities[st].length!=0) {alert ("Please select city"); return false;}
+
+												return true;
+								                }
+			
+												</script>
+											</td>
+											<td valign="top">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="5"><input value="Go" class="td-button td-button-disabled td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>
+											<!-- button should start using "disabled" class, but switch to "secondary" class once the user has chosen their state/city -->
+											<!--<td colspan="5"><input value="Go" class="td-button td-button-secondary td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>-->
+										</tr>
+										<tr>
+											<td colspan="5">
+												<DIV ID="DivGo" name="DivGo" style="position:relative;">
+													<table cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td valign="top">&nbsp;<input value="Go" class="td-button td-button-disabled td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>
+															<!-- button should start using "disabled" class, but switch to "secondary" class once the user has chosen their state/city -->
+															<!--<td valign="top">&nbsp;<input value="Continue" class="td-button td-button-secondary td-button-compact td-margin-top-medium" name="Continue" type="submit"/></td>-->														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+									
+									</table>
+								</form>				
+												
+									
+									
+									<!-- end form -->
+									<hr class="td-divider-fade td-cs-tertiary td-margin-top-large td-margin-bottom-large" />								
+									<div id="divCanada" class="td-layout-row">
+										<p tab-index="0" class="td-padding-right-36">Canadian residents can bank with TD Bank in the U.S. as Cross-Border customers.</p>
+										<p tab-index="0" class="td-padding-bottom-24 td-padding-right-36">Just select the TD Bank location closest to you, even if you're in Canada, before hitting the "Go" button.</p>
+                                        </div>
+                                        <div>
+										<input type="radio" title="Choose from one of the options" name="USResident" id="USResident" value="USResident"><label for="USResident" id="USResident">&nbsp;I live in the U.S.</label>
+										<input type="radio" title="Choose from one of the options" name="CAResident" id="CAResident" value="CAResident"><label for="CAResident" id="CAResident">&nbsp;I'm a Canadian resident</label>
+									</div><!-- End .td-layout-column -->
+								</form>
+							</div>
+						</div><!-- End .td-callout -->
+					</div><!-- End .td-layout-column -->
+				</div><!-- End .td-layout-row -->
 				<div class="td-layout-row">
 					<div class="td-layout-column td-layout-grid15 td-layout-column-first">
 						<p class="td-copy-legal td-padding-top-36">Note: Once you've selected your city, state and country of residence, we'll make sure you return to the appropriate regional information on our site in the future by generating a cookie. This will save you the time of specifying your location each time you access our site. Please rest assured that this information will never be used for any purpose other than displaying the appropriate regional web content. Learn more about our <a href="/bank/privacy_and_security.html">Privacy</a> and <a href="/bank/security.html">Security</a> policies.</p>
