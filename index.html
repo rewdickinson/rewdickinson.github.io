@@ -1,336 +1,703 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
-<head>
-<script src="https://gen-demo.appiancloud.com/suite/tempo/tempo.nocache.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="0">
-<title>Genworth Financial</title>
-<script language="javascript" type="text/javascript">
-//helper function to create the form
-function getNewSubmitForm(){
-	 var submitForm = document.createElement("FORM");
-	 document.body.appendChild(submitForm);
-	 submitForm.method = "POST";
-	 return submitForm;
-}
 
-//helper function to add elements to the form
-function createNewFormElement(inputForm, elementName, elementValue){
-	var newElement = document.createElement("input");
-	newElement.type = "hidden";
-	newElement.name = elementName;
-	newElement.value = elementValue;
-	inputForm.appendChild(newElement);
-	return newElement;
-}
-</script>
-</head>
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+	<head>
+		<title>Select Your Region</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+		<link rel="shortcut icon" href="http://www.tdbank.com/assets-tdos/images/ui/favicon.ico" type="image/vnd.microsoft.icon" />
+		<!-- Common CSS -->
+		<link type="text/css" href="http://www.tdbank.com/assets-tdos/css/default.css" rel="stylesheet" />
+		<link type="text/css" href="http://www.tdbank.com/assets-tdos/css/print.css" rel="stylesheet" media="print" />
+		<!-- Common JS -->
+		<script type="text/javascript" src="http://www.tdbank.com/assets-tdos/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="http://www.tdbank.com/assets-tdos/js/jquery/jquery.metadata.js"></script>
+		<!--[if lt IE 9]><script src="http://www.tdbank.com/assets-tdos/js/html5shiv.js"></script><![endif]-->
+		<!--[if lt IE 10]><script type="text/javascript" src="http://www.tdbank.com/assets-tdos/js/PIE.js"></script><![endif]-->
+		<script type="text/javascript" src="http://www.tdbank.com/assets-tdos/js/default.js"></script>
+		<link type="text/css" href="/net/css/custom-oao-selectstate.css" rel="stylesheet" />		
+		<script type="text/javascript" src="../exc/scripts/mbox.js"></script>
+		<Script Language="javascript">
+			if (top != self){
+			   top.location = location
+			}
+						</Script>
+			<script language="JavaScript" type="text/javascript">
+			    function checkNoState() {
 
-<body>
-	
-	
-	
+			        st = document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
 
-		
-		<div id="masterDiv">
-			<div id="header">
-				<!-- Logo and Links -->
-				<div id="pageHead"> 
-					<head>
-<title>Genworth Financial</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta name="description"
-	content="Genworth Financial, About Us,
-		    Life Events, Products, For the Sales Professional,
-		    For Creating and Preserving Wealth,	For Protecting your Lifestyle and Assets,
-		    Meeting Your Business Needs, Our Vision, Pathways to a Career,
-		    Retirement Planning, Planning an Education,	Owning a Car,
-		    Distribution Internet Servicing and Support, The Marketing Power of Genworth">
-<meta name="keywords"
-	content="Sales Professional, Insurance Brokerage Group,
-			Strategic Partners Group, Products,
-		    Distribution Internet Servicing and Support">
-<meta name="WT.cg_n" content="" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="https://auth.genworth.com/usermanagement/themes/themeGenworth/css/main.css">
-<NOSCRIPT>
-	<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1"
-		SRC="http://ssdc.genworth.com/dcsu69jft00000wo8w4iwozqa_5n2u/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2">
-</NOSCRIPT>
+			        if (st == "") {
+			            show("divSelectState");
+			            return false;
+			        }
+			        else
+			            return true;
+			    }
+    
 
-</head>
-	<div id="logo">				
-		<img src="https://auth.genworth.com/usermanagement/themes/themeGenworth/images/header_bg.png" alt="" usemap="#logomap" border="0" width="100%" height="75px"/>
+				function checkNoStateNotUsed() {
 
-		<map name="logomap">
-  			<area shape="rect" coords="0,0,361,75" 
-  				onfocus="window.status='Genworth Financial'; return true;"
-				onmouseover="window.status='Genworth Financial'; return true;"
-				onmouseout="window.status=''; return true;"
-				href="http://www.genworth.com/content/genworth/www_genworth_com/web/global/en/home.html?ignore=true" alt="" />
-		</map>		
-	</div>
-	<div id="topNav"></div>
-				</div>
-			</div>
-			<div id="body">
-				<!-- Content -->
-				<div id="mainColumn">
-					
+					st=document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
 
-	<script language="JavaScript" type="text/javascript" src="https://auth.genworth.com/usermanagement/js/jquery-1.9.1.js"></script>
-	<script language="JavaScript" type="text/javascript" src="https://auth.genworth.com/usermanagement/js/password.js"></script>
-<!--
-	<table width="100%" class="registrationHeader">
-		
-		<tr >
-			<td class="h2nounderline" width="22%">
-				User Registration
-			</td>
-			<td class="h2nounderline" width="63%">				
-				<img src="https://auth.genworth.com/usermanagement/image/icon_lock.png" alt="Protecting your privacy is important to us. The information you provide is confidential and will not be shared." />
-			</td>
-			<td class="h2nounderline" width="15%">Page 1 of 2</td>
-		</tr>
-	</table> 
-	
-	<table width="100%">
-	
-		
-		<tr><td colspan="2"></td></tr>
-		
-		
-		
-		
-			<form action="validateUserData" method="post">
-			<tr>		
-				<td>
-					<table>
-						<tr><td colspan="3"><b>All Fields below require an entry to complete the registration process</b></td></tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">First Name:</td>
-							<td>													
-								<input type="text" name="firstName" size="30" maxlength="60" value="" id="firstName"/>		
-							</td>
-							<td width="500px">&nbsp;</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Middle Initial:</td>
-							<td>
-								<input type="text" name="middleInitial" size="1" maxlength="1" value="" id="middleInitial"/>
-							</td>
-							<td width="500px">&nbsp;</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Last Name:</td>
-							<td>								
-								<input type="text" name="lastName" size="30" maxlength="60" value="" id="lastName"/>
-							</td>
-							<td width="500px">&nbsp;</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Email Address:</td>
-							<td>
-								<input type="text" name="email" size="30" maxlength="60" value="" id="email"/>
-							</td>
-							<td width="500px">&nbsp;</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Confirm Email Address:</td>
-							<td>
-								<input type="text" name="confirmEmail" size="30" maxlength="60" value="" id="confirmEmail"/>
-							</td>
-							<td width="500px">&nbsp;</td>
-						</tr>
-					</table></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2" height="50">
-				<h2 style="font-size: 15pt;"> 
-				Create Account
-				</h2>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Username:</td>
-							<td><input type="text" name="username" size="30" maxlength="120" value="" id="username" onchange="checkPasswordStrength()"/></td>
-							<td style="color:#999999">Must contain a minimum of eight (8). Special characters and numbers are allowed.</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Password:</td>
-							<td><input type="password" name="password" size="30" maxlength="64" value="" id="password" onkeyup="checkPasswordStrength()" onchange="checkPasswordStrength()"/></td>
-							<td style="color:#999999">
-								<ul id="passwordRules">
-								<script>	
-									for(i=0; i < passwordStrengthRules.length; i++) {
-										document.write("<li id='"+passwordStrengthRules[i].id+"' class='ruleNotSatisfied'>"+passwordStrengthRules[i].description+"</li>");
-										if(passwordStrengthRules[i].subrules != null) {
-											document.write("<ul id='passwordSubrules'>");
-											if(passwordStrengthRules[i].subrules != null) {
-												for(j=0; j < passwordStrengthRules[i].subrules.length; j++) {
-													document.write("<li id='"+passwordStrengthRules[i].subrules[j].id+"'>"
-															+passwordStrengthRules[i].subrules[j].description+"</li>");	
-												}											
-												document.write("</ul>");
-											}
-										}
-									}								
-								</script>
+					if (st =="") 
+					{
+						alert ("Please select state");
+						return false;
+					}
+					else
+						return true;
+	}
+
+	function sortSelect(selElem) {
+	    var tmpAry = new Array();
+	    for (var i = 0; i < selElem.options.length; i++) {
+	        tmpAry[i] = new Array();
+	        tmpAry[i][0] = selElem.options[i].text;
+	        tmpAry[i][1] = selElem.options[i].value;
+	    }
+	    tmpAry.sort();
+	    while (selElem.options.length > 0) {
+	        selElem.options[0] = null;
+	    }
+	    for (var i = 0; i < tmpAry.length; i++) {
+	        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+	        selElem.options[i] = op;
+	    }
+	    return;
+	}
+				// End hiding script from old browsers -->
+                				
+			</script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#state option[value='']").remove();
+                    sortSelect(document.getElementById('state'));
+                    $('#state option:first').before($('<option />', { "value": '', text: 'Select a state' }));
+                    document.getElementById('state').selectedIndex = 0;
+                    htmlCode = "<OPTION value=''>Select a state</OPTION>";
+                    $("#divSelectState").hide();
+                    $('#USResident').attr("checked", true);
+                    $('#CAResident').attr("checked", false);
+                    $('#divCanada').hide();
+
+                    $('select[name=state]').change(function () {
+                        var index = $(this).get(0).selectedIndex;
+
+                        if (index > 0) {
+                            $("#divSelectState").hide();
+                            $('input[name=Go]').removeClass('td-button-disabled').addClass('td-button-primary');
+
+
+                        }
+                        else {
+                            //$("#divSelectState").show();
+                            $('input[name=Go]').addClass('td-button-disabled').removeClass('td-button-primary');
+                        }
+
+                    });
+
+                    $('input[name=Go][type=submit]').click(function () {
+
+                        var index = $('select[name=state]').get(0).selectedIndex;
+                        if (index > 0) {
+
+                            if ($('input[name=CAResident]').is(':checked')) {
+                                $("#CountrySelected").val("14");
+
+                            }
+                            else if ($('input[name=USResident]').is(":checked")) {
+                                $("#CountrySelected").val("12");
+                            }
+                        }
+                        else {
+                            $("#divSelectState").show();
+                        }
+
+                    });
+
+
+                    $('input[name=CAResident]').click(function () {
+                        $('#USResident').attr("checked", false);
+                        $('#divCanada').slideDown('slow');
+
+
+                    });
+
+                    $('input[name=USResident]').click(function () {
+                        $('#CAResident').attr("checked", false);
+                        $('#divCanada').slideUp('slow');
+
+                    });
+
+                });
+      </script>
+	</head>
+	<body>
+		<a name="top" id="top"></a>
+		<div class="td-skip">
+			<a href="#main">Skip to main content</a>
+		</div>
+		<div id="td-wrapper">
+			<div id="td-container">
+			<!--****************************************
+			Header
+			****************************************-->
+				<header class="td-layout-row" id="td-layout-header" role="banner">
+					<div class="td-layout-column td-layout-grid7">
+						<div id="td-logo">
+							<div itemtype="http://schema.org/Organization" itemscope="">
+								<a href="http://www.tdbank.com/" itemprop="url"><img width="300" height="60" src="http://www.tdbank.com/assets/logo_tdbank.gif" itemprop="logo" alt="TD Bank, America's Most Convenient Bank"></a>
+							</div>
+						</div>
+					</div>
+					<div class="td-layout-column td-layout-grid8 td-noprint td-layout-column-last">
+						<div class="td-layout-row">
+							<div class="td-layout-column td-layout-grid8 td-copy-align-right td-layout-column-first td-layout-column-last">
+								<ul class="td-list-inline td-link-nounderline td-margin-bottom-large">
+									<li class="td-copy-sub td-link-colour-grey"><a title="Customer Service" onclick="this.href='/customerservice/default.aspx'" href="/customerservice/default.aspx">Customer Service</a></li>
+									<li class="td-copy-sub td-link-colour-grey"><a title="Locations" href="/net/absearch/">Locations</a></li>
+									<li class="td-copy-sub td-link-colour-grey"><a lang="es" onclick="return switchLanguage('es'); function switchLanguage(lang) {MP.SrcUrl=unescape('mp_js_orgin_url');MP.UrlLang='mp_js_current_lang';MP.init();MP.switchLanguage(MP.UrlLang==lang?'en':lang); return false;}" href="http://espanol.tdbank.com/" mporgnav="" title="En Español">En Espa&ntilde;ol</a></li>
 								</ul>
-							</td>																
-						</tr>
-						<tr>
-							<td width="180px">Confirm Password:</td>
-							<td colspan="2">																
-								<input type="password" name="confirmPassword" size="30" maxlength="64" value="" id="confirmPassword"/>
-							</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Challenge Question:</td>
-							<td colspan="2"> 								
-								<select name="challengeQuestion" id="challengeQuestion">
-    <option value=""
-    >Please select...</option>
-    <option value="Favorite movie from your childhood?">Favorite movie from your childhood?</option>
-    <option value="Favorite fictional character?">Favorite fictional character?</option>
-    <option value="Favorite book from childhood?">Favorite book from childhood?</option>
-    <option value="College you applied to but didn't attend?">College you applied to but didn't attend?</option>
-    <option value="What is your first pet's name?">What is your first pet's name?</option>
-    <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
-    <option value="What is your birth place?">What is your birth place?</option>
-    <option value="Name of your favorite childhood friend? ">Name of your favorite childhood friend? </option>
-    <option value="Name of your first manager?">Name of your first manager?</option>
-    <option value="Name of your first boyfriend or girlfriend?">Name of your first boyfriend or girlfriend?</option>
-    <option value="Favorite TV show no longer on the air?">Favorite TV show no longer on the air?</option>
-    <option value="Favorite person from history?">Favorite person from history?</option>
+							</div>
+						</div>
+						<div class="td-layout-row">
+							<div class="td-layout-column td-layout-grid5 td-layout-column-first td-copy-align-right">
+								<ul class="td-list-inline td-copy-sub td-link-nounderline td-link-colour-grey"></ul>
+							</div>
+							<div class="td-layout-column td-layout-grid3 td-layout-column-last td-copy-align-right">
+								<div role="search" id="td-header-search">
+									<form target="_top" method="get" id="globalNavSearch" action="http://www.tdcanadatrust.com/search/index.jsp">
+										<label>
+											<input type="text" value="Search" title="Your Search Term" onfocus="if(this.value=='Search')this.value=''" name="query" id="td-header-search-textfield">
+											<input type="submit" value="Search" id="td-header-search-button">
+										</label>
+										<input type="hidden" value="en" name="language"><input type="hidden" value="td_canadatrust_en" name="site">									
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- End #td-layout-header -->
+			
+			
+				<!-- content goes here -->
+			
+				<!--****************************************
+				Main Navigation
+				****************************************-->
+				<div class="td-layout-row td-noprint td-margin-top-none td-margin-bottom-medium" id="td-layout-nav-main">
+					<div class="td-layout-column td-layout-grid15">
+						<div id="td-nav-divider" class="header-div">&nbsp;</div>
+					</div>
+				</div>
+				<!-- End #td-layout-nav-main -->
+				<!-- Begin Grid -->
+				<!-- Place immediately after <div id="td-container"> -->
+				<div id="td-layout-contentarea" class="td-layout-row td-padding-left-12">
+					<div class="td-layout-column td-layout-grid8" role="main">
+						<a name="main" id="main" tabindex="-1"></a>
+						<h1 class="td-margin-top-none td-margin-bottom-large">Select Your Region</h1>
+						<!--<p>To make sure we are able to give you the most accurate product, rate and fee information in your area, please choose the region that's closest to where you live (or bank).</p>		-->
+
+					</div><!-- End .td-layout-column -->
+				</div><!-- End .td-layout-row -->
+				<div id="td-layout-contentarea" class="td-layout-row td-padding-left-12 td-padding-bottom-36">
+					<div class="td-layout-column td-layout-grid8 td-layout-column-first">
+						<div class="td-callout td-callout-primary td-cs-tertiary">
+							<div class="td-callout-content">
+								
+								<label for="state" class="td-selectstate td-padding-bottom-12 td-padding-right-36">Please choose the TD Bank location that's closest to where you live (or bank) so we are able to give you the most accurate product, rate and fee information in your area.</label><br />
+								<!-- start form -->
+								
+								<form name="banksBankState" action="selectstate.aspx" method="get" onsubmit="return checkNoState()">
+                                <input type="hidden" value="" name="CountrySelected" id="CountrySelected" />
+									
+                                 
+									<table cellpadding="0" cellspacing="0" border="0"> 
+										<tr>
+											<td colspan="5">
+												<div id="divSelectState" style="display:none" role="alert">
+													<span style="color: #ae0101;" tabindex="0">Select a state</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" colspan="2"><title="Select a state"></title></td>
+											<td width="15" valign="top"><img src="../exc/img/pixel.gif" alt="" width="15"></td>
+											<td valign="top" colspan="2">
+												<DIV ID="DivCityLabel" name="DivCityLabel" style='position:relative;display:none;' visibility ='hidden'>
+													<table cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td valign="top"><title="Select a city"></title></td>
+														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+													<input type=hidden name=ref value='/customerservice/default.aspx'>
+													<!-- test -->
+											</td><!-- added -->
+                                                                                 
+											<td valign="middle">
+												<!-- mp_trans_schedule_disable_start -->
+												<label for="state" class="td-forscreenreader">Select a state:</label>
+												<select class="monospace" name="state" aria-required="true" title="Select a state" id="state" onChange='goState ()' onblur='setFocusOnDD()'><OPTION value=''>Select a state</OPTION><OPTION VALUE='CT'  >Connecticut</OPTION><OPTION VALUE='DC'  >Washington DC</OPTION><OPTION VALUE='DE'  >Delaware</OPTION><OPTION VALUE='FL'  >Florida</OPTION><OPTION VALUE='MA'  >Massachusetts</OPTION><OPTION VALUE='MD'  >Maryland</OPTION><OPTION VALUE='ME'  >Maine</OPTION><OPTION VALUE='NC'  >North Carolina</OPTION><OPTION VALUE='NH'  >New Hampshire</OPTION><OPTION VALUE='NJ'  >New Jersey</OPTION><OPTION VALUE='NY'  >New York</OPTION><OPTION VALUE='PA'  >Pennsylvania</OPTION><OPTION VALUE='RI'  >Rhode Island</OPTION><OPTION VALUE='SC'  >South Carolina</OPTION><OPTION VALUE='VA'  >Virginia</OPTION><OPTION VALUE='VT'  >Vermont</OPTION></select>
+											</td>
+											<td valign="top"></td>
+											<td width="15" valign="top"><img src="../exc/img/pixel.gif" alt="" width="10"></td>
+											<td valign="middle">
+												<DIV ID="DivCity" name="DivCity" style='position:relative;display:none;' visibility ='hidden'>
+													<table cellpadding="0" cellspacing="0" border="0"> 
+														<tr>
+															<td valign="top"><select class="monospace" aria-required="true" name="city" title="Select a city" id="city"></select><!-- mp_trans_schedule_disable_end --></td>	
+														</tr>
+													</table>
+												</div>
+												<script language="javascript">
+
+													function setFocusOnDD() {
+														var selectedState = document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+
+														if (selectedState != null && selectedState.length > 0) {
+															document.getElementById("city").focus();
+
+														}
+													}
+												function goState ()
+												{
+												//banksBankState.submit()
+												st=document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+
+												if (cities[st]==null || cities[st].length==0) 
+												{
+												document.banksBankState.city.selectedIndex=-1;
+												hide ("DivCity");			
+												hide ("DivCityLabel");					
+												return;
+												}
+
+												if (cities[st]!=null) document.banksBankState.city.length =getLength(cities[st]);
+												else {document.banksBankState.city.length=1;}
+												x = 0;
+
+												
+												for (var n in cities[st]) 
+												{
+												//document.write (n+":"+ cities[st][n]);
+												document.banksBankState.city[x] = new Option(cities[st][n],n);
+												x++;
+								}
+								sortSelect(document.getElementById('city'));
+
+												if (x==0) {document.banksBankState.city[x] = new Option("------------","");}
+												show ("DivCity");
+												show("DivCityLabel");	
+												//document.getElementById("city").focus();
+															 
+
+															
+												}
+
+												function goBranches ()
+												{
+
+												st=document.banksBankState.state.options[document.banksBankState.state.selectedIndex].value;
+												//ct=document.bankSubmit.city.options[document.bankSubmit.city.selectedIndex].value;
+
+												if (st =="") {alert ("Please select state"); return false;}
+												//if (ct=="" && cities[st].length!=0) {alert ("Please select city"); return false;}
+
+												return true;
+								                }
+			
+												</script>
+											</td>
+											<td valign="top">&nbsp;</td>
+										</tr>
+										<tr>
+											<td colspan="5"><input value="Go" class="td-button td-button-disabled td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>
+											<!-- button should start using "disabled" class, but switch to "secondary" class once the user has chosen their state/city -->
+											<!--<td colspan="5"><input value="Go" class="td-button td-button-secondary td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>-->
+										</tr>
+										<tr>
+											<td colspan="5">
+												<DIV ID="DivGo" name="DivGo" style="position:relative;">
+													<table cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td valign="top">&nbsp;<input value="Go" class="td-button td-button-disabled td-button-compact td-margin-top-medium" name="Go" type="submit"/></td>
+															<!-- button should start using "disabled" class, but switch to "secondary" class once the user has chosen their state/city -->
+															<!--<td valign="top">&nbsp;<input value="Continue" class="td-button td-button-secondary td-button-compact td-margin-top-medium" name="Continue" type="submit"/></td>-->														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+									
+									</table>
+								</form>				
+												
+									
+									
+									<!-- end form -->
+									<hr class="td-divider-fade td-cs-tertiary td-margin-top-large td-margin-bottom-large" />								
+									<div id="divCanada" class="td-layout-row">
+										<p tab-index="0" class="td-padding-right-36">Canadian residents can bank with TD Bank in the U.S. as Cross-Border customers.</p>
+										<p tab-index="0" class="td-padding-bottom-24 td-padding-right-36">Just select the TD Bank location closest to you, even if you're in Canada, before hitting the "Go" button.</p>
+                                        </div>
+                                        <div>
+										<input type="radio" title="Choose from one of the options" name="USResident" id="USResident" value="USResident"><label for="USResident" id="USResident">&nbsp;I live in the U.S.</label>
+										<input type="radio" title="Choose from one of the options" name="CAResident" id="CAResident" value="CAResident"><label for="CAResident" id="CAResident">&nbsp;I'm a Canadian resident</label>
+									</div><!-- End .td-layout-column -->
+								</form>
+							</div>
+						</div><!-- End .td-callout -->
+					</div><!-- End .td-layout-column -->
+				</div><!-- End .td-layout-row -->
+				<div class="td-layout-row">
+					<div class="td-layout-column td-layout-grid15 td-layout-column-first">
+						<p class="td-copy-legal td-padding-top-36">Note: Once you've selected your city, state and country of residence, we'll make sure you return to the appropriate regional information on our site in the future by generating a cookie. This will save you the time of specifying your location each time you access our site. Please rest assured that this information will never be used for any purpose other than displaying the appropriate regional web content. Learn more about our <a href="/bank/privacy_and_security.html">Privacy</a> and <a href="/bank/security.html">Security</a> policies.</p>
+					</div><!-- End .td-layout-column -->
+				</div><!-- End .td-layout-row -->
+			
+				<!-- end content goes here -->
+			
+			
+			</div><!-- End #td-container -->
+			<!--****************************************
+			Footer
+			****************************************-->
+			<div id="footer">
+  
+			  <!--/inc/bank_footer_nav.ihtml--><!--****************************************
+  Footer
+****************************************-->
 
 
-</select>
 
-							</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Challenge Response:</td>
-							<td colspan="2">
-								<input type="password" name="challengeResponse" size="30" maxlength="30" value="" id="challengeResponse"/>
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2" height="50">
-				<h2 style="font-size: 15pt;"> 
-				Add a Policy
-				</h2>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td colspan="2">Please enter a valid policy number including leading zeros.
-							</td>
-						</tr>
-						<tr><td colspan="3"></td></tr>
-						<tr>
-							<td width="180px">Policy Number:</td>
-							<td class="vCenterAlign"><input type="text" name="policyNumber" size="30" maxlength="60" value="" id="policyNumber" onblur="javascript:this.value=this.value.toUpperCase();"/></td>
-							<td class="vCenterAlign"><img src="https://auth.genworth.com/usermanagement/image/icon_lock.png" alt="Protecting your privacy is important to us. The information you provide is confidential and will not be shared." /></td>
-						</tr>
-					</table></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2" height="50">
-				<h2 style="font-size: 15pt;"> 
-				Terms and Conditions
-				</h2>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" ><a href='#' onclick='window.open("jsp/register/registerTerms.jsp", "registerPopupWindow", "width=700,height=300,scrollbars=YES,location=NO")'>Click here</a> to view the terms and conditions for registering.
-				</td>
-			</tr>
-			<tr><td colspan="2"></td></tr>
-			<tr>
-				<td colspan="3" >
-				<input type="checkbox" name="accept" value="true" id="accept"/><input type="hidden" id="__checkbox_accept" name="__checkbox_accept" value="true" />
-				I accept the terms and conditions for registration
-			</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="left" valign="middle" height="80">
-						<input type="submit" id="common_button_acceptAndContinue" name="common.button.acceptAndContinue" value="Accept and Continue" class="button" style="width:11em;"/>
-	
-						<input type='button' onclick='window.location="https://auth.genworth.com/routingandauthorization/public/backToLoginPage?pageCode=cq5Home"' value='Cancel Registration' class="button" style="width: 11em;" />						
-				</td>
-			</tr>
-				
-				
-					<input type="hidden" name="from" value="genworth" />
-				
-			</form>
+	<footer class="td-layout-row td-noprint" id="td-layout-footer" role="complementary">
+
+<div class="td-layout-row" id="footLinks">
+
+
+
+		<div class="td-layout-column td-layout-grid3">
+			<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Personal Banking</h6>
+			<ul class="td-list-sublinks td-link-colour-grey td-link-nounderline td-copy-sub">
+				<li><a href="/personal/online_banking.html">Online Banking</a>, <a href="/personal/ebillpay.html">Bill Pay</a></li>
+				<li><a href="/personal/mobile_banking.html">Mobile Banking</a></li>
+				<li><a href="/personal/checking.html">Checking</a></li>
+				<li><a href="/personal/savings.html">Savings, Money Market</a></li>
+				<li><a href="/personal/personal_debit.html">Debit Card</a>, <a href="/prepaid-cards/index.html?click=bottom-nav:personal:prepaid-cards">Prepaid Cards</a>
+<li><a href="/personal/applepay.html">Apple Pay</a></li>
+				<li><a href="/personal/cds.html">CDs</a></li>
+				<li><a href="/personal/iras.html">IRAs</a></li>
+				<li><a href="/personal/credit-cards.html">Credit Cards</a></li>	
+				<li><a href="/personal/mortgages.html">Mortgage</a></li>
+				<li><a href="/personal/home_equity_loan.html">Home Equity Loans & Lines </a></li>
+				<!--<li><a href="/personal/autoloan.html">Auto Loans</a></li>-->
+				<li><a href="https://securepay.tdbank.com/cgi/tdbankExpress-bin/vortex.cgi">Make a Loan Payment</a></li>
+			</ul>
+		</div>
 		
-	</table>-->
-<appian-task taskId="268435594" />
-	
-	<script>checkPasswordStrength();</script>
-				</div>														
-			</div>							
-			<div class="push"></div>		
+		<div class="td-layout-column td-layout-grid3">
+			<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Small Business Banking</h6>
+			<ul class="td-list-sublinks td-link-colour-grey td-link-nounderline td-copy-sub">
+				<li><a href="/small_business/online_account_management.html">Online Banking</a> &amp; <a href="/small_business/ebillpay.html">Bill Pay</a></li>
+				<li><a href="/small_business/mobile-banking.html">Mobile Banking</a></li>
+				<li><a href="/small_business/merchant_services.html">Merchant Services</a></li>
+				<li><a href="/small_business/checking.html?s_tnt=41697:1:0">Business Checking</a></li>
+				<!-- <li><a href="/small_business/savings.html">Business Savings</a></li> -->
+				<li><a href="/small_business/money_market.html">Business Money Market</a></li>
+				<li><a href="/small_business/cds.html">CDs</a></li>
+				<li><a href="/small_business/sb_credit.html">Credit Cards</a></li>
+				<!-- <li><a href="/small_business/sb_debit.html">Debit Cards</a></li> -->
+
+<li><a href="/personal/applepay.html">Apple Pay</a></li>
+
+				<li><a href="/small_business/loans.html">Loans &amp; Lines of Credit</a></li>
+				<li><a href="/small_business/tools_resources.html">Tools &amp; Resources</a></li>
+			</ul>
+		</div>
+		
+		<div class="td-layout-column td-layout-grid3">
+			<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Commercial Banking</h6>
+			<ul class="td-list-sublinks td-link-colour-grey td-link-nounderline td-copy-sub">
+				<li><a href="/business/cash_management.html">Treasury Management Services</a></li>
+                <li><a href="/business/checking.html">Checking</a></li>
+                <li><a href="/business/loans_commercial.html">Loans &amp; Lines of Credit</a></li>
+                <li><a href="/business/leasing.html">Leasing &amp; Equipment Finance</a></li>
+                <li><a href="/governmentbanking/index.html">Government Banking</a></li>
+                <li><a href="/net/corporate_services.aspx">More Commercial Banking...</a></li>
+
+</ul>
+
+<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Investing</h6>
+			<ul class="td-list-sublinks td-link-colour-grey td-link-nounderline td-copy-sub">
+				<li><a href="/investments/personal-financial-services/td-ameritrade.html">TD Ameritrade</a></li>
+                <li><a href="/investments/personal-financial-services/index.html">Personal Financial Services</a></li>
+                <li><a href="/investments/private-client-group/private-client-group.html">Private Client Group</a></li>
+			</ul>
+		</div>
+		
+		
+		<div class="td-layout-column td-layout-grid3" id="footer_followus">
+			<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Follow Us</h6>
+<ul class="td-list-nobullet td-copy-sub td-link-colour-grey td-link-nounderline">
+				
+				<li><img alt="Twitter" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/twitter.gif" height="32" width="32"> &nbsp;<a href="https://twitter.com/TDBank_US" target="blank">Twitter</a></li>
+				<li><img alt="Facebook" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/facebook.gif" height="32" width="32"> &nbsp;<a href="http://www.facebook.com/TDBank" target="blank">Facebook</a></li>
+
+				<li><img alt="Instagram" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/instagram.png" height="32" width="32"> &nbsp;<a href="https://instagram.com/TDBank_US" target="blank">Instagram</a></li>
+
+				<li><img alt="YouTube" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/youtube.gif" height="32" width="32"> &nbsp;<a href="http://www.youtube.com/user/TDBankUS" target="blank">YouTube</a></li>
+				
+				<li><img alt="LinkedIn" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/linkedin.gif" height="32" width="32"> &nbsp;<a href="http://www.linkedin.com/company/2775?trk=tyah" target="blank">LinkedIn</a></li>
+				
+				<li><img alt="Pinterest" class="td-icon" src="http://www.tdbank.com/assets-tdos/images/icons/32x32/Pinterest-icon.jpg" height="32" width="32"> &nbsp;<a href="http://pinterest.com/tdbank/" target="blank">Pinterest </a></li>
+			</ul>
 		</div>
 
-		<div id="footer" class="footer">
-			
-
-
-	<div id="copyright" class="copyright">
 		
-		&copy; 2015 Genworth Financial, Inc. All rights reserved.&nbsp;&nbsp;
-	</div>
+		<div class="td-layout-column td-layout-grid3 td-layout-column-first">
+			<h6 class="td-margin-top-medium" style="margin-bottom:10px;">Customer Service</h6>
+			<ul class="td-list-sublinks td-link-colour-grey td-link-nounderline td-copy-sub">
+				<li><a href="/community/our_community.html">Our Community</a></li>
+				<li><a href="/careers/careers.html">Careers</a></li>
+				<li><a href="/bank/callbanking.html">Call Us/Bank by Phone</a></li>
+				<li><a href="/net/absearch/">Find a TD Bank or ATM location</a></li>
+				<li><a href="/financialeducation/index.html">Finance 101: Money management for any stage of your life</a></li>
+		
+			</ul>
 
-	&nbsp;&nbsp;
-	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/privacy_policy.html">Privacy Policy</a> |
-	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/corp_terms_of_use.html">Terms of Use</a> |
-	<a href="http://www.genworth.com/content/genworth/www_genworth_com/web/corporate/en/non_navigable/corp_footer/corp_information_safety.html">Information Safety </a>
-		</div>	
-	
-	
-	<!-- SiteCatalyst code version: H.22.1.
-		Copyright 1996-2011 Adobe, Inc. All Rights Reserved
-		More info available at http://www.omniture.com -->
-	<script language="JavaScript" type="text/javascript" src="https://auth.genworth.com/usermanagement/js/s_code.js"></script>
-	<script language="JavaScript" type="text/javascript" src="https://auth.genworth.com/usermanagement/js/jquery-1.9.1.js"></script>
-	<script language="JavaScript" type="text/javascript" src="https://auth.genworth.com/usermanagement/js/omniture.js"></script>
-	<script language="JavaScript" type="text/javascript"><!--
+<div class="td-margin-top-small" style="float:left;margin-right:5px;">
+<img src="/exc/img/tdhelps/HelpIcon44.png" alt="">
+</div>
 
-	/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/	
-	<script language="JavaScript" type="text/javascript"><!--
-	if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-	//--></script><noscript><img src="https://genworthfinancial.d2.sc.omtrdc.net/b/ss/genfinconsumer/1/H.22.1--NS/0"
-	height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
-	<!-- End SiteCatalyst code version: H.22.1. -->	
+<p class="td-copy-sub td-margin-top-none"><strong>Questions? Ask TD Helps.</strong><br>
+<a onclick="trackCustomLink('tdb:p:personalbanking:asktdhelps','Link','onClick');" href="/tdhelps/">Start the conversation</a>
+</p>
+		</div>
+		
+</div>		
+
+
+
+
+<div class="td-layout-row" id="footLinksDisclosure">
+
+
+		<div id="old_footer" >
+
+
+			<p class="td-copy-sub" align="center">
+			<a class="td-link-nounderline" href="/bank/sitemap.html">Site Map</a> | <a href="/bank/privacy_and_security.html" class="td-link-nounderline">Privacy</a> | <a href="/bank/security.html" class="td-link-nounderline">Security</a> | <a href="/aboutus/accessibility.html" class="td-link-nounderline">Accessibility</a> | <a href="/bank/terms_of_use.html" class="td-link-nounderline">Terms of Use</a> | <a href="/bank/fdic.html" class="td-link-nounderline">Bank Deposits FDIC Insured</a> | Equal Housing Lender <img alt="" src="http://www.tdbank.com/assets-tdos/images/homepage/ehl_house.gif" style="margin-left:.5em;" align="absmiddle" height="14" width="19">
+			<br><br>
+			<a href="/bank/fdic_disclosure.html" class="td-link-nounderline">Important Disclosure Regarding Deposit Insurance on Noninterest-bearing Transaction Accounts (FDIC)</a></p>
+
+			<p class="td-copy-sub" align="center">
+			</p><table style="border: 1pt solid #CAD6CE; padding: 2px; border-collapse: collapse; font-size:90%;" align="center">
+			<tbody><tr>
+			<td colspan="3" style="padding: 2px; text-align:center; width: 33%">SECURITIES AND INSURANCE</td>
+			</tr>
+			<tr>
+			<td style="border: 1pt solid #CAD6CE; padding: 2px; text-align:center; width: 33%; font-size:11px;">NOT FDIC INSURED</td>
+			<td style="border: 1pt solid #CAD6CE; padding: 2px; text-align:center; width: 33%; font-size:11px;">NO BANK GUARANTEE</td>
+			<td style="border: 1pt solid #CAD6CE; padding: 2px; text-align:center; width: 33%; font-size:11px;">MAY LOSE VALUE</td>
+			</tr>
+			</tbody></table>
+
+
+			
+			<p class="smalltext">Securities and other investment and insurance products are: not a deposit; not FDIC insured; not insured by any federal government agency; not guaranteed by TD Bank, N.A. or any of its affiliates; and, may be subject to investment risk, including possible loss of value.</p>			
+			<p align="left">
+			<span class="smalltext">
+			<!-- mp_trans_disable_start -->
+			
+			<!-- mp_trans_add
+			
+			Toda la documentaci&oacute;n que usted necesita para abrir y mantener su cuenta de dep&oacute;sito est&aacute; disponible solamente en ingl&eacute;s. 
+			
+			-->
+			
+			<!-- mp_trans_disable_end -->
+			
+			
+			</span>  
+			</p>
+			<p align="center">
+			<span class="smalltext">&copy;2015 TD Bank, N.A. All Rights Reserved.</span>
+			</p>
+			
+		</div>
+
+</div>
+
+
+	</footer>
+
+	<!-- End #td-layout-footer -->
+
+
+
+			  <!-- rightnow_noindex_end -->
+			</div>
+			<!-- End #td-layout-footer -->
+		</div><!-- End #td-wrapper -->
+		<div class="mboxDefault"></div> 
+		<script type="text/javascript">
+		    mboxCreate("tdbank_selectstate_top"); 
+            
+		</script>
+	<script language='JavaScript' type='text/javascript' src='/exc/s_code_us.js'></script><script language=javascript>CategoryID="2000111";</script>
+<script language=javascript>CategoryIDOmniture="banking,miscellaneous";</script>
+<style> html{display : none ; } </style>
+<script> 
+if( self == top  || top.location.href.substring(0,22)=='http://www.tdbank.com/'  || top.location.href.substring(0,18)=='http://tdbank.com/') 
+{ 
+document.documentElement.style.display = 'block' ; 
+} 
+else 
+{ 
+top.location = self.location ; 
+}
+</script>
+
+
+
+
+
+
+
+
+<!-- BEGIN Omniture SUPPORT -->
+
+<!-- SiteCatalyst code version: H.22.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+
+
+<script language="JavaScript" type="text/javascript">
+
+if (!(typeof CategoryIDOmniture === 'undefined') && CategoryIDOmniture!="")
+{
+var sections = CategoryIDOmniture.split(",");
+var section="";
+var subsection_1="";
+var subsection_2=""; 
+var subsection_3="";
+if (sections.length==0) {section=CategoryIDOmniture;}
+if (sections.length>1) {section=sections[0];subsection_1=sections[1];}
+if (sections.length>2) {subsection_2=sections[2];}
+if (sections.length>3) {subsection_3=sections[3];}
+
+//alert (section +"," +subsection_1+"," +subsection_2+","+subsection_3);
+
+customSections(section, subsection_1, subsection_2, subsection_3);
+}
+
+</script>
+
+
+
+
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+var s;
+s.pageName=""
+s.server=""
+s.channel="us-en"
+if (location.href.indexOf("espanol")!="-1") s.channel = 'us-es';
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://metrics.td.com/b/ss/tdunitedstates/1/H.23.3--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.23.3. -->
+
+
+
+
+<!-- END Omniture -->
 </body>
+    <script  type="text/javascript">
+
+		function show (divName)
+					{
+						
+						if (document.getElementById)
+						{
+                            var style2 = document.getElementById(divName).style;				
+                            style2.display = "block";					
+                            
+						//alert("getElementById");
+						}
+
+						else if (document.all) 
+						{
+						    document.all[divName].style.display = ""; 
+                           // document.all[divName].focus();
+						//alert("all"); 
+						} 
+						else if (document.layers) 
+						{
+						document.layers[divName].visibility ="visible";  
+                       // document.layers[divName].focus();
+						//alert("layers"); 
+                        
+						}	
+						 					
+					}
+					function hide (divName)
+					{
+						
+						if (document.getElementById)
+						{
+                            var style2 = document.getElementById(divName).style;
+                            style2.display = "none";					
+						}
+
+						else if (document.all) {
+						document.all[divName].style.display = "none" 
+						} else if (document.layers) 
+						{
+						document.layers[divName].visibility ="hidden";   
+						}						
+
+					}	
+					hide("DivGo");	
+					//hide ("DivCity");			
+					hide ("DivCityLabel");
+				
+                                                				var cities={};
+                                      				function getLength  (myHashtable) 
+				                                    { 
+					                                    if (!document.all)
+					                                    {
+						                                    len = 0; 
+						                                    for (var n in myHashtable) {len++;}
+						                                    return len; 
+					                                    }
+					                                    else return myHashtable.length;
+				                                    }
+					                              	cities['MA']={'1526':'Acton','9':'Agawam','1538':'Allston','306':'Amesbury','10':'Amherst','11':'Andover','339':'Arlington','251':'Ashland','12':'Athol','13':'Auburn','340':'Bedford','270':'Beverly','343':'Billerica','217':'Boston','14':'Boxford','15':'Bradford','348':'Braintree','319':'Brewster','521':'Brighton','218':'Brookline','275':'Burlington','316':'Buzzards Bay','1216':'Cambridge','314':'Centerville','323':'Chatham','16':'Chelmsford','346':'Chelsea','17':'Chicopee','219':'Concord','19':'Dracut','20':'East Longmeadow','322':'Falmouth','21':'Fitchburg','335':'Foxborough','220':'Framingham','22':'Gardner','23':'Georgetown','222':'Gloucester','24':'Great Barrington','25':'Greenfield','26':'Groveland','310':'Harwichport','28':'Haverhill','1398':'Hingham','223':'Holliston','29':'Holyoke','1215':'Hudson','309':'Hyannis','268':'Ipswich','224':'Lawrence','32':'Leominster','345':'Lexington','33':'Longmeadow','34':'Lowell','35':'Ludlow','520':'Mansfield','255':'Marlborough','330':'Mashpee','1514':'Melrose','226':'Methuen','36':'Middleton','253':'Milford','229':'Needham','307':'Newburyport','263':'Newton','37':'North Adams','231':'North Andover','336':'North Attleborough','38':'Northampton','39':'Orange','311':'Orleans','312':'Osterville','304':'Peabody','41':'Pittsfield','333':'Plymouth','318':'Pocasset','315':'Provincetown','1544':'Quincy','273':'Reading','344':'Revere','269':'Rowley','274':'Salem','317':'Sandwich','42':'Shrewsbury','324':'South Dennis','43':'South Hadley','313':'South Yarmouth','46':'Springfield','47':'Sturbridge','232':'Sudbury','233':'Tewksbury','48':'Topsfield','49':'Tyngsboro','337':'Walpole','234':'Waltham','328':'Wareham','1217':'Wayland','235':'Wellesley','1540':'West Roxbury','51':'West Springfield','236':'Westborough','53':'Westfield','1534':'Weymouth','54':'Williamstown','342':'Woburn','55':'Worcester','338':'Wrentham'};
+cities['CT']={'284':'Avon','285':'Berlin','359':'Branford','360':'Bridgeport','363':'Bristol','276':'Cheshire','2':'Colchester','373':'Darien','3':'East Hartford','378':'Fairfield','4':'Glastonbury','865':'Greenwich','393':'Hamden','394':'Hartford','287':'Killingworth','1521':'Manchester','288':'Mansfield','414':'Meriden','296':'Middlebury','531':'Middletown','866':'Milford','283':'New Britain','867':'New Canaan','347':'New Haven','289':'Newington','523':'North Branford','431':'North Haven','433':'Norwalk','496':'Orange','290':'Plainville','280':'Plantsville','5':'Portland','449':'Redding','291':'Rocky Hill','297':'Seymour','868':'Shelton','292':'Simsbury','298':'Southbury','278':'Southington','459':'Stamford','460':'Stratford','299':'Torrington','463':'Trumbull','279':'Wallingford','295':'Waterbury','300':'Watertown','293':'West Hartford','474':'West Haven','481':'Westport','7':'Wethersfield','301':'Winsted','302':'Wolcott','485':'Woodbridge','303':'Woodbury'};
+cities['NJ']={'913':'Aberdeen','914':'Absecon','529':'Allendale','915':'Atco','916':'Atlantic City','917':'Barnegat','354':'Basking Ridge','1209':'Bayonne','918':'Bayville','920':'Bellmawr','355':'Bergenfield','921':'Berkeley Heights','356':'Berlin','358':'Blackwood','922':'Bloomfield','923':'Brick','361':'Bridgeton','925':'Bridgewater','362':'Brigantine','927':'Camden','928':'Cape May Court House','365':'Cedar Grove','929':'Cedar Knolls','930':'Chatham','368':'Cherry Hill','931':'Cinnaminson','932':'Clark','525':'Clementon','370':'Cliffside Park','371':'Clifton','933':'Clinton','934':'Cranford','935':'Delran','1393':'Denville','936':'Deptford','937':'Dover','938':'East Brunswick','939':'East Hanover','940':'East Rutherford','941':'East Windsor','942':'Eatontown','943':'Edison','945':'Egg Harbor Township','497':'Elmwood Park','947':'Englewood','948':'Englewood Cliffs','949':'Englishtown','950':'Ewing ','951':'Fair Haven','524':'Fair Lawn','379':'Fairfield','381':'Fairview','952':'Fanwood','953':'Flanders','954':'Flemington','1554':'Florham Park','955':'Forked River','516':'Fort Lee','956':'Franklin ','384':'Franklin Lakes','1199':'Franklin Park','958':'Freehold','385':'Frenchtown','959':'Galloway','507':'Garfield','960':'Glassboro','1210':'Gloucester City','1200':'Green Brook','390':'Hackensack','962':'Hackettstown','391':'Haddon Heights','963':'Haddonfield','392':'Haledon','965':'Hamilton','966':'Hammonton','967':'Hasbrouck Heights','968':'Hawthorne','969':'Hazlet','970':'Hillsborough','509':'Hillsdale','397':'Hoboken','971':'Holmdel ','972':'Howell','400':'Jackson','973':'Jamesburg','532':'Jersey City','975':'Lakewood','404':'Little Egg Harbor','501':'Little Ferry','977':'Livingston','510':'Lodi','919':'Long Beach Township','978':'Lumberton','406':'Lyndhurst','408':'Mahwah','979':'Manahawkin','980':'Manchester','981':'Mantua','409':'Marlton','983':'Marmora','410':'Maywood','411':'Medford','984':'Mercerville','985':'Metuchen','986':'Middletown','418':'Millville','987':'Monroe','420':'Montclair','422':'Montvale','988':'Montville','989':'Moorestown','990':'Morris Plains','423':'Morristown','993':'Mount Holly','992':'Mount Laurel','995':'Mullica Hill','996':'Neptune','997':'New Brunswick','998':'New Providence','427':'Newark','999':'North Arlington ','429':'North Bergen','1002':'Northfield ','530':'Norwood','434':'Nutley','513':'Oakland','526':'Oaklyn','1003':'Ocean','1004':'Ocean City','1005':'Old Bridge','435':'Orange','499':'Paramus','1006':'Parsippany','438':'Passaic','439':'Paterson','440':'Pemberton','1007':'Pennington','441':'Penns Grove','1008':'Pennsauken','1009':'Phillipsburg','1010':'Piscataway','1011':'Pitman','1012':'Point Pleasant','445':'Pompton Lakes','528':'Pompton Plains','1013':'Princeton','1014':'Rahway','448':'Ramsey','1015':'Randolph','1016':'Raritan','1017':'Red Bank','450':'Ridgefield Park','1018':'Ridgewood','451':'Ringwood','512':'River Edge','1019':'Rockaway','452':'Roseland','1020':'Roselle','1021':'Runnemede','500':'Saddle Brook','454':'Salem','1023':'Scotch Plains','1024':'Seaside Heights','1025':'Secaucus','456':'Sewell','1026':'Sicklerville','1028':'Somers Point','1029':'Somerville','1022':'South Plainfield','1031':'Spring Lake Heights','1032':'Springfield','527':'Stratford','1033':'Succasunna','1034':'Summit','506':'Tenafly','1035':'Tinton Falls','1036':'Toms River','462':'Totowa','519':'Township of Washington','1037':'Trenton','1038':'Turnersville','1039':'Union','464':'Union City','466':'Vineland','467':'Voorhees','1040':'Wall','1042':'Warren','471':'Wayne','1044':'West Caldwell','1045':'West Long Branch','476':'West New York','477':'West Orange','1046':'Westfield','479':'Westmont','498':'Westwood','1047':'Whitehouse Station','1048':'Whiting','1049':'Wildwood','1050':'Williamstown','1051':'Willingboro','1053':'Woodbridge','1054':'Woodbury','1397':'Woodland Park','487':'Wyckoff'};
+cities['FL']={'1279':'Altamonte Springs','1282':'Apollo Beach','1271':'Auburndale','1286':'Aventura','877':'Boca Raton','878':'Boynton Beach','1288':'Brandon','1294':'Clearwater','1223':'Coconut Creek','879':'Coral Gables','880':'Coral Springs','1268':'Crescent City','1299':'Crystal River','881':'Cutler Bay','882':'Davie','1267':'Daytona Beach','883':'Deerfield Beach','1196':'Deerwood','1265':'Deland','884':'Delray Beach','1264':'Deltona','885':'Doral','1263':'Edgewater','1262':'Eustis','886':'Fort Lauderdale','1261':'Fort Pierce','1310':'Gainesville','887':'Greenacres','1547':'Hallandale Beach','888':'Haverhill','889':'Hialeah','1259':'Holly Hill','1404':'Hollywood','1405':'Homestead','1258':'Indialantic','1257':'Interlachen','1324':'Jacksonville','890':'Juno Beach','1211':'Jupiter','1255':'Kissimmee','1325':'Lake Butler','1326':'Lake City','1254':'Lake Placid','1202':'Lake Worth','1252':'Lakeland','1329':'Largo','1557':'Lighthouse Point','1333':'Live Oak','1334':'Longwood','1335':'Macclenny','1213':'Margate','1251':'Melbourne','1250':'Merritt Island','892':'Miami','893':'Miami Beach','1212':'Miami Lakes','1520':'Miami Shores','1390':'New Port Richey','1248':'New Smyrna Beach','894':'North Miami','1518':'North Miami Beach','895':'North Palm Beach','1351':'Ocala','1246':'Orange City','1354':'Orlando','1245':'Palatka','1244':'Palm Bay','896':'Palm Beach','1243':'Palm City','1356':'Pembroke Pines','1539':'Plantation','1242':'Port Orange','1359':'Port Richey','1241':'Port Saint Lucie','1276':'Port Salerno','897':'Riviera Beach','1236':'Saint Augustine','1506':'Saint Petersburg','1275':'Satellite Beach','1238':'Sebastian','1370':'Starke','1234':'Stuart','1272':'Sunny Isles Beach','898':'Tamarac','1376':'Tampa','1378':'Temple Terrace','899':'Tequesta','1379':'Tierra Verde','1232':'Titusville','1231':'Vero Beach','1384':'Wesley Chapel','900':'West Palm Beach','901':'Weston','1387':'Winter Garden','1226':'Winter Haven','1388':'Winter Park'};
+cities['NH']={'101':'Alton','102':'Amherst','103':'Barrington','104':'Bedford','105':'Bristol','106':'Brookline','107':'Concord','108':'Contoocook','109':'Conway','239':'Derry','110':'Dover','522':'Epping','240':'Epsom','112':'Farmington','113':'Gilford','114':'Glen','115':'Goffstown','116':'Hampstead','117':'Hampton','118':'Henniker','119':'Hillsboro','120':'Hooksett','121':'Hudson','122':'Jaffrey','123':'Keene','124':'Kingston','241':'Londonderry','127':'Loudon','128':'Manchester','130':'Merrimack','132':'Milford','133':'Nashua','134':'New Boston','135':'New Ipswich','136':'Newington','137':'Newmarket','138':'North Conway','242':'North Hampton','243':'Northwood','140':'Peterborough','141':'Plaistow','142':'Portsmouth','143':'Rindge','144':'Rochester','145':'Rye','146':'Salem','147':'Seabrook','148':'Stratham','149':'Suncook','150':'Tilton','152':'Troy','153':'Weare','154':'Wilton','155':'Winchester','156':'Wolfeboro Falls'};
+cities['ME']={'56':'Auburn','57':'Augusta','58':'Bangor','59':'Biddeford','60':'Brewer','61':'Bridgton','62':'Brunswick','63':'Camden','64':'Caribou','65':'Ellsworth','66':'Fairfield','67':'Falmouth','69':'Farmington','70':'Fort Kent','350':'Gorham','71':'Gray','72':'Houlton','73':'Kennebunk','74':'Kittery','75':'Lewiston','76':'Lincoln','78':'Newport','79':'North Windham','80':'Oakland','81':'Oxford','82':'Pittsfield','83':'Portland','84':'Presque Isle','85':'Rockland','86':'Saco','87':'Sanford','88':'Scarborough','89':'Searsport','91':'South Portland','92':'Standish','94':'Waterville','96':'Westbrook','98':'Yarmouth','99':'York'};
+cities['VT']={'180':'Barre','181':'Barton','182':'Bellows Falls','183':'Bennington','185':'Brattleboro','186':'Burlington','187':'Chester','189':'Enosburg Falls','249':'Essex','191':'Essex Junction','250':'Manchester Center','196':'Milton','198':'Montpelier','199':'Morrisville','202':'Richford','203':'Richmond','204':'Rutland','205':'Shelburne','207':'South Burlington','208':'St. Albans','209':'St. Johnsbury','210':'Stowe','211':'Swanton','212':'Waitsfield','213':'Waterbury','214':'Williston','215':'Winooski','216':'Woodstock'};
+cities['NY']={'157':'Albany','1055':'Astoria','1516':'Bay Shore','1056':'Bayside','1057':'Bethpage ','1565':'Bohemia','158':'Bolton Landing','1058':'Borough Park','1059':'Bronx','1060':'Brooklyn','364':'Carmel','1061':'Cedarhurst','367':'Central Valley','159':'Chazy','369':'Chester','1063':'Clarkstown','160':'Clifton Park','1064':'Commack','1568':'Deer Park','162':'Delmar','163':'East Greenbush','1567':'East Islip','1066':'East Meadow','1067':'East Northport','1546':'East Norwich','1068':'Elmhurst','1535':'Elmsford','1069':'Farmingdale','1070':'Farmingville','382':'Fishkill','1071':'Floral Park','1072':'Flushing','1073':'Forest Hills','1074':'Franklin Square ','1075':'Fresh Meadows','1076':'Garden City','1077':'Garnerville','246':'Glens Falls','388':'Goshen','165':'Granville','1219':'Great Neck','166':'Greenwich','1273':'Hampton Bays','1078':'Hauppauge','1079':'Hempstead','1080':'Hicksville','1081':'Hollis','1519':'Howard Beach','167':'Hudson','168':'Hudson Falls','1553':'Huntington','1082':'Huntington Station','399':'Hyde Park','1083':'Jackson Heights','1084':'Jefferson Valley','169':'Keeseville','1201':'Kew Gardens','491':'Kingston','170':'Lake George','1085':'Lake Grove','1086':'Lake Ronkonkoma','1087':'Larchmont','171':'Latham','1220':'Lawrence','1088':'Long Beach','1536':'Long Island City','407':'Mahopac','1089':'Mamaroneck','1561':'Maspeth','1090':'Massapequa','172':'Mechanicville','1091':'Medford','1093':'Merrick','1094':'Middle Village','416':'Middletown','1095':'Mineola','419':'Monroe','421':'Monticello','1096':'Mount Kisco','1527':'Mount Sinai','1564':'Mount Vernon','1569':'Nanuet','1098':'New Hyde Park','426':'New York City','428':'Newburgh','173':'Niskayuna','1100':'North Babylon','1224':'Northport','1101':'Oceanside','1102':'Old Brookville','1104':'Ossining','1530':'Ozone Park','1105':'Park Slope','1203':'Patchogue','1107':'Pearl River','1108':'Pelham','174':'Peru','1109':'Plainview','175':'Plattsburgh','1110':'Port Chester','1541':'Port Jefferson','446':'Port Jervis','1206':'Port Washington','447':'Poughkeepsie','1555':'Queens','1221':'Queens Village','176':'Queensbury','1218':'Rego Park','1112':'Richmond Hill','1113':'Ridgewood','1399':'Rockville Center','1114':'Rocky Point','1115':'Roslyn Heights','1116':'Rye','1563':'Rye Brook','177':'Salem','1529':'Sayville','1117':'Scarsdale','1118':'Shirley','1119':'Smithtown','248':'South Glens Falls','1208':'St. James','1120':'Staten Island','1121':'Stony Point','461':'Suffern','1543':'Sunnyside','1533':'Syosset','1122':'Thornwood','1123':'Valley Stream','1124':'Wantagh','492':'Wappingers Falls','179':'Warrensburg','469':'Warwick','470':'Washingtonville','1401':'West Babylon','1402':'West Islip','1126':'Westbury','1127':'Westhampton Beach','483':'White Plains','1560':'Whitestone','1559':'Williston Park','1128':'Yonkers'};
+cities['NC']={'1284':'Asheville','1290':'Burnsville','1303':'Fletcher','1307':'Franklin','1316':'Hampstead','1318':'Hendersonville','1341':'Morganton','1361':'Rutherfordton','1366':'Spruce Pine','1381':'Tryon','1382':'Waynesville','1383':'Weaverville','1386':'Wilmington'};
+goState ();    
+    
+    </script>
 </html>
