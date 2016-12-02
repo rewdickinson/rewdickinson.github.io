@@ -38,7 +38,7 @@
 	</style>
 	
 	
-	<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"></script>
+	<!--<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"></script>-->
 	
 	
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -352,10 +352,30 @@
 		
 		
 		<!-- Start - Appian Section -->
-		
-		<div class="my-tasks" id="tasks">
+		      <script>
+         function render() {
+         var scriptFrame = document.createElement('iframe');
+         scriptFrame.id = "embedded-iframe";
+         scriptFrame.src = 'javascript:""';
+         scriptFrame.style.width = "100%";
+         scriptFrame.style.height = "750px";
+         content.appendChild(scriptFrame);
+         
+         frameDoc = scriptFrame.contentDocument;
+         if (!frameDoc) {
+         frameDoc = scriptFrame.contentWindow.document;
+         }
+         
+         var html = '<html>\n<head></head>\n<body style="height: 725px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action processModelUuid="0002ddfd-1181-8000-f92f-7f0000014e7a" />\n</body></html>';
+         
+         frameDoc.open();
+         frameDoc.write(html);
+         frameDoc.close();
+         }
+      </script>
+		<!--<div class="my-tasks" id="tasks">
 	    <appian-action processModelUuid="0002ddfd-1181-8000-f92f-7f0000014e7a" />
-	    </div>
+	    </div>-->
 		
 		<!-- End - Appian Section -->
 		
