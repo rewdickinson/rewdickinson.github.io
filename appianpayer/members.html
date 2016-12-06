@@ -29,6 +29,27 @@
 
 	
 	<!-- Start - Appian section --> 
+	<script>
+         function render() {
+         var scriptFrame = document.createElement('iframe');
+         scriptFrame.id = "embedded-iframe";
+         scriptFrame.src = 'javascript:""';
+         scriptFrame.style.width = "100%";
+         scriptFrame.style.height = "750px";
+         content.appendChild(scriptFrame);
+         
+         frameDoc = scriptFrame.contentDocument;
+         if (!frameDoc) {
+         frameDoc = scriptFrame.contentWindow.document;
+         }
+         
+         var html = '<html>\n<head></head>\n<body style="height: 725px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action processModelUuid="0002ddfd-1181-8000-f92f-7f0000014e7a" />\n</body></html>';
+         
+         frameDoc.open();
+         frameDoc.write(html);
+         frameDoc.close();
+         }
+      </script>
 	
 	<style>
 	div.my-tasks {
@@ -43,7 +64,7 @@
 	
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     
-    <script>
+    <!--<script>
       function showTask(taskId) {
         $("#tasks").empty();
         $('<appian-task />').attr("taskId", taskId).on("submit", handleSubmit).appendTo("#tasks");
@@ -94,7 +115,7 @@
 	  }
 	  
 	  
-    </script>
+    </script>-->
 	
 	<!-- End - Appian Section -->
 	
@@ -107,7 +128,7 @@
 
 
 <!-- Appian - add onload to the body -->
-<body onload="showFirstTaskFromList();">
+<!-- <body onload="showFirstTaskFromList();">-->
 
 
 
@@ -352,29 +373,11 @@
 		
 		
 		<!-- Start - Appian Section -->
-	    <div class="my-tasks" id="tasks">
-		      <script>
-         function render() {
-         var scriptFrame = document.createElement('iframe');
-         scriptFrame.id = "embedded-iframe";
-         scriptFrame.src = 'javascript:""';
-         scriptFrame.style.width = "100%";
-         scriptFrame.style.height = "750px";
-         content.appendChild(scriptFrame);
-         
-         frameDoc = scriptFrame.contentDocument;
-         if (!frameDoc) {
-         frameDoc = scriptFrame.contentWindow.document;
-         }
-         
-         var html = '<html>\n<head></head>\n<body style="height: 725px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action processModelUuid="0002ddfd-1181-8000-f92f-7f0000014e7a" />\n</body></html>';
-         
-         frameDoc.open();
-         frameDoc.write(html);
-         frameDoc.close();
-         }
-      </script>
-		    </div>
+	    <div id="appianSection">
+	      <script>
+		 render();
+	      </script>
+	</div>
 		<!--<div class="my-tasks" id="tasks">
 	    <appian-action processModelUuid="0002ddfd-1181-8000-f92f-7f0000014e7a" />
 	    </div>-->
