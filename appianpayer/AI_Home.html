@@ -24,7 +24,7 @@
          scriptFrame.id = "embedded-iframe";
          scriptFrame.src = 'javascript:""';
          scriptFrame.style.width = "100%";
-         scriptFrame.style.height = "300px";
+         scriptFrame.style.height = "350px";
          content.appendChild(scriptFrame);
          
          frameDoc = scriptFrame.contentDocument;
@@ -32,7 +32,7 @@
          frameDoc = scriptFrame.contentWindow.document;
          }
          
-         var html = '<html>\n<head></head>\n<body style="height: 329px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action themeIdentifier="aetna" processModelUuid="2d40b52c-f3a2-4115-b4df-875486a0d920" />\n</body></html>';
+         var html = '<html>\n<head></head>\n<body style="height: 325px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action themeIdentifier="aetna" processModelUuid="2d40b52c-f3a2-4115-b4df-875486a0d920" />\n</body></html>';
          
          frameDoc.open();
          frameDoc.write(html);
