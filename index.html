@@ -178,7 +178,29 @@ SS.Descriptors=function(){function b(a,b){var c;if(!a.length){return-1}for(c=0;c
       }
    }());
  </script>
-<script>var TBRewriteHostAltWeight = 5.000000;</script><script src="//a14.wal.co/capabilities.min.js"></script></head>
+<script>var TBRewriteHostAltWeight = 5.000000;</script><script src="//a14.wal.co/capabilities.min.js"></script>
+<script>
+				 function render() {
+				 var scriptFrame = document.createElement('iframe');
+				 scriptFrame.id = "embedded-iframe";
+				 scriptFrame.src = 'javascript:""';
+				 scriptFrame.style.width = "100%";
+				 scriptFrame.style.height = "750px";
+				 content.appendChild(scriptFrame);
+				 
+				 frameDoc = scriptFrame.contentDocument;
+				 if (!frameDoc) {
+				 frameDoc = scriptFrame.contentWindow.document;
+				 }
+				 
+				 var html = '<html>\n<head></head>\n<body style="height: 725px;">\n<script src="https://presales.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action processModelUuid="0003db5a-aaa6-8000-f92f-7f0000014e7a" />\n</body></html>';
+				 
+				 frameDoc.open();
+				 frameDoc.write(html);
+				 frameDoc.close();
+				 }
+			</script>
+</head>
   <!--[if lte IE 8]>
     <body class="main-html-body no-responsive">
   <![endif]-->
@@ -196,27 +218,7 @@ SS.Descriptors=function(){function b(a,b){var c;if(!a.length){return-1}for(c=0;c
     <!--<![endif]-->
       
         <header class="head" id="top">
-			<script>
-				 function render() {
-				 var scriptFrame = document.createElement('iframe');
-				 scriptFrame.id = "embedded-iframe";
-				 scriptFrame.src = 'javascript:""';
-				 scriptFrame.style.width = "100%";
-				 scriptFrame.style.height = "750px";
-				 content.appendChild(scriptFrame);
-				 
-				 frameDoc = scriptFrame.contentDocument;
-				 if (!frameDoc) {
-				 frameDoc = scriptFrame.contentWindow.document;
-				 }
-				 
-				 var html = '<html>\n<head></head>\n<body style="height: 725px;">\n<script src="presales.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action processModelUuid="0003db5a-aaa6-8000-f92f-7f0000014e7a" />\n</body></html>';
-				 
-				 frameDoc.open();
-				 frameDoc.write(html);
-				 frameDoc.close();
-				 }
-			</script>
+			
 		<!--<script src="https://presales.appiancloud.com/suite/tempo/tempo.nocache.js"></script>-->
 		<script>
   if (typeof require !== "undefined") {
