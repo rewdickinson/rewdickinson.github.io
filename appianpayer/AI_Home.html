@@ -24,7 +24,7 @@
          scriptFrame.id = "embedded-iframe";
          scriptFrame.src = 'javascript:""';
          scriptFrame.style.width = "100%";
-         scriptFrame.style.height = "350px";
+         scriptFrame.style.height = "600px";
          scriptFrame.style.border = "none";
 	 scriptFrame.frameborder = "0";
          content.appendChild(scriptFrame);
@@ -34,7 +34,7 @@
          frameDoc = scriptFrame.contentWindow.document;
          }
          
-         var html = '<html>\n<head></head>\n<body style="height: 325px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action themeIdentifier="aetna" processModelUuid="2d40b52c-f3a2-4115-b4df-875486a0d920" />\n</body></html>';
+         var html = '<html>\n<head></head>\n<body style="height: 575px;">\n<script src="https://aetna-demo.appiancloud.com/suite/tempo/tempo.nocache.js"' + '></scrip' + 't>\n<appian-action themeIdentifier="aetna" processModelUuid="2d40b52c-f3a2-4115-b4df-875486a0d920" />\n</body></html>';
          
          frameDoc.open();
          frameDoc.write(html);
@@ -1388,7 +1388,7 @@ $(function() {
     		</div>
 		</div>
 </div>
-<div class="columnLayout section">
+<!--<div class="columnLayout section">
     	<div class="container-fluid module whitebg imgtxt">
 	    		<div class="row-fluid">
 					<div class="span12 titleBar">
@@ -1426,7 +1426,7 @@ $(function() {
 			   		</div>
     		</div>
 		</div>
-</div>
+</div>-->
 	<!--
 <div class="section emptySpacer">
 <div class="articleSpacer"></div></div>
