@@ -1,0 +1,19 @@
+body div.infoWrapper{padding:9px;white-space:normal;color:#333;background-color:#FFF;border:1px solid #777;z-index:3942;font:12px Arial,sans-serif;line-height:18px;position:absolute;width:230px;text-align:left;left:0;display:none;overflow:visible;visibility:hidden}
+div.infoWrapper.openHover{display:block;visibility:visible}
+div.infoWrapper.block{display:block}
+.hoverArea{position:absolute;top:0;left:0}
+body div.hoverBox-ng .infoWrapper{width:287px;box-shadow:0 0 5px rgba(0,0,0,0.5);-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5)}
+.leftHoverWrapper{width:330px}
+.infoWrapper ul{white-space:normal;font:12px Arial,sans-serif;text-align:left;margin-left:15px;color:#333;line-height:18px}
+.infoWrapper h5{color:#333;font-size:12px;font-weight:bold;margin-bottom:-12px}
+.infoWrapper p{margin-top:12px;margin-bottom:0}
+.infoWrapper p:first-child{margin-top:0;margin-bottom:0}
+.topHoverWrapper .infoPointer,.centeredTopHoverWrapper .infoPointer{background:url(../../../images/infoBoxPointer.png) 8px 0 no-repeat;position:absolute;z-index:500;width:100%;height:15px;bottom:-10px;left:9px}
+.hoverBox-ng .topHoverWrapper .infoPointer,.centeredTopHoverWrapper .infoPointer{background:url(../../../images/pointerShadow.png) 4px 0 no-repeat;background:url(../../../images/pointerNoShadow.png) 4px 0 no-repeat\9;bottom:-13px}
+.leftHoverWrapper .infoPointer{background:url(../../../images/infoBoxPointerLeft.png) center left no-repeat;position:absolute;z-index:500;height:18px;width:15px;right:-10px;top:12px;left:none;bottom:none}
+.topLeftHoverWrapper .infoPointer{background:url(../../../images/infoBoxPointer.png) 261px 0 no-repeat;position:absolute;z-index:500;width:100%;height:25px;bottom:-20px}
+.topHoverWrapper .infoPointerUp,.centeredTopHoverWrapper .infoPointerUp{background:url(../../../images/pointerShadowUp.png) 4px 0 no-repeat;background:url(../../../images/pointerNoShadowUp.png) 4px 0 no-repeat\9}
+span.nextGenHoverLink,a.nextGenHoverLink{color:#333;background:url(../../../images/dots2.png) 1px 16px repeat-x;text-decoration:none;padding-bottom:4px}
+a.nextGenHoverLink:hover{color:#333;border-bottom:0;text-decoration:none}
+span:hover.nextGenHoverLink{background:0}
+.hoverLink{cursor:pointer}

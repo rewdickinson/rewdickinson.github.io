@@ -1,0 +1,48 @@
+html{background-color:#d4cfc3}
+h1{font:21px/24px Arial,sans-serif;margin-bottom:18px}
+.main{background-color:white;width:966px;margin-left:auto;margin-right:auto;margin-top:18px;padding:18px;overflow:hidden}
+.banner{margin-bottom:30px;height:315px;width:966px;position:relative}
+.bannerText{position:absolute;top:140px;left:32px;font:14px/21px Arial,sans-serif;color:#656565;width:523px}
+.icon{display:block;float:left;padding:0 10px 12px 0;width:64px;height:64px;margin-top:-6px}
+a.channelLink,a.channelLink:hover,a.channelLink:active,a.channelLink:link,a.channelLink:visited{width:226px;display:inline;float:left;padding:6px 0 12px 0;margin:0 20px 0 0;color:#333;text-decoration:none}
+.channelLink span.linkStyle{font-size:16px;line-height:18px;color:#955d23}
+.openHover span.linkStyle,a.channelLink:hover span.linkStyle,a.channelLink:active span.linkStyle{text-decoration:underline;color:#94141d}
+#FASChannel{width:224px;margin-right:0}
+.superFooter{width:966px;margin-left:auto;margin-right:auto;padding:18px;overflow:hidden}
+.superFooter .column1,.superFooter .column2{display:block;float:left;width:228px;padding-right:18px}
+.superFooter ul{padding-left:0}
+.superFooter a,.superFooter a:hover,.superFooter a:active{color:#333;text-decoration:none;border-bottom:solid 1px #333;line-height:26px}
+.superFooter h4{font-weight:normal;line-height:30px;color:#333}
+.disclaimerSection{border-top:1px solid #989898;color:#666;font-style:normal;margin-top:27px;padding-top:6px;width:100%;display:block;font-size:12px;float:left}
+.disclaimerSection p.disclaimer{font-style:italic}
+.disclaimerSection p{font:14px/21px Arial,sans-serif;color:#666;margin-bottom:13px;width:720px}
+body div.hoverBox-ng div.infoWrapper{font:12px/18px Arial,sans-serif;width:auto;padding-right:9px;color:#333}
+.hoverBox-ng .infoWrapper ul{margin-left:0;font:12px/18px Arial,sans-serif}
+.hoverBox-ng .infoWrapper li{list-style:disc;padding:0;margin-bottom:6px}
+#hoverBoxFAS .infoWrapper{width:226px}
+#hoverBoxRetail .infoWrapper,#hoverBoxInstitutional .infoWrapper,#hoverBoxRetirement .infoWrapper{width:230px}
+a.toolTipLink{background:url(../images/button_gotosite_off.png);height:21px;width:100px;display:block;margin-top:10px}
+a.toolTipLink:hover{background:url(../images/button_gotosite_hover.png);text-decoration:none}
+a.toolTipLink:active{background:#a8a093 url(../images/button_gotosite_pressed.png) no-repeat;text-decoration:none}
+.layerContent h2{font:21px/24px Arial,sans-serif;color:#333;margin-bottom:18px}
+.layerContent h3{font-size:16px;color:#333;line-height:18px}
+.layerContent h4{color:#333}
+.layerContent li{list-style:disc;margin-bottom:8px}
+#GHTop{background:#96151d;height:20px;min-width:1002px}
+#GHMiddle{height:75px;background:white;width:100%;min-width:1002px}
+.gblHeaderIcon{height:75px;width:966px;margin-left:auto;margin-right:auto;padding-left:18px;padding-right:18px}
+#GHVanguardLogo{padding-top:23px;width:139px;height:39px}
+.hidden{display:none;visibility:hidden}
+.layerContent{padding:10px}
+.infoWrapper dl{font:12px/18px Arial,sans-serif;margin-top:6px}
+.infoWrapper dt{padding-left:5px;width:15px;float:left}
+.infoWrapper dd{margin:0 0 6px 20px;padding:0}
+.popup .gblHeaderIcon,.popup #gblFooter{width:100%}
+.popup .main{width:95%;padding:18px 2.5%;height:auto}
+.popup #GHTop,.popup #GHMiddle,.popup #gblFooterContainer{min-width:0}
+div.dataBreach{font-size:16px;color:#333;width:966px;margin:0;padding:0}
+.dataBreach img{width:72px;height:72px;float:left;padding-right:12px}
+.dataBreach b{font-weight:normal}
+.dataBreach p{padding-top:20px;display:inline-block}
+.dataBreach a{line-height:18px;color:#955d23}
+.dataBreach a:hover{text-decoration:underline;color:#94141d}

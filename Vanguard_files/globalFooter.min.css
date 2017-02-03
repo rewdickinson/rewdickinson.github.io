@@ -1,0 +1,9 @@
+#gblFooterContainer{background-color:#666;width:100%;overflow:hidden;min-width:1002px}
+#gblFooter{background-color:#666;margin-left:auto;margin-right:auto;width:966px;font-size:12px;padding:18px 18px 21px 18px;overflow:hidden;position:relative}
+#gblFooter P{font:12px/18px Arial,sans-serif;text-align:left;color:#CCC;background-color:#666;width:840px;float:left}
+#gblFooter A{color:#CCC!important;border-bottom:1px solid #CCC}
+#gblFooter a:hover,#gblFooter a:visited:hover,#gblFooter a:active:hover,#gblFooter a:link:hover{color:#FFF!important;border-bottom:1px solid #FFF;text-decoration:none}
+#feedbackIcon{border:0}
+#gblFooter p.feedback{width:126px;padding-top:36px;text-align:right}
+#gblFooter p.version{background:#96151d;color:white;font-weight:bold;width:auto;position:absolute;top:36px;left:600px;font:10px/14px arial,sans-serif;padding:2px;display:none}
+#gblFooter p.version.visible{display:block}

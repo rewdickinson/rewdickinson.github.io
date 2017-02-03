@@ -1,0 +1,10 @@
+.alert-message-container{background-color:#faf2bb;padding-bottom:10px;padding-top:8px;width:100%;min-width:1002px;position:relative}
+.alert-message-content-container{max-width:1002px;width:100%;margin:0 auto}
+.alert-message-content{width:100%;max-width:660px}
+.alert-message-content-centering-container{vertical-align:middle;padding:0 18px}
+.headline{font-size:21px;line-height:24px;margin-bottom:0;margin-top:0;padding-bottom:4px;padding-top:7px}
+.title{font-size:14px;font-weight:700;line-height:21px;padding-bottom:2px;padding-top:4px;margin-bottom:0;margin-top:0}
+.alert-message{font-size:14px;line-height:20px;padding-bottom:3px;padding-top:6px;margin-bottom:0}
+.standalone-link{font-size:14px;line-height:21px;margin-top:0;margin-bottom:10px;padding-top:5px}
+.standalone-link a:hover{text-decoration:none}
+.standalone-link a:active span,.standalone-link a:focus span,.standalone-link a:hover span{color:#96151d;border-bottom:1px solid #96151d}

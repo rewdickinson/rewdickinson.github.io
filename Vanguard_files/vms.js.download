@@ -1,0 +1,77 @@
+/*global window*/
+
+var VanguardMsgService = VanguardMsgService || {};
+
+VanguardMsgService.isInsecureBrowser = function () {
+    var ua = window.navigator.userAgent,
+        isTrueLessThanIE8Browser = ua.indexOf('Trident') === -1 && ua.indexOf('MSIE') > -1, //Not susceptible to spoofing
+        isIE8 = ua.indexOf('Trident/4.0') > -1;
+
+    if (isIE8 || isTrueLessThanIE8Browser) {
+        return true;
+    }else{
+        return false;
+    }
+};
+
+VanguardMsgService.addLegacyBrowserMessage = function (config) {
+
+    var msgDiv, msg, body, node, insertionNode, closeButton, target, defaultUrl, url;
+
+    if (this.isInsecureBrowser()) {
+
+        config = config || {};
+        defaultUrl = 'https://personal.vanguard.com/us/help/FAQTechHelpBrowserContent.jsp';
+        msgDiv = document.createElement('div');
+        msg = document.createElement('div');
+        body = document.getElementsByTagName('body')[0];
+        node = document.getElementById(config.insertionNodeId);
+        insertionNode = !!node ? node : body;
+        target = config.openInNewTabOrWindow ? '_blank' : '_self';
+        url = config.url || defaultUrl;
+
+        msgDiv.style.width = '100%';
+        msgDiv.style.backgroundColor = '#FAF2BB';
+        msgDiv.style.position = 'relative';
+        msgDiv.style.textAlign = 'left';
+        msgDiv.className = 'vmsContainer';
+
+        msg.innerHTML = "<b>Please update your browser</b><br/>" +
+            "Support for your browser has ended or will be ending soon. Outdated browsers can have serious security flaws. " +
+            "We recommend that you update your current browser to the most current version available. " +
+            "<a style='color:#e37222' class='vmsHelpLink' href=\'" + url + "\' target =\'" + target + "\'>Learn more</a>";
+        msg.style.width = '90%';
+        msg.style.fontFamily = 'Arial';
+        msg.style.color = '#000';
+        msg.style.fontSize = '14px';
+        msg.style.margin = '0';
+        msg.style.padding = '15px';
+        msg.className = 'vmsContent';
+        msgDiv.appendChild(msg);
+
+        if (!config.hideCloseButton) {
+            closeButton = document.createElement('span');
+            closeButton.style.background = "url(https://static.vgcontent.info/web/vui/1.24.0/images/vui_close_icons_20150625.png) no-repeat scroll 0 -54px transparent";
+            closeButton.style.top = '6px';
+            closeButton.style.right = '6px';
+            closeButton.style.height = '24px';
+            closeButton.style.width = '24px';
+            closeButton.style.marginLeft = '6px';
+            closeButton.style.position = 'absolute';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = function () {
+                insertionNode.removeChild(msgDiv);
+            };
+            closeButton.onmouseover = function () {
+                closeButton.style.backgroundPosition = "0 -78px";
+            };
+            closeButton.onmouseout = function () {
+                closeButton.style.backgroundPosition = "0 -54px";
+            };
+            closeButton.className='vmsCloseButton';
+            msgDiv.appendChild(closeButton);
+        }
+
+        insertionNode.insertBefore(msgDiv, insertionNode.firstChild);
+    }
+};
