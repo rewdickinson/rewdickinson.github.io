@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en" id="psApp" data-modules="patterns.organisms.run">
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta data-viewport name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link  rel="stylesheet" href="https://investor.vanguard.com/static/global/css/1.1.0/reset.min.css" type="text/css"  />
+<link  rel="stylesheet" href="https://investor.vanguard.com/patterns/667/css/template-base-rwd.min.css" type="text/css"  />
+<link  rel="stylesheet" href="https://investor.vanguard.com/patterns/667/css/template-home-rwd.min.css" type="text/css"  />
+<link  rel="stylesheet" href="https://investor.vanguard.com/patterns/667/css/psr-patterns.min.css" type="text/css"  />
+<link href="favicon.ico" type="image/x-icon" rel="shortcut icon"> 
+<link href="favicon.ico" type="image/x-icon" rel="icon"> 
+<!--[if lte IE 7]>
+	<link  rel="stylesheet" href="/patterns/667/css/ie_lte_7.min.css" type="text/css"  />
+<!-- <![endif]-->
+<!--[if lte IE 9]>
+	<link  rel="stylesheet" href="/patterns/667/css/ie_lte_9.min.css" type="text/css"  />
+<!-- <![endif]--><link  rel="stylesheet" href="https://investor.vanguard.com/static/global/components/webTracking/adobeSiteCatalyst/1.2.4/adobeSC.min.css" type="text/css"  />
+<title>Vanguard: Helping you reach your investing goals | Vanguard</title>
+		<!-- DCRNAME: PSE_releases/public_site  /Properties/Extended/data/home/index -->
+		<script type="text/javascript" src="https://static.vgcontent.info/web/vui/add-ons/vms/js/vms.js"></script>
+<meta name="ps-setting.WebAnalytics.country" content="us"/>
+	<meta name="ps-setting.WebAnalytics.language" content="en"/>
+	<meta name="ps-setting.WebAnalytics.siteId" content="retail"/>
+	<meta name="ps-setting.WebAnalytics.platform" content="web"/>
+	<meta name="ps-setting.WebAnalytics.environment" content="prod"/>
+	<meta name="ps-setting.WebAnalytics.DFA.globalEnabled" content="true"/>
+	<meta name="ps-setting.WebAnalytics.DFA.pageEnabled" content="true"/>
+	<meta name="ps-setting.WebAnalytics.DFA.maxDelay" content="750"/>
+	<meta name="ps-setting.WebAnalytics.DFA.SPOTID" content="844392"/>
+	<meta name="KEYWORDS" content="vanguard,home,homepage,page,personal,investors" />
+			<meta name="DESCRIPTION"
+			content="Vanguard funds, IRAs, 401(k) rollovers, and the help you need to sort it out. All from Vanguard, where we put you first." />
+			<meta name="SEARCH_PRIORITY"
+			content="0" />
+			<meta name="ps-setting.TealeafDisabledPage" content="false"/>
+	<meta name="ps-setting.TealeafEnabledGS" content="true"/>
+<meta name="ps-setting.isRwdEnabled" content="true"/>
+<meta name="ps-setting.secureSiteAddress" content="https://personal.vanguard.com"/>
+<meta name="ps-setting.investorAddress" content="https://investor.vanguard.com"/>
+<meta name="ps-setting.teamsiteRootUrl" content=""/>
+<meta name="ps-setting.staticResourcePrefix" content="/static"/>
+<meta name="ps-setting.retRESTAddressFunds" content="https://api.vanguard.com/rs/ire/02"/>
+<meta name="ps-setting.retRESTAddressFundsSilo03" content="https://api.vanguard.com/rs/ire/01"/>
+<meta name="ps-setting.mkeRESTAddress" content="/api/proxy/mke"/>
+<meta name="ps-setting.mkeRESTAddressSilo2Version2" content="https://api.vanguard.com/rs/mke/02/2.0"/>
+<meta name="ps-setting.retirementAddress" content="https://retirementplans.vanguard.com"/>
+<meta name="ps-setting.isInternalUser" content="false"/>
+<meta name="ps-setting.isLoggedOn" content="false"/>
+<meta name="ps-setting.searchRESTAddress" content="https://api.vanguard.com/rs/sae"/>
+<meta name="ps-setting.nowYear" content="2017"/>
+<meta name="ps-setting.projectVersion" content="1.0.0-M20170314-03"/>
+<meta name="ps-setting.csaVersion" content="17.950.1-M20160122-01"/>
+<meta name="ps-setting.rteLevel" content="prd"/>
+<meta name="ps-setting.clientSideVersionNumber" content="667"/>
+<meta name="ps-setting.patternsResourcesAddress" content="/patterns"/>
+<meta name="ps-setting.productsAddressVersioned" content="https://invproductsui.vanguard.com/products/2.0.4"/>
+
+<script type="text/javascript" src="https://static.vgcontent.info/web/common/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://static.vgcontent.info/web/common/angularjs/1.2.14/angular.min.js"></script>
+<script type="text/javascript" src="https://static.vgcontent.info/web/common/angularjs/1.2.14/angular-sanitize.min.js"></script>
+<!--[if lt IE 8]>
+	<script type="text/javascript" src="https://static.vgcontent.info/web/common/json3/3.2.5/json3.min.js"></script>
+<!-- <![endif]-->
+<script type="text/javascript" src="https://investor.vanguard.com/static/passmark-fingerprint/1.0.0/hash.min.js"></script>
+<script type="text/javascript" src="https://investor.vanguard.com/static/passmark-fingerprint/1.0.0/rsa.min.js"></script>
+<script type="text/javascript" src="https://static.vgcontent.info/web/vui/add-ons/app-measurement/2.3.0/AllAppMeasurement.min.js"></script>
+<script type="text/javascript" src="https://investor.vanguard.com/static/global/components/webTracking/adobeSiteCatalyst/1.2.4/adobeSC.min.js"></script>
+<!-- Reference to DCR: null--><meta name="apple-itunes-app" content="app-id=335186209"></head>
+	<body id="body" class="ps" data-link-reporting>
+		<div class="appBanners" >
+		<div data-app-banner="android" data-image-src='/ts/images/appBanners/AppIcon.svg' data-title='Vanguard App' data-subtext='Easy. Convenient. Secure.<br/>FREE&mdash;in Google Play<sup>&#8482;</sup>' data-app-link='<a class="largeStrong" href="https://play.google.com/store/apps/details?id=com.vanguard"><span>Install</span></a>'></div>
+		<div data-app-banner="kindle" data-image-src='/ts/images/appBanners/AppIcon.svg' data-title='Vanguard App' data-subtext='Easy. Convenient. Secure.<br/>FREE&mdash;in the Amazon Appstore<sup>&#8482;</sup>' data-app-link='<a class="largeStrong" href="http://www.amazon.com/gp/product/B00I3MX20W/ref=mas_pm_Vanguard"><span>Install</span></a>'></div>
+	</div>
+<div id="main-wrapper" data-aria-support>
+			<script>
+					document.body.className = document.body.className + ' js';
+				</script>
+			<div>
+				<a class="skip-navigation" data-hash-navigation href="#main-content">Skip to main content</a>
+			</div>
+			<link  rel="stylesheet" href="https://eus.vanguard.com/global-components/2.0.1/css/vgcHeaderFooter.css" type="text/css"  />
+<link  rel="stylesheet" href="https://eus.vanguard.com/global-components/2.0.1/css/peGlobalHeaderFooter.css" type="text/css"  />
+<script type="text/javascript" src="https://eus.vanguard.com/global-components/2.0.1/js/vgcHeaderFooter.js"></script>
+<div id='vgc-globalHeader' data-vgc-data-json='{&#034;brandHeader&#034;:{&#034;icon&#034;:{&#034;title&#034;:&#034;Home&#034;,&#034;brand&#034;:&#034;corporate&#034;,&#034;label&#034;:&#034;Vanguard home&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/home/&#034;}},&#034;internalOnly&#034;:{&#034;message&#034;:&#034;INTERNAL ONLY&#034;},&#034;legalFooter&#034;:{&#034;alternativeBoilerplates&#034;:[{&#034;content&#034;:&#034;The Vanguard Group, Inc. All rights reserved.&#034;,&#034;type&#034;:&#034;ADVICE&#034;}],&#034;disclosure&#034;:&#034;Vanguard funds not held in a brokerage account are held by The Vanguard Group, Inc., and are not protected by SIPC. Brokerage assets are held by Vanguard Brokerage Services, a division of Vanguard Marketing Corporation, member &lt;a href=\&#034;https://investor.vanguard.com/external-site-message?url=http://www.finra.org/Investors\&#034; &gt; &lt;span class=\&#034;vgc-iconRight\&#034;&gt;&lt;span class=\&#034;vgc-linkText\&#034;&gt;FINRA&lt;\/span&gt;&lt;span class=\&#034;vgc-linkIcon\&#034; aria-label=\&#034;Open a new browser window\&#034;&gt;&lt;\/span&gt;&lt;\/span&gt;&lt;\/a&gt; and &lt;a href=\&#034;https://investor.vanguard.com/external-site-message?url=http://www.sipc.org/\&#034;&gt; &lt;span class=\&#034;vgc-iconRight\&#034;&gt;&lt;span class= \&#034;vgc-linkText\&#034;&gt;SIPC&lt;\/span&gt;&lt;span class=\&#034;vgc-linkIcon\&#034; aria-label=\&#034;Open a new browser window\&#034;&gt;&lt;\/span &gt;&lt;\/span&gt;&lt;\/a&gt;.&#034;,&#034;boilerplate&#034;:&#034;The Vanguard Group, Inc. All rights reserved. Vanguard Marketing Corporation, Distributor of the Vanguard Funds.&#034;,&#034;links&#034;:[{&#034;label&#034;:&#034;Privacy policy&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/privacy-policy&#034;},{&#034;newWindow&#034;:true,&#034;noFollow&#034;:true,&#034;label&#034;:&#034;Security&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/security/&#034;},{&#034;label&#034;:&#034;Technical support&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/customer-service/technical-support&#034;},{&#034;demote&#034;:&#034;ADVICE&#034;,&#034;label&#034;:&#034;Mutual fund prospectuses&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/literature/prospectus/mutualfunds&#034;},{&#034;demote&#034;:&#034;ADVICE&#034;,&#034;label&#034;:&#034;ETF (exchange-traded fund) prospectuses&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/litfulfillment/ELFProspectus?categoryCd=PRRP&amp;subcategoryCd=ETPR&amp;view=default&#034;},{&#034;demote&#034;:&#034;ADVICE&#034;,&#034;label&#034;:&#034;Variable annuity prospectuses&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/litfulfillment/ELFProspectus?categoryCd=PRRP&amp;subcategoryCd=VAPR&amp;view=default&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Special notice to non-U.S. investors&#034;,&#034;type&#034;:&#034;home&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/content/SiteWide/LglDocs/SWLglNonUSInvstContent.jsp&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Careers&#034;,&#034;href&#034;:&#034;http://www.vanguardjobs.com/&#034;},{&#034;label&#034;:&#034;Mobile app&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/mobile-apps&#034;},{&#034;label&#034;:&#034;Social media&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/what-we-offer/social-media&#034;},{&#034;label&#034;:&#034;Vanguard Labs&#034;,&#034;href&#034;:&#034;https://www.vanguard-labs.com/&#034;},{&#034;icon&#034;:{&#034;type&#034;:&#034;vgc-adChoicesIcon&#034;},&#034;newWindow&#034;:true,&#034;label&#034;:&#034;AdChoices&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/privacy-policy#thirdPartyAnalytics&#034;}],&#034;copyright&#034;:&#034;&amp;copy; 1995&amp;ndash;&#034;,&#034;termsAndConditions&#034;:&#034;Your use of this site signifies that you accept our &lt;a href=\&#034;https://personal.vanguard.com/us/content/SiteWide/LglDocs/SWLglTermsConditionsContent.jsp\&#034; target=\&#034;_blank\&#034; aria-describedby=\&#034;openNewWindow\&#034;&gt;&lt;span&gt;terms and conditions of use&lt;\/span&gt;&lt;span id=\&#034;openNewWindow\&#034; class=\&#034;vgc-hideText\&#034;&gt;Open a new browser window&lt;\/span&gt;&lt;\/a&gt;.&#034;,&#034;feedbackLink&#034;:{&#034;feedback&#034;:{&#034;href&#034;:&#034;https://personal.vanguard.com/us/opinionLab&#034;},&#034;newWindow&#034;:true,&#034;noFollow&#034;:true,&#034;img&#034;:{&#034;href&#034;:&#034;/global-components/ui-components/feedback-link/sm_e5e5e5_oo.gif&#034;},&#034;label&#034;:&#034;Feedback&#034;,&#034;href&#034;:&#034;https://secure.opinionlab.com/ccc01/comment_card.asp&#034;}},&#034;search&#034;:{&#034;submit&#034;:{&#034;href&#034;:&#034;https://investor.vanguard.com/search/&#034;},&#034;autoSuggest&#034;:{&#034;searchAll&#034;:{&#034;text&#034;:&#034;See all search results&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/search/?query=${query}&#034;},&#034;termLandingPage&#034;:{&#034;href&#034;:&#034;https://investor.vanguard.com/search/?query=${term}&#034;},&#034;minimumCharacterSearch&#034;:2,&#034;parameters&#034;:&#034;?types=funds,term&amp;limit=10&amp;limits=6,4&#034;,&#034;href&#034;:&#034;https://api.vanguard.com/rs/sae/autosuggest.jsonp&#034;,&#034;fundLandingPage&#034;:{&#034;href&#034;:&#034;https://personal.vanguard.com/us/funds/snapshot?FundId=${fundID}&amp;FundIntExt=INT&#034;},&#034;queryTerm&#034;:&#034;query&#034;,&#034;maximumSearchResults&#034;:10},&#034;placeholderText&#034;:{&#034;shortText&#034;:&#034;Search/Get quote&#034;,&#034;longText&#034;:&#034;Search the site or get a quote&#034;},&#034;queryTerm&#034;:&#034;query&#034;},&#034;verticalNav&#034;:{&#034;sharedResource&#034;:&#034;horizontalNav&#034;},&#034;social&#034;:{&#034;links&#034;:[{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Facebook&#034;,&#034;type&#034;:&#034;facebook&#034;,&#034;href&#034;:&#034;https://facebook.com/Vanguard&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Google+&#034;,&#034;type&#034;:&#034;googleplus&#034;,&#034;href&#034;:&#034;https://plus.google.com/+vanguard&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;YouTube&#034;,&#034;type&#034;:&#034;youtube&#034;,&#034;href&#034;:&#034;https://www.youtube.com/user/Vanguard&#034;},{&#034;label&#034;:&#034;Mobile app&#034;,&#034;type&#034;:&#034;mobileApps&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/mobile-apps&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Twitter&#034;,&#034;type&#034;:&#034;twitter&#034;,&#034;href&#034;:&#034;https://twitter.com/Vanguard_Group&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Vanguard Blog&#034;,&#034;type&#034;:&#034;blog&#034;,&#034;href&#034;:&#034;http://vanguardblog.com/&#034;},{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;LinkedIn&#034;,&#034;type&#034;:&#034;linkedin&#034;,&#034;href&#034;:&#034;https://www.linkedin.com/company/vanguard&#034;},{&#034;label&#034;:&#034;RSS feeds&#034;,&#034;type&#034;:&#034;subscriptions&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/insights/newsarchive/rss-article-subscription&#034;}],&#034;registeredSymbol&#034;:&#034;&amp;#174&#034;,&#034;intro&#034;:&#034;CONNECT WITH US&#034;},&#034;utilityBar&#034;:{&#034;preferredSite&#034;:[],&#034;preferredSiteAltText&#034;:&#034;Preferred Vanguard site&#034;,&#034;groups&#034;:[{&#034;mobileLabel&#034;:&#034;Vanguard websites&#034;,&#034;label&#034;:&#034;PERSONAL INVESTORS&#034;,&#034;type&#034;:&#034;sitesList&#034;,&#034;groups&#034;:[{&#034;links&#034;:[{&#034;sitePreferenceID&#034;:&#034;P&#034;,&#034;label&#034;:&#034;Personal investors&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/home/&#034;},{&#034;sitePreferenceID&#034;:&#034;R&#034;,&#034;label&#034;:&#034;Retirement plan participants&#034;,&#034;href&#034;:&#034;https://retirementplans.vanguard.com/VGApp/pe/PublicHome&#034;},{&#034;sitePreferenceID&#034;:&#034;I&#034;,&#034;label&#034;:&#034;Institutional investors&#034;,&#034;href&#034;:&#034;https://institutional.vanguard.com/VGApp/iip/site/institutional/home&#034;},{&#034;sitePreferenceID&#034;:&#034;F&#034;,&#034;label&#034;:&#034;Financial advisors&#034;,&#034;href&#034;:&#034;https://advisors.vanguard.com/VGApp/iip/site/advisor/home&#034;},{&#034;label&#034;:&#034;SET SITE PREFERENCE&#034;,&#034;type&#034;:&#034;setSitePreference&#034;}]},{&#034;links&#034;:[{&#034;label&#034;:&#034;Non-U.S. investors&#034;,&#034;href&#034;:&#034;https://global.vanguard.com/portal/site/home&#034;},{&#034;label&#034;:&#034;Small Business Online&#034;,&#034;href&#034;:&#034;https://smallbiz.vanguard.com/VGApp/sbs/nesc/LoginPage&#034;},{&#034;label&#034;:&#034;My Plan Manager&#034;,&#034;href&#034;:&#034;https://myplanmanager.vanguard.com/us/#/today&#034;},{&#034;label&#034;:&#034;Institutional trading&#034;,&#034;href&#034;:&#034;https://investmentonly.vanguard.com/VGApp/iio/Portfolios&#034;}]},{&#034;links&#034;:[{&#034;label&#034;:&#034;About Vanguard&#034;,&#034;href&#034;:&#034;https://about.vanguard.com/&#034;},{&#034;label&#034;:&#034;Pressroom&#034;,&#034;href&#034;:&#034;https://pressroom.vanguard.com/&#034;},{&#034;label&#034;:&#034;Career opportunities&#034;,&#034;href&#034;:&#034;http://www.vanguardjobs.com/&#034;},{&#034;label&#034;:&#034;Other Vanguard sites&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/content/SiteWide/OtherSitesContent.jsp&#034;}]}]},{&#034;type&#034;:&#034;utilityLinks&#034;,&#034;groups&#034;:[{&#034;links&#034;:[{&#034;label&#034;:&#034;Open an account&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/openaccount&#034;},{&#034;label&#034;:&#034;Forms&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/literature&#034;},{&#034;label&#034;:&#034;Client support&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/customer-service/&#034;},{&#034;label&#034;:&#034;Log on&#034;,&#034;logOnOff&#034;:true,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}]}]}]},&#034;taxonomyMapping&#034;:{&#034;primary&#034;:{&#034;CBD_NAV_RMA&#034;:&#034;myAccounts&#034;,&#034;CBD_NAV_PLANNING_AND_ADVICE&#034;:&#034;news&#034;,&#034;CBD_NAV_FUNDS_AND_STOCKS&#034;:&#034;investing&#034;,&#034;CBD_NAV_SERVICES&#034;:&#034;investing&#034;,&#034;CBD_NAV_MY_PORTFOLIO&#034;:&#034;myAccounts&#034;,&#034;CBD_NAV_NONE&#034;:[]},&#034;secondary&#034;:{&#034;CBD_NAV_RETIREMENT_INCOME&#034;:&#034;advice&#034;,&#034;CBD_NAV_INVESTING&#034;:&#034;investing&#034;,&#034;CBD_NAV_INSIGHTS&#034;:&#034;advice&#034;,&#034;CBD_NAV_ADVICE&#034;:&#034;advice&#034;,&#034;CBD_NAV_PREMIUM_SERVICES&#034;:&#034;whyVanguard&#034;}},&#034;horizontalNav&#034;:{&#034;silos&#034;:[{&#034;id&#034;:&#034;home&#034;,&#034;name&#034;:&#034;Home&#034;,&#034;demote&#034;:true,&#034;href&#034;:&#034;https://investor.vanguard.com/home&#034;},{&#034;id&#034;:&#034;myAccounts&#034;,&#034;linkLists&#034;:[[{&#034;subOverview&#034;:{&#034;promote&#034;:true,&#034;label&#034;:&#034;Log on&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}}]],&#034;name&#034;:&#034;My Accounts&#034;,&#034;suppressLinkList&#034;:true,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;},{&#034;id&#034;:&#034;investing&#034;,&#034;linkLists&#034;:[[{&#034;subOverview&#034;:{&#034;overview&#034;:true,&#034;label&#034;:&#034;Overview&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;Vanguard mutual funds&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/mutual-funds/&#034;},{&#034;label&#034;:&#034;Vanguard ETFs&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/etf/&#034;},{&#034;label&#034;:&#034;Other mutual funds&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/other-funds/&#034;},{&#034;label&#034;:&#034;Stocks &amp; other ETFs&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/stocks/&#034;},{&#034;label&#034;:&#034;CDs &amp; bonds&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/cd-bond/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Investment products&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment-products&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;IRAs: Roth &amp; traditional&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/ira/iras&#034;},{&#034;label&#034;:&#034;Individual &amp; joint accounts&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/joint-account-individual-account&#034;},{&#034;label&#034;:&#034;529 college savings plans&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/529-plan/&#034;},{&#034;label&#034;:&#034;Annuities&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/annuity/&#034;},{&#034;label&#034;:&#034;SEPs, SIMPLEs &amp; i401(k)s&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/what-we-offer/small-business/overview&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Account types&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment-accounts&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;401(k) &amp; 403(b) rollovers&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/401k-rollover/&#034;},{&#034;label&#034;:&#034;Account transfers&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/account-transfer/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Rollovers &amp; transfers&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/rollover-iras-transfers&#034;}}]],&#034;name&#034;:&#034;Investing&#034;,&#034;actionBar&#034;:{&#034;buttons&#034;:[{&#034;label&#034;:&#034;Open an account&#034;,&#034;type&#034;:&#034;primary&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/openaccount&#034;},{&#034;label&#034;:&#034;Log On&#034;,&#034;type&#034;:&#034;secondary&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}],&#034;links&#034;:[{&#034;label&#034;:&#034;Investing goals&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/goals&#034;},{&#034;label&#034;:&#034;Partner with an advisor&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/financial-advisor/financial-advice&#034;},{&#034;label&#034;:&#034;Investing principles&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/insights/investingprinciples&#034;}]},&#034;href&#034;:&#034;https://investor.vanguard.com/investing/&#034;},{&#034;id&#034;:&#034;advice&#034;,&#034;linkLists&#034;:[[{&#034;subOverview&#034;:{&#034;overview&#034;:true,&#034;label&#034;:&#034;Overview&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/advice-guidance&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Partner with an advisor&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/financial-advisor/financial-advice&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;Saving for retirement&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/retirement/savings/&#034;},{&#034;label&#034;:&#034;Preparing to retire&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/retirement/planning/&#034;},{&#034;label&#034;:&#034;Investing during retirement&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/retirement/income/&#034;},{&#034;label&#034;:&#034;College&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/college-savings-plans/saving-for-college&#034;},{&#034;label&#034;:&#034;Emergency fund&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/emergency-fund/&#034;},{&#034;label&#034;:&#034;Other savings goals&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/other-savings-goals/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Investing goals&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/goals&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;Personal life&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/insights/article/investing-life-personal&#034;},{&#034;label&#034;:&#034;Work life&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/insights/article/investing-life-work&#034;},{&#034;label&#034;:&#034;Inheriting accounts&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/inherit/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Life events&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/life-events&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;Getting started investing&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/how-to-invest/&#034;},{&#034;label&#034;:&#034;Choosing investments&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment/&#034;},{&#034;label&#034;:&#034;Trading online&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/online-trading/&#034;},{&#034;label&#034;:&#034;Understanding taxes&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/taxes/&#034;},{&#034;label&#034;:&#034;Managing your portfolio&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/portfolio-management/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Investor education&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investor-education&#034;}}],[{&#034;contentPages&#034;:[{&#034;promote&#034;:true,&#034;label&#034;:&#034;Calculators &amp; tools&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment-calculator&#034;},{&#034;promote&#034;:true,&#034;label&#034;:&#034;Tax-filing information&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/taxes/&#034;},{&#034;promote&#034;:true,&#034;label&#034;:&#034;Forms&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/literature&#034;},{&#034;label&#034;:&#034;Naming beneficiaries&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/beneficiaries/&#034;}],&#034;subOverview&#034;:{&#034;demote&#034;:true,&#034;label&#034;:&#034;Other resources&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/other-resources&#034;}}]],&#034;name&#034;:&#034;Advice &amp; Guidance&#034;,&#034;actionBar&#034;:{&#034;buttons&#034;:[{&#034;label&#034;:&#034;Open an account&#034;,&#034;type&#034;:&#034;primary&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/openaccount&#034;},{&#034;label&#034;:&#034;Log On&#034;,&#034;type&#034;:&#034;secondary&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}],&#034;links&#034;:[{&#034;label&#034;:&#034;ETFs &amp; mutual funds&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/etf/etf-vs-mutual-fund&#034;},{&#034;label&#034;:&#034;Fund recommendations&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/funds/tools/recommendation&#034;},{&#034;label&#034;:&#034;Roth vs. traditional IRAs&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/ira/roth-vs-traditional-ira&#034;}]},&#034;href&#034;:&#034;https://investor.vanguard.com/investing/advice-guidance&#034;},{&#034;id&#034;:&#034;news&#034;,&#034;linkLists&#034;:[[{&#034;subOverview&#034;:{&#034;overview&#034;:true,&#034;label&#034;:&#034;Overview&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/news-perspectives&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;News &amp; views&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/insights/newsarchive&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Market summary&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/funds/tools/marketsummary#/&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Research&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment-research&#034;}}],[{&#034;subOverview&#034;:{&#034;newWindow&#034;:true,&#034;label&#034;:&#034;Vanguard Blog&#034;,&#034;href&#034;:&#034;http://vanguardblog.com/&#034;}}]],&#034;name&#034;:&#034;News &amp; Perspectives&#034;,&#034;actionBar&#034;:{&#034;buttons&#034;:[{&#034;label&#034;:&#034;Open an account&#034;,&#034;type&#034;:&#034;primary&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/openaccount&#034;},{&#034;label&#034;:&#034;Log On&#034;,&#034;type&#034;:&#034;secondary&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}],&#034;links&#034;:[{&#034;label&#034;:&#034;Partner with an advisor&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/financial-advisor/financial-advice&#034;},{&#034;label&#034;:&#034;Investing goals&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/goals&#034;},{&#034;label&#034;:&#034;Life events&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/life-events&#034;}]},&#034;href&#034;:&#034;https://investor.vanguard.com/investing/news-perspectives&#034;},{&#034;id&#034;:&#034;whyVanguard&#034;,&#034;linkLists&#034;:[[{&#034;subOverview&#034;:{&#034;overview&#034;:true,&#034;label&#034;:&#034;Overview&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/why-vanguard&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Why we&#039;re different&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/what-we-offer/why-vanguard&#034;}}],[{&#034;contentPages&#034;:[{&#034;label&#034;:&#034;Up to $1 million&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/benefits/voyager&#034;},{&#034;label&#034;:&#034;$1 million to $5 million&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/benefits/flagship&#034;},{&#034;label&#034;:&#034;$5 million or more&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/wealth-management/&#034;}],&#034;subOverview&#034;:{&#034;label&#034;:&#034;Benefits&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/benefits/&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Costs &amp; fees&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/investing/investment-fees&#034;}}],[{&#034;subOverview&#034;:{&#034;label&#034;:&#034;Appian&#034;,&#034;href&#034;:&#034;Vanguard_Client_Onboarding.html&#034;}}]],&#034;name&#034;:&#034;Benefits &amp; Costs&#034;,&#034;actionBar&#034;:{&#034;buttons&#034;:[{&#034;label&#034;:&#034;Open an account&#034;,&#034;type&#034;:&#034;primary&#034;,&#034;href&#034;:&#034;https://personal.vanguard.com/us/openaccount&#034;},{&#034;label&#034;:&#034;Log On&#034;,&#034;type&#034;:&#034;secondary&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/my-account/log-on&#034;}],&#034;links&#034;:[{&#034;label&#034;:&#034;Partner with an advisor&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/financial-advisor/financial-advice&#034;},{&#034;label&#034;:&#034;401(k) rollovers&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/401k-rollover/&#034;},{&#034;label&#034;:&#034;Account transfers&#034;,&#034;href&#034;:&#034;https://investor.vanguard.com/account-transfer/&#034;}]},&#034;href&#034;:&#034;https://investor.vanguard.com/investing/why-vanguard&#034;}],&#034;back&#034;:{&#034;altText&#034;:&#034;Back to main menu&#034;},&#034;collapsed&#034;:{&#034;label&#034;:&#034;MENU&#034;}},&#034;superFooter&#034;:{&#034;sharedResource&#034;:&#034;horizontalNav&#034;},&#034;sitePreferences&#034;:{&#034;positiveAcknowledgement&#034;:{&#034;content&#034;:&#034;${selectedSite} has been set as your preferred Vanguard website. (You can change your preference anytime.)&#034;},&#034;preferredSite&#034;:[],&#034;setCookieView&#034;:{&#034;content&#034;:&#034;Which Vanguard website would you prefer to reach directly when you visit us in the future? (You can change your preference anytime.)&#034;,&#034;buttonLabel&#034;:&#034;SAVE PREFERENCE&#034;,&#034;options&#034;:[{&#034;description&#034;:&#034;For people who invest directly in individual accounts (including IRAs and rollovers); in joint, college savings, or small-business accounts; or in annuities.&#034;,&#034;value&#034;:&#034;P&#034;,&#034;label&#034;:&#034;Personal investors&#034;},{&#034;description&#034;:&#034;For people who invest through their employer in a Vanguard 401(k), 403(b), or other retirement plan.&#034;,&#034;value&#034;:&#034;R&#034;,&#034;label&#034;:&#034;Retirement plan participants&#034;},{&#034;description&#034;:&#034;For retirement plan sponsors, consultants, and nonprofit representatives.&#034;,&#034;value&#034;:&#034;I&#034;,&#034;label&#034;:&#034;Institutional investors&#034;},{&#034;description&#034;:&#034;For broker-dealers, registered investment advisors, and trust or bank brokerage professionals.&#034;,&#034;value&#034;:&#034;F&#034;,&#034;label&#034;:&#034;Financial advisors&#034;},{&#034;value&#034;:&#034;N&#034;,&#034;label&#034;:&#034;No site preference&#034;}]},&#034;negativeAcknowledgement&#034;:{&#034;content&#034;:&#034;You&#039;ve indicated that you have no site preference for future visits to vanguard.com. (You can change your preference anytime.)&#034;},&#034;closeButtonTitle&#034;:&#034;Close site preference&#034;,&#034;siteList&#034;:{&#034;F&#034;:&#034;Financial advisors&#034;,&#034;P&#034;:&#034;Personal investors&#034;,&#034;R&#034;:&#034;Retirement plan participants&#034;,&#034;N&#034;:&#034;none&#034;,&#034;I&#034;:&#034;Institutional investors&#034;},&#034;noCookieView&#034;:{&#034;content&#034;:&#034;Would you like to come directly to Vanguard&#039;s website for ${currentSite} when you visit vanguard.com in the future? (You can change your preference anytime.)&#034;,&#034;buttonLabel&#034;:&#034;SAVE PREFERENCE&#034;,&#034;options&#034;:[{&#034;value&#034;:&#034;Y&#034;,&#034;label&#034;:&#034;Yes&#034;},{&#034;value&#034;:&#034;N&#034;,&#034;label&#034;:&#034;No&#034;}]}}}' data-showWelcomeMessage='false' data-vgc-primary-silo='home' data-current-site='P' >
+	<div class="vgc-pe">
+			<div class="vgc-utilityBar vgc-hasManyLinks" role="menubar">
+				<div class="vgc-utilityBarContainer vgc-constrainedCentered">
+					<div class="vgc-utilityBarRegion">
+						<div class="vgc-siteList vgc-dropdownContainer" id ="vgc-siteList vgc-dropdownContainer">
+								<!-- Reference to DCR: null--><a href="https://investor.vanguard.com/corporate-portal" class="vgc-siteIndicatorMenu"><span><span>VANGUARD WEBSITES</span></span></a></div>
+						<ul class="vgc-utilityLinks">
+							<li class="vgc-utilityLink" role="menuitem">
+								<a href="https://personal.vanguard.com/us/openaccount"><span>Open an account</span></a>
+							</li>
+							<li class="vgc-utilityLink" role="menuitem">
+								<a href="https://personal.vanguard.com/us/literature"><span>Forms</span></a>
+							</li>
+							<li class="vgc-utilityLink" role="menuitem">
+								<a href="https://investor.vanguard.com/customer-service/"><span>Client support</span></a>
+							</li>
+							<li class="vgc-utilityLink" role="menuitem">
+								<a href="https://investor.vanguard.com/my-account/log-on"><span>Log on</span></a>
+							</li>
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div class="vgc-brandHeader">
+				<div class="vgc-brandHeaderContainer vgc-constrainedCentered">
+					<div class="vgc-brandHeaderRegion">
+						<a class="vgc-corporate" href="https://satinvestor.vanguard.com:1443/home/" title="Home" aria-label="Vanguard home"></a>
+						<div class="vgc-searchBar vgc-hasLeftPipe">
+							<form action="https://satinvestor.vanguard.com:1443/search/" method="GET" name="siteSearch" autocomplete="off">
+								<label class="vgc-accessibleOffscreenText" for="vgc-navBarSearchInput">Search the site or get a quote</label>
+								<div class="vgc-searchInputContainer">
+									<input class="vgc-searchInput" id="vgc-navBarSearchInput" type="text" name="query" value="" autocomplete="off" role="search" placeholder="Search the site or get a quote">
+								</div>
+								<div class="vgc-closeBtn vgc-small vgc-hidden" type="reset" role="button" tabindex="0" aria-label="clear"></div>
+								<span id="SearchResultSpan" class="vgc-accessibleOffscreenText SearchResultSpan" aria-live="polite"></span>
+								<span class="vgc-submitWrapper">
+									<input id="vgc-searchInput" class="vgc-searchSubmit" type="submit" aria-label="Submit search" role="button" value="">
+								</span>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="vgc-horizontalNav" role="application" aria-label="main navigation">
+				<div class="vgc-horizontalNavContainer vgc-constrainedCentered"> 
+					<ul class="vgc-horizontalNavRegion vgc-horizontalNavSections">
+						<li class="vgc-menuItemContainer">
+							<a class ="vgc-menuItem" href="#vgc-globalFooter"><!-- Reference to DCR: null-->Menu</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div id="ps-vanguard-msg-service"></div>
+
+<div id="main-content" tabindex="0" class="full-bleed">
+			<div class="enlarged-banner">
+					<div class="feature-banner-container photo-illustration left" data-banner-background-image="/ts/images/banners/journeys_couple_01.jpg" >
+	<div class="feature-banner-content-container">
+		<div class="feature-banner-content-vertical-centering-container">
+			<div class="feature-banner-content">
+				<h1 class="banner-text-heading default-grey">Advice for your real-life journey</h1>
+				
+				<p class="banner-text-sub-content">Dream. Plan. Choose your path.</p>
+				<div class="banner-text-link">
+				        <a class="ctaArrowIconLinkPutty ctaBannerLink" href="/financial-advisor/financial-advice"><span>See what a Vanguard advisor can do for you</span></a>
+				    </div>
+				</div>
+		</div>
+	</div>
+	</div>
+
+<div class="feature-banner-container-css2-nojs photo-illustration left">
+	<div class="feature-banner-image-container-css2-nojs">
+		<img class="feature-banner-image-css2-nojs" src="/ts/images/banners/journeys_couple_01.jpg" />
+	</div>
+	<div class="feature-banner-content-container-css2-nojs">
+		<div class="feature-banner-content-horizontal-centering-container">
+			<div class="feature-banner-content-vertical-centering-container">
+				<div class="feature-banner-content">
+					<span class="banner-text-heading">Advice for your real-life journey</span>
+					
+					<p class="banner-text-sub-content">Dream. Plan. Choose your path.</p>
+					<div class="banner-text-link">
+					        <a class="ctaArrowIconLinkPutty ctaBannerLink" href="/financial-advisor/financial-advice"><span>See what a Vanguard advisor can do for you</span></a>
+					    </div>
+					</div>
+			</div>
+		</div>
+	</div>
+	</div></div>
+				<div>
+					<div class='color-block-container color-block-count-5'>
+	<div class='color-block-wrapper'>
+		<div class="color-block color-block-logon theme-grey ">
+	<div class="controls-wrapper">
+		<div class="form-container">
+			<div class="form-padding">
+				<form class="login-form" data-disable-multiple-submits="" data-ng-submit="disableSubmitButton()" name="LoginForm" action="https://personal.vanguard.com/us/AuthenticationServiceServlet" method="post" autocomplete="off">
+							<input type="hidden" id="target" name="target" value="$SM$/us/MyHome"/>
+							<input type="hidden" id="pm_fp" name="pm_fp" value="" />
+							<input type="hidden" id="smauthreason" name="smauthreason" value="0" />
+							<div class="inputs-container">
+								<div class="text-container username">
+									<label for="USER" class="input-label">User name</label>
+									<input type="text" class="text-field" data-auto-focus="userTextEntry" id="USER" name="USER" maxlength="12" data-ng-model="userNameFieldValue" data-ng-change="userNameChange()" data-logon-input-field aria-required="true" required />
+								</div>
+								<div class="text-container password">
+									<label for="PASSWORD" class="input-label">Password</label>
+									<input type="password" class="text-field" id="PASSWORD" name="PASSWORD" maxlength="20" data-ng-model="passwordFieldValue" data-ng-change="passwordChange()" data-logon-input-field aria-required="true" required />
+								</div>
+							</div>
+							<div class="form-button-container">
+								<button id="login"  type="submit" title="Log On" class="form-button grey" ><span class="label">LOG ON</span></button>
+							</div>
+						</form>
+						<div class="account-access-container">
+							<a class="new-user" href="https://personal.vanguard.com/us/JSP/RegLogOn/Regis/RegActivityContent.jsf"><span>Sign up for access</span></a>
+							<a class="forgot-user" href="https://personal.vanguard.com/us/faces/com/vanguard/commonauth/view/forgotuserpass/ForgotUserPassClientInfoEntry.xhtml?fromLogon=true"><span>Need logon help?</span></a>
+						</div>										
+					</div>
+		</div>
+	</div>
+</div>
+<a class="color-block color-block-text theme-red color-block-anchor" href="https://vanguardblog.com/2016/11/29/withdrawal-strategies-for-retirees/">
+   	<span class="color-block-copy">Remember "Please Excuse My Dear Aunt Sally?"</span>
+    <span class="color-block-link"><span>There's an order of operations for spending in retirement too</span></span>
+</a><a class="color-block color-block-text theme-classicNavy color-block-anchor" href="/etf">
+   	<span class="color-block-copy">Vanguard ETFs<sup>&#174;</sup>: Another way to index</span>
+    <span class="color-block-link"><span>See what they can do for you</span></span>
+</a><a class="color-block color-block-text theme-green color-block-anchor" href="/financial-advisor/financial-advice">
+   	<span class="color-block-copy">Your financial goals are about real-life needs</span>
+    <span class="color-block-link"><span>See how a Vanguard advisor can help</span></span>
+</a><div class="color-block color-block-open-account">
+   	<span class="color-block-copy">Open an account online</span>
+    <div class="button-container">
+			<div class="button-padding">
+				<a class="largeStrong data-adobe-event-listener" href="https://personal.vanguard.com/us/openaccount?CompLocation=Home&Component=OpenAccntLnk">Get started today</a></div>
+		</div>
+</div></div>
+</div></div>
+				</div>
+		<div class="template break-A">
+			<div id="content-region" class="template-region content-region containsFloats">
+					<div class='column-container column-total-4 containsFloats'>
+	<div class="column odd column-1 ">
+			<div class='columnContent content-area medium-font'>
+					<div class='icon-link-container containsFloats'>
+	<div class="iconImage">
+		<img alt="" title="" src="/ts/images/icons/paper_vg_mutal_funds_001.png" data-adaptive-icon-background="/ts/images/icons/paper_vg_mutal_funds_001" data-svg="true" data-high-res="true" />
+	</div>
+	<div class="iconContent">
+		<div class="standalone-link">
+	<a href="/mutual-funds/list#/mutual-funds/asset-class/month-end-returns"><span>Browse Vanguard's complete mutual fund lineup</span></a></div>
+</div>
+</div></div>
+		</div>
+	<div class="column even column-2 ">
+			<div class='columnContent content-area medium-font'>
+					<div class='icon-link-container containsFloats'>
+	<div class="iconImage">
+		<img alt="" title="" src="/ts/images/icons/paper_vg_etfs_001.png" data-adaptive-icon-background="/ts/images/icons/paper_vg_etfs_001" data-svg="true" data-high-res="true" />
+	</div>
+	<div class="iconContent">
+		<div class="standalone-link">
+	<a href="/etf/list#/etf/asset-class/month-end-returns"><span>Browse Vanguard's complete ETF lineup</span></a></div>
+</div>
+</div></div>
+		</div>
+	<div class="column odd column-3 ">
+			<div class='columnContent content-area medium-font'>
+					<div class='icon-link-container containsFloats'>
+	<div class="iconImage">
+		<img alt="" title="" src="/ts/images/icons/script_001.png" data-adaptive-icon-background="/ts/images/icons/script_001" data-svg="true" data-high-res="true" />
+	</div>
+	<div class="iconContent">
+		<div class="standalone-link">
+	<a href="https://personal.vanguard.com/us/insights/article/help-tax-questions-012017"><span>Help for your most common tax questions</span></a></div>
+</div>
+</div></div>
+		</div>
+	<div class="column even column-4 ">
+			<div class='columnContent content-area medium-font'>
+					<div class='icon-link-container containsFloats'>
+	<div class="iconImage">
+		<img alt="" title="" src="/ts/images/icons/401k_rollover_001.png" data-adaptive-icon-background="/ts/images/icons/401k_rollover_001" data-svg="true" data-high-res="true" />
+	</div>
+	<div class="iconContent">
+		<div class="standalone-link">
+	<a href="/401k-rollover/vanguard-ira"><span>Roll over your <span class="noWrap">401(k)</span> </span></a></div>
+</div>
+</div></div>
+		</div>
+	</div>
+<div class="callout-box" role="complementary">
+	<h2 class="headline headlineC1">Vanguard news &amp; perspectives</h2>
+
+
+<div class='column-container column-total-1 containsFloats'>
+	<div class="column">
+		<div class='columnContent content-area medium-font'>
+			<div class="standalone-link">
+	<a href="https://personal.vanguard.com/us/insights/newsarchive"><span>More news</span></a></div>
+</div>
+	</div>
+</div><div class='column-container column-total-4 containsFloats'>
+	<div class="column odd column-1 ">
+			<div class='columnContent content-area medium-font'>
+					<h3 class="headline headlineF1"><a href="https://personal.vanguard.com/us/insights/video/3815-JH-Retail-LIVE-Ex-3"><span>Education savings: A Roth IRA or a 529?</span></a></h3>
+
+
+</div>
+		</div>
+	<div class="column even column-2 ">
+			<div class='columnContent content-area medium-font'>
+					<h3 class="headline headlineF1"><a href="https://personal.vanguard.com/us/insights/article/fund-announcement-032017"><span>Advisor changes for Explorer Fund</span></a></h3>
+
+
+</div>
+		</div>
+	<div class="column odd column-3 ">
+			<div class='columnContent content-area medium-font'>
+					<h3 class="headline headlineF1"><a href="https://personal.vanguard.com/us/insights/article/top-investing-news-1-032017"><span>Top investing news from Vanguard</span></a></h3>
+
+
+</div>
+		</div>
+	<div class="column even column-4 ">
+			<div class='columnContent content-area medium-font'>
+					<h3 class="headline headlineF1"><a href="https://personal.vanguard.com/us/insights/article/cap-gains"><span>Find out if your fund is declaring a quarterly dividend in March</span></a></h3>
+
+
+</div>
+		</div>
+	</div>
+</div><div class='column-container column-total-1 containsFloats'>
+	<div class="column">
+		<div class='columnContent content-area medium-font'>
+			<div class="standalone-link">
+	Research our firm with <a class="externalSiteIconLink" href="/external-site-message?url=http://brokercheck.finra.org/"><span>FINRA's BrokerCheck.</span><span class="linkIcon">&nbsp;</span><span class="linkIconAltText">External site</span></a></div>
+</div>
+	</div>
+</div><hr class="section-boundary" /><div class='column-container column-total-1 containsFloats'>
+	<div class="column">
+		<div class='columnContent content-area medium-font'>
+			<p>Vanguard average expense ratio: 0.19%. Industry average expense ratio: 1.03%. Sources: Vanguard and Lipper, a Thomson Reuters Company, as of December 31, 2015.</p><p> </p><p>Vanguard is client-owned. As a client owner, you own the funds that own Vanguard.</p><p> </p><p>Vanguard provides services to the Vanguard funds and ETFs at cost.</p></div>
+	</div>
+</div></div>
+			<div id="layers-section" class="template-region layer-region">
+					<div class="layers" data-ng-class="{'break-F': true}">
+	<h2 class="headlineH">REFERENCE CONTENT</h2>
+	<div data-layer data-ng-keydown='tabNavigation($event)'  class="layer" id="layer1" tabindex="0" ng-style="positionStyles">
+	<div class="layerContainer">
+		<header>
+			<div id="layerHeader" data-layer-header class="layerHeader" aria-labelledby="layerHeader" aria-describedby="layerContent">
+				<span class="accessibleOffscreenText">Layer opened.</span><h3>Read the transcript</h3>
+			</div>
+		</header>
+		<div id="layerContent" data-layer-content class="layerContent" ng-style="positionStyles">
+			<div class="layerContentContainer">
+				<div class='column-container column-total-1 containsFloats'>
+	<div class="column">
+		<div class='columnContent content-area medium-font'>
+			<p><strong>Liz Tammaro</strong>: So we received quite a few questions in advance when you all registered for this webcast. We're going to get started with our first question and, Jim, I'm going to give this one to you. So it makes a lot of sense before we get started, let's define what is an ETF.<br /> <br /><strong>Jim Rowley</strong>: Simply put, an ETF is an exchange-traded fund, right? It's a pooled investment vehicle that acquires or disposes of securities. Investors own a pro rata share of the assets in that fund. The fund issues new shares or redeems existing shares to meet investor demand.<br /> <br />Furthermore, and I should say providing some type of an investment exposure to those advisors, whether it's an index in particular or a market strategy. And when you think about even more so what makes them similar to mutual funds is that the majority of ETFs are organized and regulated as investment companies under the Investment Company Act of 1940. And that's the same regulatory regime under which mutual funds operate. So for all the discussions sometimes we hear about differences between mutual funds and ETFs, they're overwhelmingly similar actually.<br /> <br /><strong>Liz Tammaro</strong>: And even thinking about that, we can talk about maybe what are some of the benefits of the mutual fund versus an ETF or, sorry, even vice versa, ETF versus mutual fund. And even maybe what are some of the disadvantages. <br /><br /><strong>Jim Rowley</strong>: I'll take that because I think I don't necessarily like the word disadvantage. I think differences is maybe the more appropriate term. And we just addressed some of the similarities between ETFs and mutual funds, so it's maybe more important to know what are the actual differences. And really the differences come down to two major items and they both relate to how investors transact in shares of those funds, right? We're talking about exchange-traded funds.<br /> <br />ETF investors they trade with each other on exchange in terms of buying or selling their securities, and the price that they get is a tradeable market price. Mutual fund investors, on the other hand, they are buying and selling their shares directly with the fund and they might do that through some type of intermediary but it's back and forth with the fund itself and they get an end-of-day NAV.<br /> <br />So we think about all the similarities and, again, sometimes there's a discussion about how different they are; but, really, the differences come down to those two items. It's trading on exchange versus direct with the fund and it's trading at a market price rather than getting the end-of-day NAV. <br /><strong><br />Jim Rowley</strong>: I think we actually have a great way to illustrate that. I think we have a chart that addresses that point that Doug was talking about that ETFs are overwhelming. They just happen to be index funds. And when the chart comes up, a simple way to illustrate this is we look at expense ratios. But instead of breaking them down by ETF versus mutual fund, we break them down by index fund versus nonindex fund separated into ETF and mutual fund. And when you see the expense ratios, you see that given an indexing strategy, whether it's a mutual fund or an ETF, the expense ratios tend to be lower than they are for the nonindex strategies, whether it's an ETF or a mutual fund. <br /><br />So it has a lot more to do with whether or not it's an indexing strategy than whether or not it's an ETF or a mutual fund. <br /><br /><strong>Liz Tammaro</strong>: And similar to that question, we have another one that's come in from Bruce asking about how easy is it to buy and/or sell an ETF versus a mutual fund? <br /><br /><strong>Jim Rowley</strong>: A lot of moving parts in that question because I think the default has always been mutual funds because they've been around longer. So it becomes a lot of a comfort decision in many ways where purchasing a mutual fund is usually done in dollars. You put your orders in in dollar terms. You're happy to hit the enter button on your keyboard because you know at the end of the day your order is going to execute at the end of the day with a 4 PM NAV. You might be able to get fractional shares because your order gets rounded up into dollars and the mutual fund takes care of the automatic reinvestment for you. <br />With an ETF, investors need to be aware of transacting through their brokerage account. And now the dynamic might be a little bit different because you have to put your order in in shares, mutually speaking. There's no fractionals there. When you put your order in shares, you get a corresponding dollar amount rather than put the order in dollars and you get a corresponding share amount. <br /><br />So, you know, the ease comes with a comfort level that a particular individual might choose or have a preference for doing. <br /><br /><strong>Important information</strong> <br /><br />All investing is subject to risk, including the possible loss of the money you invest. Diversification does not ensure a profit or protect against a loss.<br /> <br /><strong>For more information about Vanguard funds or Vanguard ETFs, visit vanguard.com, or call 877-662-7447, to obtain a prospectus. Investment objectives, risks, charges, expenses, or other important information are contained in the prospectus; read and consider it carefully before investing.</strong> <br /><br /><em>Vanguard ETF Shares are not redeemable with the issuing Fund other than in very large aggregations worth millions of dollars. Instead, investors must buy and sell Vanguard ETF Shares in the secondary market and hold those shares in a brokerage account. In doing so, the investor may incur brokerage commissions and may pay more than net asset value when buying and receive less than net asset value when selling.</em> <br /><br />This webcast is for educational purposes only. We recommend that you consult a tax or financial advisor about your individual situation. <br /><br />Advisory services are provided by Vanguard Advisers, Inc. (VAI), a registered investment advisor.<br /> <br />&#169; 2015 The Vanguard Group, Inc. All rights reserved. Vanguard Marketing Corporation, Distributor.</p></div>
+	</div>
+</div></div>
+		</div>
+		<div class="returnToContent">
+			<a data-layer-close-button class="closeButton" title="Return to main page" href="#layerLink1" tabindex="0" ng-click="closeLayer($event)"><span>Return to main page</span></a>
+		</div>
+	</div>
+</div>
+
+</div></div>
+			</div>
+		<div class="full-bleed">
+			<div class="template-region break-A">
+				<div class="template-region bottom-region">
+						</div>
+				</div>
+		</div>
+	<!-- Duplicate import: https://eus.vanguard.com/global-components/2.0.1/css/vgcHeaderFooter.css -->
+	<!-- Duplicate import: https://eus.vanguard.com/global-components/2.0.1/css/peGlobalHeaderFooter.css -->
+	<!-- Duplicate import: https://eus.vanguard.com/global-components/2.0.1/js/vgcHeaderFooter.js -->
+	<div data-vgc-global-footer class = "globalFooter" id='vgc-globalFooter' data-vgc-data-ref='#vgc-globalHeader' data-vgc-build='1.0.0-M20170314-03, 17.950.1-M20160122-01' data-vgc-footer-type="home">
+	<div class="vgc-pe">
+	<div class="vgc-socialLinks">
+			<div class="vgc-socialLinksContainer vgc-constrainedCentered">
+				<div class="vgc-socialLinksRegion">
+					<p>CONNECT WITH US<sup>&#174</sup></p>
+					<ul>
+						<li>
+							<a href="https://facebook.com/Vanguard" class="vgc-socialIcon vgc-facebook"  target=_blank><span>Facebook</span></a>
+						</li>
+						<li>
+							<a href="https://plus.google.com/+vanguard" class="vgc-socialIcon vgc-googleplus"  target=_blank><span>Google+</span></a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/user/Vanguard" class="vgc-socialIcon vgc-youtube"  target=_blank><span>YouTube</span></a>
+						</li>
+						<li>
+							<a href="https://investor.vanguard.com/investing/mobile-apps" class="vgc-socialIcon vgc-mobileApps" ><span>Mobile app</span></a>
+						</li>
+						</ul>
+					<ul>
+						<li>
+							<a href="https://twitter.com/Vanguard_Group" class="vgc-socialIcon vgc-twitter"  target=_blank><span>Twitter</span></a>
+						</li>
+						<li>
+							<a href="http://vanguardblog.com/" class="vgc-socialIcon vgc-blog"  target=_blank><span>Vanguard Blog</span></a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/company/vanguard" class="vgc-socialIcon vgc-linkedin"  target=_blank><span>LinkedIn</span></a>
+						</li>
+						<li>
+							<a href="https://personal.vanguard.com/us/insights/newsarchive/rss-article-subscription" class="vgc-socialIcon vgc-subscriptions" ><span>RSS feeds</span></a>
+						</li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	<div class="vgc-superFooter">
+			<div class="vgc-superFooterContainer vgc-isCenterAligned">
+				<div class="vgc-superFooterRegion">
+					<div class="vgc-columns-5">
+							<div class="vgc-column-group-3">
+								<div class="vgc-navigation">
+										<span class="vgc-heading">
+											<a href="https://investor.vanguard.com/home">Home</a>
+										</span>
+										<div class="vgc-column">
+											<ul role="menu">
+												</ul>
+										</div>
+									</div>
+								<div class="vgc-navigation">
+										<span class="vgc-heading">
+											<a href="https://investor.vanguard.com/my-account/log-on">My Accounts</a>
+										</span>
+										<div class="vgc-column">
+											<ul role="menu">
+												<li role="menuitem"><a href="https://investor.vanguard.com/my-account/log-on">Log on</a></li>
+													</ul>
+										</div>
+									</div>
+								<div class="vgc-navigation">
+										<span class="vgc-heading">
+											<a href="https://investor.vanguard.com/investing/">Investing</a>
+										</span>
+										<div class="vgc-column">
+											<ul role="menu">
+												<li role="menuitem"><a href="https://investor.vanguard.com/investing/investment-products">Investment products</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/investment-accounts">Account types</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/rollover-iras-transfers">Rollovers & transfers</a></li>
+													</ul>
+										</div>
+									</div>
+								</div>
+							<div class="vgc-column-group-2">
+								<div class="vgc-navigation">
+										<span class="vgc-heading">
+											<a href="https://investor.vanguard.com/investing/advice-guidance">Advice & Guidance</a>
+										</span>
+										<div class="vgc-column">
+											<ul  role="menu">
+												<li role="menuitem"><a href="https://investor.vanguard.com/financial-advisor/financial-advice">Partner with an advisor</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/goals">Investing goals</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/life-events">Life events</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/investor-education">Investor education</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/investment-calculator">Calculators & tools</a></li>
+																<li role="menuitem"><a href="https://investor.vanguard.com/taxes/">Tax-filing information</a></li>
+																<li role="menuitem"><a href="https://personal.vanguard.com/us/literature">Forms</a></li>
+																</ul>
+										</div>
+									</div>
+								<div class="vgc-navigation">
+										<span class="vgc-heading">
+											<a href="https://investor.vanguard.com/investing/news-perspectives">News & Perspectives</a>
+										</span>
+										<div class="vgc-column">
+											<ul  role="menu">
+												<li role="menuitem"><a href="https://personal.vanguard.com/us/insights/newsarchive">News & views</a></li>
+													<li role="menuitem"><a href="https://personal.vanguard.com/us/funds/tools/marketsummary#/">Market summary</a></li>
+													<li role="menuitem"><a href="https://investor.vanguard.com/investing/investment-research">Research</a></li>
+													<li role="menuitem"><a href="http://vanguardblog.com/">Vanguard Blog</a></li>
+													</ul>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	<div class="vgc-legalFooter" role="complementary">
+			<div class="vgc-legalFooterContainer vgc-constrainedCentered">
+				<div class="vgc-legalFooterRegion">
+					<div class="vgc-mainContent">
+						<p class="vgc-boilerplate">
+							<span class="copyrightDates" href="#buildVersion">&copy; 1995&ndash;2017</span>&nbsp;The Vanguard Group, Inc. All rights reserved. Vanguard Marketing Corporation, Distributor of the Vanguard Funds.<span class="vgc-termsOfUse">Your use of this site signifies that you accept our <a href="https://personal.vanguard.com/us/content/SiteWide/LglDocs/SWLglTermsConditionsContent.jsp" target="_blank" aria-describedby="openNewWindow"><span>terms and conditions of use</span><span id="openNewWindow" class="vgc-hideText">Open a new browser window</span></a>.</span>
+						</p>
+						<ul class="vgc-linkList">
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/investing/privacy-policy" tabindex="0" >
+			                    	<span class=""></span><span>Privacy policy</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/security/" tabindex="-1"  target=_blank rel=nofollow>
+			                    	<span class=""></span><span>Security</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/customer-service/technical-support" tabindex="-1" >
+			                    	<span class=""></span><span>Technical support</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://personal.vanguard.com/us/literature/prospectus/mutualfunds" tabindex="-1" >
+			                    	<span class=""></span><span>Mutual fund prospectuses</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://personal.vanguard.com/us/litfulfillment/ELFProspectus?categoryCd=PRRP&subcategoryCd=ETPR&view=default" tabindex="-1" >
+			                    	<span class=""></span><span>ETF (exchange-traded fund) prospectuses</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://personal.vanguard.com/us/litfulfillment/ELFProspectus?categoryCd=PRRP&subcategoryCd=VAPR&view=default" tabindex="-1" >
+			                    	<span class=""></span><span>Variable annuity prospectuses</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://personal.vanguard.com/us/content/SiteWide/LglDocs/SWLglNonUSInvstContent.jsp" tabindex="-1"  target=_blank>
+			                    	<span class=""></span><span>Special notice to non-U.S. investors</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="http://www.vanguardjobs.com/" tabindex="-1"  target=_blank>
+			                    	<span class=""></span><span>Careers</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/investing/mobile-apps" tabindex="-1" >
+			                    	<span class=""></span><span>Mobile app</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/what-we-offer/social-media" tabindex="-1" >
+			                    	<span class=""></span><span>Social media</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://www.vanguard-labs.com/" tabindex="-1" >
+			                    	<span class=""></span><span>Vanguard Labs</span>
+			                    </a>
+					        </li>
+			                <li class="vgc-siteWideLinks">
+			                    <a href="https://investor.vanguard.com/investing/privacy-policy#thirdPartyAnalytics" tabindex="-1"  target=_blank>
+			                    	<span class="vgc-adChoicesIcon"></span><span>AdChoices</span>
+			                    </a>
+					        </li>
+			                </ul>
+						<span class="vgc-feedbackLink"><a href="https://secure.opinionlab.com/ccc01/comment_card.asp"  target=_blank rel=nofollow><span class="vgc-linkGIF"></span><span>Feedback</span></a></span>
+					</div>
+				</div>
+				<small id="buildVersion" class="vgc-buildVersion" tabindex="-1"><span>1.0.0-M20170314-03, 17.950.1-M20160122-01</span></small>
+			</div>
+		</div>	
+	</div>
+</div>
+<script type="text/javascript" src="https://eus.vanguard.com/global-components/2.0.1/js/vgcHeaderFooterInit.js"></script>
+</div>
+		<noscript id="adobeAnalyticsNoScript">
+		<img src="https://vanguard.d2.sc.omtrdc.net/b/ss/vanguardretailprod,vanguardcrosssiteprod/1/H.26.2--NS/0" data-skip-test="true" />
+	</noscript>
+<script type="text/javascript">
+	(function(VanguardMsgService){
+		var config = {'insertionNodeId' : 'ps-vanguard-msg-service'};
+		if (VanguardMsgService !== 'undefined') {
+			VanguardMsgService.addLegacyBrowserMessage(config);
+		}
+	})(VanguardMsgService);
+</script>
+
+<!-- deferred key [app-banners-template] --><script id="app-banners-template" type="text/x-jquery-tmpl">
+		<div class="banner" ng-show="showBanner">
+	<span class="bannerCloseButton" data-ng-click="closeBanner()">&nbsp;</span>
+	<div class="appIcon">
+		<img title="Close" data-ng-src="{{imageSrc}}"/>
+	</div>
+	<div class="bannerContent">
+		<p class="bannerTitle">{{title}}</p>
+		<p class="bannerSubtext" data-ng-bind-html="subtext">{{subtext}}</p>
+	</div>
+	<div class="bannerAppLink" data-ng-bind-html="appLink">{{appLink}}</div>
+</div></script>
+<script type="text/javascript" src="/patterns/667/js/psr-patterns-script.min.js"></script>
+<script data-tealeaf type="text/x-jquery-tmpl"></script>
+ 
+<span>
+				<iframe id="floodIframe" data-delayed-src="https://fls.doubleclick.net/activityi;src=844392;u7=Home100;type=vgpub817;cat=vangu618;u1=prd;ord=1490380364649?" ></iframe>
+			</span>
+	<script type="text/javascript" src="/patterns/667/third-party/SEO/iqseotag.min.js"></script>
+</body>
+</html>
+
